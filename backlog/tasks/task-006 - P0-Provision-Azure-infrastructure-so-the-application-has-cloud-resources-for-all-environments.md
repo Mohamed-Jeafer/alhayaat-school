@@ -6,7 +6,7 @@ title: >-
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:51'
-updated_date: '2026-03-15 11:55'
+updated_date: '2026-03-15 12:58'
 labels:
   - phase-0
   - infrastructure
@@ -57,22 +57,22 @@ STRIPE_SECRET_KEY: string  // Stripe API secret
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Given the dev resource group exists in Azure
+- [ ] #1 Given the dev resource group exists - When the Bicep deployment runs with dev.json - Then all 6 resources appear in rg-alhayaat-dev with status Succeeded (App Service, PostgreSQL, Key Vault, Storage, App Insights, App Service Plan)
 When the developer runs az deployment group create with infrastructure/main.bicep and dev parameters
 Then all 6 resources are provisioned and az resource list confirms them
-- [ ] #2 Given the App Service is provisioned
+- [ ] #2 Given the App Service is provisioned - When the health endpoint is polled - Then HTTP 200 is returned within 30 seconds of provisioning
 When the developer curls the App Service URL
 Then the health check endpoint returns HTTP 200
-- [ ] #3 Given the PostgreSQL Flexible Server is provisioned
+- [ ] #3 Given the PostgreSQL Flexible Server is provisioned - When a connection uses the DATABASE_URL from Key Vault - Then SELECT 1 succeeds confirming connectivity
 When the developer runs az postgres flexible-server show
 Then the server state shows Ready
-- [ ] #4 Given Key Vault is provisioned
+- [ ] #4 Given Key Vault is provisioned - When DATABASE_URL, NEXTAUTH_SECRET, and STRIPE_SECRET_KEY are stored - Then the App Service reads them via managed identity without credentials in code
 When the developer runs az keyvault secret list
 Then DATABASE_URL, NEXTAUTH_SECRET, and STRIPE_SECRET_KEY are present
-- [ ] #5 Edge case: idempotent re-deployment — Given all resources already exist
+- [ ] #5 Edge case: idempotent re-deployment - Given all resources already exist - When Bicep runs again - Then all resources remain unchanged and the deployment exits with no errors
 When the developer re-runs the Bicep deployment
 Then no resources are duplicated and the deployment succeeds
-- [ ] #6 Edge case: parameter file mismatch — Given a required parameter is missing from dev.json
+- [ ] #6 Edge case: missing parameter - Given a required parameter is absent from dev.json - When the deployment runs - Then Bicep validation fails before any resources are created with the parameter name in the error
 When the deployment runs
 Then Bicep validation fails with a clear error identifying the missing parameter
 <!-- AC:END -->
@@ -107,10 +107,10 @@ az deployment group create \
 ## Definition of Done
 <!-- DOD:BEGIN -->
 - [ ] #1 Code reviewed and merged to develop
-- [ ] #2 Infrastructure docs created in docs/azure-infrastructure.md
-- [ ] #3 All Bicep modules pass az bicep build validation
-- [ ] #4 Dev environment fully provisioned and accessible
-- [ ] #5 Application Insights logging enabled and collecting data
-- [ ] #6 Verification script passes (scripts/verify/azure-check.sh)
-- [ ] #7 Corresponding [P0] Verify Azure Infrastructure Deployment task in Backlog.md marked Done
+- [ ] #2 All Bicep modules pass az bicep build validation
+- [ ] #3 Dev environment fully provisioned and accessible
+- [ ] #4 Application Insights logging enabled and collecting data
+- [ ] #5 Verification script passes (scripts/verify/azure-check.sh)
+- [ ] #6 Corresponding [P0] Verify Azure Infrastructure Deployment task in Backlog.md marked Done
+- [ ] #7 Infrastructure doc created via backlog doc create -t technical 'Infrastructure: Azure resources' - record doc-NNN ID here
 <!-- DOD:END -->
