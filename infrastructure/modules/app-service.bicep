@@ -36,7 +36,12 @@ resource appService 'Microsoft.Web/sites@2023-01-01' = {
       appSettings: [
         { name: 'NODE_ENV', value: 'production' }
         { name: 'NEXTAUTH_URL', value: 'https://${appName}.azurewebsites.net' }
-        // Secrets referenced from Key Vault — set after keyvault module deploys
+        { name: 'STRIPE_SECRET_KEY', value: '@Microsoft.KeyVault(SecretUri=https://${appName}-kv.vault.azure.net/secrets/STRIPE-SECRET-KEY/)' }
+        { name: 'STRIPE_WEBHOOK_SECRET', value: '@Microsoft.KeyVault(SecretUri=https://${appName}-kv.vault.azure.net/secrets/STRIPE-WEBHOOK-SECRET/)' }
+        { name: 'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY', value: '@Microsoft.KeyVault(SecretUri=https://${appName}-kv.vault.azure.net/secrets/STRIPE-PUBLISHABLE-KEY/)' }
+        { name: 'DATABASE_URL', value: '@Microsoft.KeyVault(SecretUri=https://${appName}-kv.vault.azure.net/secrets/DATABASE-URL/)' }
+        { name: 'RESEND_API_KEY', value: '@Microsoft.KeyVault(SecretUri=https://${appName}-kv.vault.azure.net/secrets/RESEND-API-KEY/)' }
+        { name: 'NEXTAUTH_SECRET', value: '@Microsoft.KeyVault(SecretUri=https://${appName}-kv.vault.azure.net/secrets/NEXTAUTH-SECRET/)' }
       ]
       alwaysOn: environment != 'dev'
     }

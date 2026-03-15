@@ -4,6 +4,9 @@ let pool: Pool | null = null;
 
 export function getPool(): Pool {
   if (!pool) {
+    if (!process.env.DATABASE_URL) {
+      throw new Error('ERR_DB_NOT_CONFIGURED: DATABASE_URL environment variable is not set');
+    }
     pool = new Pool({
       connectionString: process.env.DATABASE_URL,
       max: 10,

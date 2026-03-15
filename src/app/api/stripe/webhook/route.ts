@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { getStripe } from '@/lib/stripe';
 import { createDonation } from '@/lib/db/queries';
+import { generateReceipt } from '@/lib/pdf/receipt';
+import { sendThankYouEmail } from '@/lib/email/donations';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,17 +40,27 @@ export async function POST(req: NextRequest) {
 
     try {
       const isAnonymous = session.metadata?.isAnonymous === 'true';
+      const donorEmail = session.metadata?.donorEmail ?? session.customer_email;
+      if (!donorEmail) {
+        console.error('[webhook] Missing donor email — ERR_MISSING_DONOR_EMAIL', { sessionId: session.id });
+        return NextResponse.json({ error: 'Missing donor email' }, { status: 500 });
+      }
       const donation = await createDonation({
         stripeSessionId: session.id,
         amountCad: (session.amount_total ?? 0) / 100,
         donorName: isAnonymous ? null : (session.metadata?.donorName ?? null),
-        donorEmail: session.metadata?.donorEmail ?? session.customer_email ?? '',
+        donorEmail,
         donorAddress: session.metadata?.donorAddress || undefined,
         isAnonymous,
       });
 
       if (donation) {
         console.log(`[webhook] Donation recorded: ${donation.id} — $${donation.amountCad} CAD`);
+        // Non-blocking: fire-and-forget — email failure must not cause Stripe retry
+        generateReceipt(donation)
+          .then((pdf) => sendThankYouEmail({ donation, receiptPdf: pdf }))
+          .then(() => console.log(`[webhook] Email sent for donation: ${donation.id}`))
+          .catch((err) => console.error('[webhook] Email/PDF failed — ERR_EMAIL_SEND_FAILED:', err, { donationId: donation.id }));
       } else {
         // ON CONFLICT DO NOTHING — duplicate event, silently ignore
         console.log(`[webhook] Duplicate event ignored: ${session.id}`);

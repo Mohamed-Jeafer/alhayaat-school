@@ -1,9 +1,10 @@
 ---
 id: TASK-025
 title: '[P6e] Donation success confirmation page with receipt download'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 13:14'
+updated_date: '2026-03-15 21:21'
 labels:
   - stripe
   - success-page
@@ -85,6 +86,12 @@ interface SuccessPageData {
 - [ ] #4 Given the success page renders, when the user clicks 'Return to Home', then they are navigated to / using Next.js Link (no full page reload)
 - [ ] #5 Given the user is on a 375px wide screen, when the success page renders, then all text is readable, the Download Receipt button is full-width, and no horizontal scroll occurs
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+src/app/donate/success/page.tsx (Server Component): retrieves Stripe session server-side, queries DB by stripe_session_id, displays donor name + formatted CAD amount + date, receipt download button (only when DB record exists), amber notice on webhook race condition, redirects on missing/invalid session_id.
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->

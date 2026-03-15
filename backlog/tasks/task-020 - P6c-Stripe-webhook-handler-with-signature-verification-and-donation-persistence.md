@@ -3,9 +3,10 @@ id: TASK-020
 title: >-
   [P6c] Stripe webhook handler with signature verification and donation
   persistence
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 13:12'
+updated_date: '2026-03-15 21:21'
 labels:
   - stripe
   - webhook
@@ -95,6 +96,12 @@ export async function createDonation(input: CreateDonationInput): Promise<Donati
 - [ ] #4 Given the database is unavailable during webhook processing, when createDonation throws, then the webhook returns HTTP 500 so Stripe retries, and the error is logged with full context to Application Insights (idempotency key included)
 - [ ] #5 Given the same checkout.session.completed event is delivered twice (Stripe retry), when the handler processes it, then the duplicate is detected via stripe_session_id unique constraint and no duplicate donation row is created
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+POST /api/stripe/webhook with req.text() raw body parsing, stripe.webhooks.constructEvent signature verification, checkout.session.completed handler, createDonation via lib/db.ts singleton, idempotent via ON CONFLICT (stripe_session_id) DO NOTHING, non-blocking email fire-and-forget. Build clean.
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->

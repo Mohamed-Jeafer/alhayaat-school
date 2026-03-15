@@ -1,9 +1,10 @@
 ---
 id: TASK-018
 title: '[P6b] Donation page with preset amounts and Stripe Checkout redirect'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 13:12'
+updated_date: '2026-03-15 21:21'
 labels:
   - stripe
   - donation
@@ -110,6 +111,12 @@ const checkoutSchema = z.object({
 - [ ] #4 Given the Stripe API returns a 500 error, when the donor submits the form, then a toast notification displays the error message and the form remains mounted with all values intact
 - [ ] #5 Given the user is on a 375px wide screen, when the donate page renders, then preset amount buttons are full-width, the form is single-column, and no horizontal scroll occurs
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+src/app/donate/page.tsx (SSG, Arabic verse, charity info, other payment methods). src/components/donate/DonationForm.tsx (Client Component, preset amounts $25/$50/$100/$250, react-hook-form + zod, anonymous checkbox). POST /api/stripe/checkout-session (Zod validation, Stripe checkout session, CAD). src/content/donate.json sourced from al-hayaat.webflow/donate.html.
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->

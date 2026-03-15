@@ -3,10 +3,10 @@ id: TASK-003
 title: >-
   [P0] Deploy database schema so the application has persistent storage for form
   submissions and user data
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 10:51'
-updated_date: '2026-03-15 12:57'
+updated_date: '2026-03-15 21:21'
 labels:
   - phase-0
   - database
@@ -100,6 +100,12 @@ psql $DATABASE_URL -f scripts/db/schema.sql
 - donations (id, amount, donor_name, donor_email, stripe_session_id, created_at)
 - users (id, email, password_hash, role, created_at)
 <!-- SECTION:PLAN:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+scripts/db/schema.sql created (5 tables, idempotent IF NOT EXISTS, UUID PKs, donations table Stripe-ready with stripe_session_id UNIQUE). lib/db.ts singleton pg Pool. src/lib/db/queries.ts with typed helpers: createDonation, listDonations, createContactSubmission, upsertNewsletterSubscriber.
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->

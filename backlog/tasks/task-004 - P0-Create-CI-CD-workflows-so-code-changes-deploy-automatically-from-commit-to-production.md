@@ -3,10 +3,10 @@ id: TASK-004
 title: >-
   [P0] Create CI/CD workflows so code changes deploy automatically from commit
   to production
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 10:51'
-updated_date: '2026-03-15 12:56'
+updated_date: '2026-03-15 21:21'
 labels:
   - phase-0
   - cicd
@@ -95,6 +95,12 @@ Then the workflow fails at the Azure login step with a descriptive error
 ## Required Secrets
 AZURE_CREDENTIALS, AZURE_WEBAPP_NAME_DEV, AZURE_WEBAPP_NAME_STAGING, AZURE_WEBAPP_NAME_PROD
 <!-- SECTION:PLAN:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+4 GitHub Actions workflows created: ci.yml (PR lint/typecheck/build), deploy-dev.yml (develop push + Stripe secret check), deploy-staging.yml (manual dispatch with confirmation gate), deploy-prod.yml (main push + manual approval environment + dual Stripe secret verification).
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->

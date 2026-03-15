@@ -1,9 +1,10 @@
 ---
 id: TASK-027
 title: '[P6f] View and search donation records in admin dashboard'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 13:15'
+updated_date: '2026-03-15 21:21'
 labels:
   - admin
   - donations
@@ -79,6 +80,12 @@ LIMIT  $1 OFFSET ($2 - 1) * $1
 - [ ] #4 Given the admin views the donations table, when there are 0 donations, then an empty-state message 'No donations recorded yet' is displayed
 - [ ] #5 Given there are 150 donations in the database, when the admin loads /admin/donations, then only 25 rows are shown per page with pagination controls that load the next page via server action
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+src/app/admin/donations/page.tsx (Server Component, paginated 25/page, listDonations SQL with ILIKE search). DonationsSearchForm.tsx (client search). DonationsPagination.tsx (Link-based, no full reload). Anonymous donors shown as 'Anonymous Donor'. Receipt download per row via /api/stripe/receipt.
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->

@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Al-Hayaat Islamic School',
-    default: 'Al-Hayaat Islamic School',
+    template: '%s | Al-Hayaat School',
+    default: 'Al-Hayaat School',
   },
-  description: 'Al-Hayaat Islamic School — Nurturing young minds through academic excellence and spiritual development.',
+  description: 'Al-Hayaat School — Nurturing young minds through academic excellence and spiritual development.',
 };
 
 export default function RootLayout({

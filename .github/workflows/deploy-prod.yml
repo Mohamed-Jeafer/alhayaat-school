@@ -41,6 +41,10 @@ jobs:
             echo "::error::STRIPE_WEBHOOK_SECRET_PROD not set — deployment blocked"
             exit 1
           fi
+          if [ -z "${{ secrets.STRIPE_PK_LIVE }}" ]; then
+            echo "::error::STRIPE_PK_LIVE (NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) not set — deployment blocked"
+            exit 1
+          fi
           echo "✅ Stripe secrets verified"
 
       - name: Build
