@@ -50,37 +50,37 @@ The Webflow site has no version control, no staging environment, and no automate
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Given the GitHub repository does not exist
+- [ ] #1 Given the GitHub repo does not exist — When all P0 sub-tasks execute — Then GitHub repo, Azure resources, CI/CD pipelines, DB schema, and Next.js project are all operational
 When all P0 sub-tasks are executed in sequence
 Then a GitHub repo, Azure resources, CI/CD pipelines, DB schema, and Next.js project are all operational
 When the developer runs the repository setup script
 Then the al-hayaat-nextjs repo is created with main and develop branches, branch protection rules active, and all 4 secrets configured
-- [ ] #2 Given the repository exists with no project code
+- [ ] #2 Given the repository exists with no project code — When the Next.js project is pushed to develop — Then npm run build exits with code 0 on the develop branch
 When the Next.js project is initialized and pushed to develop
 Then `npm run build` exits with code 0 on the develop branch
 When the developer runs create-next-app with TypeScript, Tailwind, ESLint, and App Router flags
 Then npm run build completes with exit code 0 and src/app/ directory structure exists
-- [ ] #3 Given the Azure dev resource group is empty
+- [ ] #3 Given the Azure dev resource group is empty — When the Bicep deployment runs with dev.json — Then all 6 Azure resources appear in rg-alhayaat-dev with status Succeeded
 When the Bicep deployment runs with dev.json parameters
 Then all 6 Azure resources are provisioned in rg-alhayaat-dev with status Succeeded
 When the developer deploys infrastructure/main.bicep with dev parameters
 Then all 6 resources (App Service, PostgreSQL, Key Vault, Storage, App Insights, App Service Plan) are provisioned and az resource list confirms them
-- [ ] #4 Given the PostgreSQL server is running
+- [ ] #4 Given the PostgreSQL server is running — When scripts/db/schema.sql is executed — Then all 5 tables and indexes exist and seed data is populated
 When scripts/db/schema.sql is executed
 Then all 5 tables and indexes exist and seed data is populated
 When the developer executes scripts/db/schema.sql
 Then 5 tables are created (contact_submissions, job_applications, newsletter_subscribers, donations, users) with correct indexes
-- [ ] #5 Given all infrastructure is deployed
+- [ ] #5 Given all infrastructure is deployed — When all 4 GitHub Actions workflows are triggered — Then CI passes on a PR and dev deployment completes with HTTP 200
 When all 4 GitHub Actions workflows are triggered
 Then CI passes on a PR and dev deployment completes with HTTP 200
 When a PR is opened against develop
 Then the ci.yml workflow triggers and passes lint, type-check, and build steps
-- [ ] #6 Edge case: Bicep idempotency — Given infrastructure was already deployed
+- [ ] #6 Edge case: Bicep idempotency — Given infra was already deployed — When Bicep runs again — Then all resources remain unchanged with no errors
 When the Bicep deployment runs again
 Then all resources remain unchanged with no errors or state drift
 When the developer re-runs the Bicep deployment
 Then no resources are duplicated and the deployment succeeds with no changes
-- [ ] #7 Edge case: Secret rotation — Given Key Vault secrets exist
+- [ ] #7 Edge case: Secret rotation — Given Key Vault secrets exist — When a secret is rotated — Then the App Service reads the new value without a restart
 When a secret value is rotated in Key Vault
 Then the App Service reads the new value without requiring a restart
 When a secret value is updated
