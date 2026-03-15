@@ -3,9 +3,10 @@ id: TASK-038
 title: >-
   [P2] Build layout primitive components so all pages share consistent
   max-widths, spacing, and grid structures
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-15 13:20'
+updated_date: '2026-03-15 23:43'
 labels:
   - phase-2
   - layout

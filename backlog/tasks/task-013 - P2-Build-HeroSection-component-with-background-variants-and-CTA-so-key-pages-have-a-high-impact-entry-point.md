@@ -3,9 +3,10 @@ id: TASK-013
 title: >-
   [P2] Build HeroSection component with background variants and CTA so key pages
   have a high-impact entry point
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-15 13:06'
+updated_date: '2026-03-15 23:43'
 labels:
   - phase-2
   - component-library
