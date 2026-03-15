@@ -4,6 +4,7 @@ title: GitHub Actions CI/CD Workflows
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:51'
+updated_date: '2026-03-15 10:52'
 labels:
   - phase-0
   - cicd
@@ -28,3 +29,19 @@ Create 4 GitHub Actions workflows: CI on PRs, deploy-dev on push to develop, dep
 - [ ] #6 Test PR created and CI workflow passes successfully
 - [ ] #7 Merge to develop triggers deploy-dev and app is accessible on dev URL
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+## Workflows
+
+| File | Trigger | Steps |
+|---|---|---|
+| ci.yml | PR to develop/main | install → lint → type-check → build |
+| deploy-dev.yml | push to develop | build → deploy to dev App Service |
+| deploy-staging.yml | manual dispatch | build → deploy to staging App Service |
+| deploy-prod.yml | push to main | build → approval → deploy to prod |
+
+## Required Secrets
+AZURE_CREDENTIALS, AZURE_WEBAPP_NAME_DEV, AZURE_WEBAPP_NAME_STAGING, AZURE_WEBAPP_NAME_PROD
+<!-- SECTION:PLAN:END -->
