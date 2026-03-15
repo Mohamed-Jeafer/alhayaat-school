@@ -6,7 +6,7 @@ title: >-
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:51'
-updated_date: '2026-03-15 12:55'
+updated_date: '2026-03-15 12:56'
 labels:
   - phase-0
   - cicd
@@ -48,12 +48,12 @@ The Webflow site has no deployment pipeline — changes go live immediately with
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Given all 4 workflow files are committed - When a PR is opened against develop - Then ci.yml triggers and runs lint, type-check, and build steps in sequence
+- [ ] #1 Given all 4 workflow files are committed - When a PR is opened against develop - Then ci.yml triggers and runs lint, type-check, and build steps
 When a PR is opened against develop
 Then ci.yml triggers automatically and runs lint, type-check, and build steps
 When a developer opens a PR against develop
 Then ci.yml triggers and runs lint, type-check, and build steps to completion
-- [ ] #2 Given ci.yml runs on a passing PR - When all steps succeed - Then a green check appears on the PR and merging is unblocked
+- [ ] #2 Given ci.yml passes on a PR - When all steps succeed - Then a green check appears and merging is unblocked
 When all steps pass
 Then a green check mark appears on the PR and merging is unblocked
 When the developer merges the PR to develop
@@ -63,17 +63,17 @@ When deploy-dev.yml runs
 Then the Next.js app is deployed to the dev App Service and returns HTTP 200
 When the developer visits the dev App Service URL
 Then the app returns HTTP 200 on the health check endpoint
-- [ ] #4 Given deploy-prod.yml has an environment protection rule - When a push to main triggers it - Then deployment pauses at the approval gate until a maintainer explicitly approves
+- [ ] #4 Given deploy-prod.yml has an environment protection rule - When a push to main triggers it - Then deployment pauses until a maintainer approves
 When a push to main triggers the workflow
 Then deployment pauses at the approval gate until a maintainer explicitly approves
 When a push to main triggers the workflow
 Then the deployment pauses and waits for manual approval before proceeding
-- [ ] #5 Edge case: CI failure - Given a PR has a TypeScript error - When ci.yml runs - Then the workflow fails with non-zero exit code and the PR is blocked from merging
+- [ ] #5 Edge case: CI failure - Given a PR has a TypeScript error - When ci.yml runs - Then the workflow fails and the PR is blocked from merging
 When ci.yml runs
 Then the workflow fails with a non-zero exit code and the PR is blocked from merging
 When ci.yml runs
 Then the workflow fails with a clear error message and the PR is blocked from merging
-- [ ] #6 Edge case: missing secret - Given AZURE_CREDENTIALS is absent - When deploy-dev.yml runs - Then the workflow fails at the Azure login step with a descriptive error message
+- [ ] #6 Edge case: missing secret - Given AZURE_CREDENTIALS is absent - When deploy-dev.yml runs - Then the workflow fails at Azure login with a descriptive error
 When deploy-dev.yml runs
 Then the workflow fails at the Azure login step with a descriptive error message
 When deploy-dev.yml triggers
