@@ -1,9 +1,10 @@
 ---
-id: TASK-008
-title: Verify Database Schema Deployment
+id: TASK-010
+title: '[P0] Verify Database Schema Deployment'
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:52'
+updated_date: '2026-03-15 10:58'
 labels:
   - phase-0
   - database

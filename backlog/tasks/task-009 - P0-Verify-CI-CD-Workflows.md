@@ -1,9 +1,10 @@
 ---
 id: TASK-009
-title: Verify CI/CD Workflows
+title: '[P0] Verify CI/CD Workflows'
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:52'
+updated_date: '2026-03-15 10:58'
 labels:
   - phase-0
   - cicd

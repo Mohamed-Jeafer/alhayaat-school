@@ -1,10 +1,10 @@
 ---
 id: TASK-003
-title: Database Schema Setup
+title: '[P0] Database Schema Setup'
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:51'
-updated_date: '2026-03-15 10:51'
+updated_date: '2026-03-15 10:58'
 labels:
   - phase-0
   - database

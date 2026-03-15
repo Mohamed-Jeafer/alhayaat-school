@@ -1,10 +1,10 @@
 ---
 id: TASK-002
-title: Next.js Project Initialization
+title: '[P0] Next.js Project Initialization'
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:50'
-updated_date: '2026-03-15 10:51'
+updated_date: '2026-03-15 10:58'
 labels:
   - phase-0
   - setup

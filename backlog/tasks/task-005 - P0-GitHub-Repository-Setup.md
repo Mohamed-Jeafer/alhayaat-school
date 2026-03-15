@@ -1,10 +1,10 @@
 ---
 id: TASK-005
-title: GitHub Repository Setup
+title: '[P0] GitHub Repository Setup'
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:51'
-updated_date: '2026-03-15 10:51'
+updated_date: '2026-03-15 10:58'
 labels:
   - phase-0
   - setup

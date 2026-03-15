@@ -1,9 +1,10 @@
 ---
 id: TASK-008
-title: Verify Azure Infrastructure Deployment
+title: '[P0] Verify Azure Infrastructure Deployment'
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:52'
+updated_date: '2026-03-15 10:58'
 labels:
   - phase-0
   - infrastructure
