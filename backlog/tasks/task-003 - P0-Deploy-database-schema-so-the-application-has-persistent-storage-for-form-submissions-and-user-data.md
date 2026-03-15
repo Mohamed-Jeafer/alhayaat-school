@@ -6,7 +6,7 @@ title: >-
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:51'
-updated_date: '2026-03-15 11:54'
+updated_date: '2026-03-15 12:55'
 labels:
   - phase-0
   - database
@@ -58,19 +58,29 @@ users (id SERIAL PK, email VARCHAR(255) UNIQUE, password_hash VARCHAR(255), role
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Given the PostgreSQL Flexible Server is running in the dev resource group
+- [ ] #1 Given the PostgreSQL Flexible Server is running in dev - When scripts/db/schema.sql executes - Then all 5 tables are created with correct columns, data types, and constraints
+When scripts/db/schema.sql is executed
+Then all 5 tables are created with correct columns, data types, and constraints
 When the developer executes psql $DATABASE_URL -f scripts/db/schema.sql
 Then all 5 tables are created in the public schema without errors
-- [ ] #2 Given the schema is deployed
+- [ ] #2 Given the schema is deployed - When a SELECT query runs against each table - Then all tables return 0 rows with no errors
+When a SELECT query runs against each table
+Then all tables return 0 rows with no errors
 When the developer queries pg_indexes for the public schema
 Then 3 indexes exist: idx_contact_created, idx_applications_created, idx_donations_created
-- [ ] #3 Given the schema is deployed
+- [ ] #3 Given the schema is deployed - When each table is inspected with \d+ - Then all expected indexes exist on the correct columns
+When \d+ is used to inspect each table
+Then all expected indexes exist on the correct columns
 When the developer executes psql $DATABASE_URL -f scripts/db/seed.sql
 Then sample data is inserted and SELECT COUNT(*) on each table returns > 0 rows
-- [ ] #4 Edge case: idempotent re-run — Given the schema was already deployed
+- [ ] #4 Edge case: idempotent re-run - Given the schema was already deployed - When schema.sql runs again - Then no error is thrown and all tables remain unchanged (CREATE TABLE IF NOT EXISTS)
+When schema.sql is executed again
+Then no error is thrown and all tables remain unchanged (CREATE TABLE IF NOT EXISTS)
 When the developer re-runs scripts/db/schema.sql
 Then no errors occur and existing data is preserved
-- [ ] #5 Edge case: connection pooling — Given lib/db.ts exports a singleton pg Pool
+- [ ] #5 Edge case: connection pooling - Given lib/db.ts exports a singleton pg Pool - When multiple routes import from lib/db.ts - Then only one Pool instance exists in memory per process
+When multiple API routes import from lib/db.ts
+Then only one Pool instance exists in memory per process
 When multiple concurrent queries execute
 Then connections are reused from the pool and no connection limit errors occur
 <!-- AC:END -->
