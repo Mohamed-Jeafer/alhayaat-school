@@ -6,7 +6,7 @@ title: >-
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:52'
-updated_date: '2026-03-15 11:56'
+updated_date: '2026-03-15 12:57'
 labels:
   - phase-0
   - infrastructure
@@ -51,22 +51,22 @@ A missing or misconfigured Azure resource (wrong SKU, missing Key Vault secret, 
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Given TASK-006 is complete and infrastructure is deployed
+- [ ] #1 Given TASK-006 is complete - When scripts/verify/azure-check.sh runs - Then it prints PASS for all 6 resource checks and exits with code 0
 When the developer runs az resource list --resource-group rg-alhayaat-dev
 Then exactly 6 resources are returned
-- [ ] #2 Given the App Service is provisioned
+- [ ] #2 Given the App Service is provisioned - When the script polls the health endpoint - Then HTTP 200 is returned and PASS is printed
 When the developer curls the health check URL
 Then the endpoint returns HTTP 200
-- [ ] #3 Given the PostgreSQL server is provisioned
+- [ ] #3 Given the PostgreSQL server is provisioned - When the script runs a test connection - Then the connection succeeds and PASS is printed
 When the developer runs az postgres flexible-server show
 Then the server state shows Ready
-- [ ] #4 Given Key Vault is provisioned
+- [ ] #4 Given Key Vault is provisioned - When the script checks the 3 required secrets - Then all are confirmed present and PASS is printed
 When the developer runs az keyvault secret list
 Then DATABASE_URL, NEXTAUTH_SECRET, and STRIPE_SECRET_KEY are present
-- [ ] #5 Edge case: missing resource — Given Application Insights was not provisioned
+- [ ] #5 Edge case: missing resource - Given Application Insights was not provisioned - When the script runs - Then it prints FAIL for App Insights and exits with code 1
 When the verification script runs
 Then it reports FAIL for Application Insights with the expected resource name
-- [ ] #6 Edge case: unhealthy App Service — Given the App Service returns HTTP 503
+- [ ] #6 Edge case: unhealthy App Service - Given the App Service returns HTTP 503 - When the script polls - Then it prints FAIL with the status code and exits with code 1
 When the verification script runs
 Then it reports FAIL with a link to App Service logs in Azure Portal
 <!-- AC:END -->
