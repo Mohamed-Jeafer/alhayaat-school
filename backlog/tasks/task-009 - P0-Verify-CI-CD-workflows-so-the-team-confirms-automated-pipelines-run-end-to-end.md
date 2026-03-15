@@ -6,7 +6,7 @@ title: >-
 status: To Do
 assignee: []
 created_date: '2026-03-15 10:52'
-updated_date: '2026-03-15 11:56'
+updated_date: '2026-03-15 12:57'
 labels:
   - phase-0
   - cicd
@@ -50,22 +50,22 @@ A broken CI/CD pipeline silently undermines the entire development workflow — 
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Given TASK-004 is complete and all 4 workflow files are committed
+- [ ] #1 Given all 4 workflow files are committed - When the verify script checks file existence - Then ci.yml, deploy-dev.yml, deploy-staging.yml, and deploy-prod.yml are all present
 When the developer runs gh workflow list
 Then 4 workflows are listed: ci, deploy-dev, deploy-staging, deploy-prod
-- [ ] #2 Given ci.yml exists
+- [ ] #2 Given ci.yml exists - When a test PR is opened against develop - Then ci.yml triggers and all steps complete with green status
 When the developer creates a test PR against develop
 Then gh run list --workflow=ci.yml shows a completed run with conclusion: success
-- [ ] #3 Given ci.yml passes on the test PR
+- [ ] #3 Given ci.yml passes - When the test PR is merged to develop - Then deploy-dev.yml triggers and the app deploys to the dev App Service
 When the developer merges the PR to develop
 Then deploy-dev.yml triggers and gh run list --workflow=deploy-dev.yml shows conclusion: success
-- [ ] #4 Given deploy-dev completes
+- [ ] #4 Given deploy-dev.yml completes - When the dev App Service URL is accessed - Then HTTP 200 is returned confirming the deployment is live
 When the developer visits the dev App Service URL
 Then the app returns HTTP 200
-- [ ] #5 Edge case: prod gate — Given deploy-prod.yml has an environment protection rule
+- [ ] #5 Edge case: prod gate - Given deploy-prod.yml has an environment protection rule - When a push to main triggers it - Then the workflow pauses and does not deploy without maintainer approval
 When a push to main triggers the workflow
 Then the run pauses at the approval step and does not deploy without manual approval
-- [ ] #6 Edge case: workflow failure — Given a PR introduces a lint error
+- [ ] #6 Edge case: workflow failure - Given a PR introduces a lint error - When ci.yml runs - Then the workflow fails and the PR is blocked from merging
 When ci.yml runs
 Then the workflow fails and the PR status check blocks merging
 <!-- AC:END -->
