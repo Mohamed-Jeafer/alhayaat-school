@@ -3,9 +3,10 @@ id: TASK-030
 title: >-
   [P4] Build newsletter subscribe API so visitors can subscribe to school
   updates from the footer signup form
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 13:17'
+updated_date: '2026-03-16 11:59'
 labels:
   - phase-4
   - backend
