@@ -3,9 +3,10 @@ id: TASK-016
 title: >-
   [P4] Build contact form page and API so visitors can submit inquiries and
   receive email confirmation
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 13:11'
+updated_date: '2026-03-16 12:17'
 labels:
   - phase-4
   - backend
@@ -102,6 +103,12 @@ interface ContactResponse {
 - [ ] #6 Edge case: honeypot triggered - Given the hidden honeypot field contains a value - When the form is submitted - Then the API returns 200 silently but no DB row is inserted and no email is sent
 - [ ] #7 Edge case: mobile viewport - Given the user is on a 375px screen - When the contact form renders - Then all inputs are full-width, labels are visible, and the submit button is reachable without horizontal scroll
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented POST /api/contact route with full validation pipeline (Zod, honeypot trap, rate limiting, DB insert, fire-and-forget emails). Converted static ContactForm into a live react-hook-form + zodResolver component with toast feedback, field-level 422 error mapping, 429/500 error handling. Also fixed a pre-existing Zod v4 type incompatibility in admissions/apply/page.tsx. Build passes clean.
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
