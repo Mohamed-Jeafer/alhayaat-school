@@ -1,46 +1,140 @@
 'use client';
 
-import { FormField, AlertBanner } from '@/components/ui';
-import { Button } from '@/components/ui/button';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { toast } from 'sonner';
+import { FormField } from '@/components/ui';
+import { SubmitButton } from '@/components/ui/SubmitButton';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { contactSchema, type ContactFormData } from '@/lib/validations/forms';
 import contactContent from '@/content/contact.json';
 
 export default function ContactForm() {
   const { form } = contactContent;
 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm<z.input<typeof contactSchema>, unknown, ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: { name: '', email: '', message: '', honeypot: '' },
+  });
+
+  async function onSubmit(data: ContactFormData) {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.status === 201) {
+        toast.success(form.success_message);
+        reset();
+        return;
+      }
+
+      const json = await res.json().catch(() => ({}));
+
+      if (res.status === 422 && json.errors) {
+        const fieldErrors = json.errors as Record<string, string[]>;
+        for (const [field, messages] of Object.entries(fieldErrors)) {
+          setError(field as keyof ContactFormData, {
+            type: 'server',
+            message: messages[0],
+          });
+        }
+        return;
+      }
+
+      if (res.status === 429) {
+        toast.error(json.error ?? 'Too many submissions. Please try again later.');
+        return;
+      }
+
+      toast.error(json.error ?? form.error_message);
+    } catch {
+      toast.error(form.error_message);
+    }
+  }
+
+  const nameField = form.fields.find((f) => f.name === 'name');
+  const emailField = form.fields.find((f) => f.name === 'email');
+  const messageField = form.fields.find((f) => f.name === 'message');
+
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
       <h2 className="mb-6 text-xl font-semibold text-gray-900">{form.heading}</h2>
 
-      <AlertBanner variant="info">
-        {form.coming_soon_note}
-      </AlertBanner>
-
       <form
-        className="mt-6 space-y-5"
-        onSubmit={(e) => e.preventDefault()}
+        className="space-y-5"
+        onSubmit={handleSubmit(onSubmit)}
         aria-label="Contact form"
+        noValidate
       >
-        <FormField label="Name" name="name" required>
-          <Input name="name" type="text" disabled placeholder="Your name" />
+        {/* Honeypot — hidden from real users */}
+        <input
+          type="text"
+          className="hidden"
+          aria-hidden="true"
+          tabIndex={-1}
+          {...register('honeypot')}
+        />
+
+        <FormField
+          label={nameField?.label ?? 'Name'}
+          name="name"
+          required={nameField?.required ?? true}
+          error={errors.name?.message}
+        >
+          <Input
+            type="text"
+            placeholder="Your name"
+            autoComplete="name"
+            {...register('name')}
+          />
         </FormField>
 
-        <FormField label="Email" name="email" required>
-          <Input name="email" type="email" disabled placeholder="your@email.com" />
+        <FormField
+          label={emailField?.label ?? 'Email'}
+          name="email"
+          required={emailField?.required ?? true}
+          error={errors.email?.message}
+        >
+          <Input
+            type="email"
+            placeholder="your@email.com"
+            autoComplete="email"
+            {...register('email')}
+          />
         </FormField>
 
-        <FormField label="Subject" name="subject">
-          <Input name="subject" type="text" disabled placeholder="Subject" />
+        <FormField
+          label={messageField?.label ?? 'Message'}
+          name="message"
+          required={messageField?.required ?? true}
+          error={errors.message?.message}
+        >
+          <Textarea
+            rows={5}
+            placeholder="Your message"
+            {...register('message')}
+          />
         </FormField>
 
-        <FormField label="Message" name="message" required>
-          <Textarea name="message" rows={5} disabled placeholder="Your message" />
-        </FormField>
-
-        <Button type="submit" size="lg" className="w-full" disabled>
+        <SubmitButton
+          isLoading={isSubmitting}
+          loadingText="Sending…"
+          size="lg"
+          className="w-full"
+        >
           {form.submit_label}
-        </Button>
+        </SubmitButton>
       </form>
     </div>
   );
