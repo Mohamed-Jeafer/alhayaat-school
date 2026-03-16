@@ -3,9 +3,10 @@ id: TASK-036
 title: >-
   [P4] Build job application form and API so qualified candidates can apply for
   positions and upload their resume
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 13:18'
+updated_date: '2026-03-16 12:53'
 labels:
   - phase-4
   - backend
@@ -98,6 +99,27 @@ The Webflow careers page has no application flow - candidates must email manuall
 - [ ] #5 Edge case: rate limit - Given an IP submits 6 applications in one hour - When the 6th request reaches the API - Then HTTP 429 is returned with a Retry-After header
 - [ ] #6 Edge case: mobile viewport - Given the user is on a 375px screen - When the form renders - Then all fields and the file upload control are accessible without horizontal scrolling
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented the full job application form and API with Azure Blob resume upload.
+
+**Files created/modified:**
+- `src/app/careers/apply/page.tsx` — Client component form with react-hook-form, zodResolver, FileUpload, SelectField (Controller), Suspense wrapper for useSearchParams
+- `src/app/api/jobs/apply/route.ts` — POST handler: FormData parsing, Zod validation, resume file validation, rate limiting, Azure Blob upload, DB insert, non-blocking email sends
+- `src/lib/db/queries.ts` — Added `createJobApplication` with `CreateJobApplicationInput` and `JobApplication` interfaces
+- `src/app/careers/page.tsx` — Replaced "Apply by Email" mailto link with "Apply Now" button linking to `/careers/apply?position=...`
+
+**Key implementation details:**
+- Azure Blob upload fails gracefully (500 with clear error) when `AZURE_STORAGE_CONNECTION_STRING` is not set
+- Resume validated for presence, size (≤5MB), and type (PDF/DOC/DOCX) server-side
+- Rate limited by IP using existing `checkRateLimit`
+- Emails sent non-blocking via `.catch()`
+- `useSearchParams` wrapped in Suspense boundary per Next.js 15 requirements
+- `export const dynamic = 'force-dynamic'` on API route
+- Build passes cleanly (TypeScript + Next.js production build)
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
