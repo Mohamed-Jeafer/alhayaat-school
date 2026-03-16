@@ -3,9 +3,10 @@ id: TASK-024
 title: >-
   [P4] Build shared email, rate-limiting, and validation service layer so all
   API routes use a consistent infrastructure foundation
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 13:13'
+updated_date: '2026-03-16 11:53'
 labels:
   - phase-4
   - backend
@@ -66,6 +67,25 @@ Without a shared service layer, each API route would instantiate its own email c
 - [ ] #4 Edge case: missing env var - Given RESEND_API_KEY is absent - When the email module loads - Then a descriptive startup error is thrown before any request is handled
 - [ ] #5 Edge case: honeypot field - Given the honeypot field is non-empty - When contactSchema validates - Then validation fails and the submission is silently rejected
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented the shared P4 service layer:
+
+**Files created:**
+- `src/lib/email/client.ts` — `getResend()` singleton, same pattern as `getStripe()`
+- `src/lib/email/templates.ts` — 7 async send functions (contact confirmation/admin, newsletter, application confirmation/admin, job-application confirmation/admin)
+- `src/lib/email/templates/contact-confirmation.tsx` — React Email template
+- `src/lib/email/templates/admin-notification.tsx` — generic admin notification template (accepts formType, name, email, details)
+- `src/lib/email/templates/newsletter-confirmation.tsx` — React Email template
+- `src/lib/email/templates/application-confirmation.tsx` — React Email template
+- `src/lib/email/templates/job-application-confirmation.tsx` — React Email template
+- `src/lib/rate-limit.ts` — `checkRateLimit(identifier)` using Upstash in prod, in-memory Map fallback in dev (5 req/hour)
+- `src/lib/validations/forms.ts` — Zod schemas: `contactSchema`, `newsletterSchema`, `applicationSchema`, `jobApplicationSchema`
+
+Build passed cleanly with no TypeScript or ESLint errors.
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
