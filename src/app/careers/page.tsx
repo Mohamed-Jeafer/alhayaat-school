@@ -124,12 +124,16 @@ export default function CareersPage() {
                           <Button render={<Link href={`/careers/${position.slug}`} />}>
                             View Details
                           </Button>
-                          <a
-                            href={`mailto:admin@alhayaat.ca?subject=Application: ${position.title}`}
-                            className="text-sm font-medium text-primary hover:underline"
+                          <Button
+                            variant="outline"
+                            render={
+                              <Link
+                                href={`/careers/apply?position=${encodeURIComponent(position.title)}`}
+                              />
+                            }
                           >
-                            Apply by Email
-                          </a>
+                            Apply Now
+                          </Button>
                         </div>
                       </div>
                     </CardContent>

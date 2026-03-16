@@ -129,3 +129,44 @@ export async function upsertNewsletterSubscriber(
   );
   return rows[0] ?? { isNew: false };
 }
+
+// ── Job Applications ──────────────────────────────────────────
+
+export interface CreateJobApplicationInput {
+  applicantName: string;
+  applicantEmail: string;
+  positionTitle: string;
+  resumeBlobUrl: string;
+  coverLetter?: string;
+}
+
+export interface JobApplication {
+  id: string;
+  applicant_name: string;
+  applicant_email: string;
+  position_title: string;
+  resume_blob_url: string;
+  cover_letter: string | null;
+  submitted_at: Date;
+  status: string;
+}
+
+export async function createJobApplication(
+  input: CreateJobApplicationInput
+): Promise<JobApplication | null> {
+  const { rows } = await db.query<JobApplication>(
+    `INSERT INTO job_applications
+       (applicant_name, applicant_email, position_title, resume_blob_url, cover_letter)
+     VALUES ($1, $2, $3, $4, $5)
+     RETURNING id, applicant_name, applicant_email, position_title,
+               resume_blob_url, cover_letter, submitted_at, status`,
+    [
+      input.applicantName,
+      input.applicantEmail,
+      input.positionTitle,
+      input.resumeBlobUrl,
+      input.coverLetter ?? null,
+    ]
+  );
+  return rows[0] ?? null;
+}
