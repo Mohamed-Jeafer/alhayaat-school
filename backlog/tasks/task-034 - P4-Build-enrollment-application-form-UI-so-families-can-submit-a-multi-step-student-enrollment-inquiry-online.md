@@ -3,9 +3,10 @@ id: TASK-034
 title: >-
   [P4] Build enrollment application form UI so families can submit a multi-step
   student enrollment inquiry online
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 13:18'
+updated_date: '2026-03-16 12:05'
 labels:
   - phase-4
   - page
@@ -84,6 +85,23 @@ The current Webflow enrollment page is a static informational page with no form.
 - [ ] #5 Edge case: mobile viewport - Given the user is on a 375px screen - When any step renders - Then all fields and the step indicator are accessible without horizontal scrolling
 - [ ] #6 Edge case: direct URL access - Given a user navigates directly to the application page - Then the form always starts at step 1
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Replaced the static form shell at `/admissions/apply` with a fully functional 4-step multi-step enrollment form. Key changes:
+- Step 1: Student info (name, DOB, grade, previous school)
+- Step 2: Guardian info (name, relationship, phone, email, address)  
+- Step 3: Academic background (current grade, subjects checkboxes, languages checkboxes, special needs)
+- Step 4: Additional info (how did you hear, notes, terms agreement checkbox)
+- Uses `react-hook-form` with `zodResolver(applicationSchema)` — single form instance across all steps
+- Per-step validation via `trigger()` before advancing
+- ProgressBar showing `Step X of 4` with percentage
+- Back button preserves entered data
+- `handleFormSubmit(data)` logs data + sets success state (ready for TASK-032 API wiring)
+- Success screen with CheckCircle icon after submission
+- Fixed two pre-existing TypeScript errors: `ContactForm.tsx` resolver type mismatch (added `z.input` generic), `jobs/apply/route.ts` invalid Azure Blob `access: 'private'` option
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
