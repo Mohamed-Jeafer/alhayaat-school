@@ -6,7 +6,7 @@ title: >-
 status: Done
 assignee: []
 created_date: '2026-03-17 11:17'
-updated_date: '2026-03-17 12:19'
+updated_date: '2026-03-17 12:21'
 labels:
   - P3
   - page-migration
@@ -47,5 +47,5 @@ Dependencies: TASK-049 (ColoredBorderCard), TASK-052 (Amiri Quran font)
 ## Final Summary
 
 <!-- SECTION:FINAL_SUMMARY:BEGIN -->
-Rewrote `src/app/donate/page.tsx` with Webflow-aligned layout. Sections: hero with Arabic Quranic verse and translation, two-column layout (info + donation form), 5 payment method `ColoredBorderCard` components (yellow/orange/blue/green/red for Pledge, E-Transfer, Cheque, Credit Card, EFT), and reused `DonationForm`. Arabic text rendered via `.text-arabic` class with Amiri font.
+Rewrote src/app/donate/page.tsx. Sections: hero with Arabic Quranic verse, two-column layout with 5 payment method ColoredBorderCards (yellow/orange/blue/green/red), and DonationForm. Arabic text rendered via .text-arabic class with Amiri font from globals.css.
 <!-- SECTION:FINAL_SUMMARY:END -->
