@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const { name, email, message, honeypot } = result.data;
+  const { name, email, subject, message, honeypot } = result.data;
 
   // 3. Honeypot check — silent success (bot trap)
   if (honeypot) {
@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
   // 6. Fire-and-forget emails
   Promise.all([
     sendContactConfirmation(name, email, message),
-    sendAdminContactNotification(name, email, message),
+    sendAdminContactNotification(name, email, subject ?? '', message),
   ])
     .then(() => {})
     .catch((err) => logger.error('email error', err, 'contact'));

@@ -55,6 +55,13 @@
   },
   "requirements": {
     "heading": "Required items for registration",
+    "fees": {
+      "heading": "Fees",
+      "items": [
+        "Registration fee (payable with the registration forms)",
+        "Resource fee (payable after the student assessment)"
+      ]
+    },
     "documents": [
       "Copy of last year's final report card or current year's last report card (if applicable)",
       "Copy of immunization record",

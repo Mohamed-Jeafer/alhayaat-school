@@ -195,6 +195,18 @@ export default function AdmissionsPage() {
                 </p>
               </div>
             </div>
+
+            <div className="mt-8 rounded-[1.5rem] border border-black/10 bg-brand-off-white p-6">
+              <h4 className="text-[1.8rem] text-brand-black">{requirements.fees.heading}</h4>
+              <ul className="mt-4 space-y-3">
+                {requirements.fees.items.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-green" />
+                    <span className="text-base leading-relaxed text-brand-black/75">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </FadeIn>
         </Container>
       </Section>

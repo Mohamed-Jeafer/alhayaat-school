@@ -36,6 +36,9 @@ export default function CareersPage() {
     <main className="min-h-screen bg-white">
       <Section background="gray" padding="md">
         <Container>
+          <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-brand-blue">
+            {hero.join_heading}
+          </h2>
           <PageHeader
             title={hero.headline}
             subtitle={hero.subtext}

@@ -4,8 +4,9 @@
     "description": "Join the Al-Hayaat School team. Explore career opportunities and help shape the next generation of leaders."
   },
   "hero": {
-    "headline": "Ready to make an Impact? Join us on Our Journey.",
-    "subtext": "Join our Team"
+    "headline": "Ready to make an Impact ? Join us on Our Journey.",
+    "subtext": "Join our Team",
+    "join_heading": "Join our Team"
   },
   "intro": {
     "heading": "Welcome to Al-Hayaat School",

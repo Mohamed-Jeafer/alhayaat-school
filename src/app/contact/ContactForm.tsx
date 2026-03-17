@@ -22,7 +22,7 @@ export default function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm<z.input<typeof contactSchema>, unknown, ContactFormData>({
     resolver: zodResolver(contactSchema),
-    defaultValues: { name: '', email: '', message: '', honeypot: '' },
+    defaultValues: { name: '', email: '', subject: '', message: '', honeypot: '' },
   });
 
   async function onSubmit(data: ContactFormData) {
@@ -65,6 +65,7 @@ export default function ContactForm() {
 
   const nameField = form.fields.find((f) => f.name === 'name');
   const emailField = form.fields.find((f) => f.name === 'email');
+  const subjectField = form.fields.find((f) => f.name === 'subject');
   const messageField = form.fields.find((f) => f.name === 'message');
 
   return (
@@ -113,6 +114,21 @@ export default function ContactForm() {
             autoComplete="email"
             className="h-11 rounded-xl border-black/10 bg-brand-off-white px-4"
             {...register('email')}
+          />
+        </FormField>
+
+        <FormField
+          label={subjectField?.label ?? 'Subject'}
+          name="subject"
+          required={false}
+          error={errors.subject?.message}
+        >
+          <Input
+            type="text"
+            placeholder="Subject (optional)"
+            autoComplete="off"
+            className="h-11 rounded-xl border-black/10 bg-brand-off-white px-4"
+            {...register('subject')}
           />
         </FormField>
 

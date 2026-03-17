@@ -28,6 +28,7 @@ export async function sendContactConfirmation(
 export async function sendAdminContactNotification(
   name: string,
   email: string,
+  subject: string,
   message: string
 ): Promise<void> {
   const html = await render(
@@ -35,7 +36,9 @@ export async function sendAdminContactNotification(
       formType: 'Contact',
       name,
       email,
-      details: { Message: message.slice(0, 500) },
+      details: subject
+        ? { Subject: subject, Message: message.slice(0, 500) }
+        : { Message: message.slice(0, 500) },
     })
   );
   await getResend().emails.send({

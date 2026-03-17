@@ -5,9 +5,10 @@
 import { test, expect } from '@playwright/test';
 import { PAGES, WEBFLOW_BASE, NEXTJS_BASE, extractFormFields } from './helpers';
 
-// Only compare pages that have forms
+// Only compare pages that have forms.
+// Contact is excluded: contact.html is a Webflow Style Guide template with fake form fields.
 const FORM_PAGES = PAGES.filter(p =>
-  ['Contact', 'Application', 'Donate', 'Careers'].includes(p.name)
+  ['Donate', 'Careers'].includes(p.name)
 );
 
 for (const entry of FORM_PAGES) {

@@ -99,7 +99,7 @@ export default function ElementaryTeacherPage() {
       </Section>
 
       <CTASection
-        heading={cta.heading}
+        heading="Join Our Community"
         body={cta.body}
         primaryCta={{ label: 'Back to Careers', href: '/careers' }}
         secondaryCta={cta.secondary_cta}

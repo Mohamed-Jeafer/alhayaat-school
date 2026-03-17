@@ -14,12 +14,13 @@ export const PAGES: PageEntry[] = [
   { name: 'About',       webflow: '/about.html',                    nextjs: '/about' },
   { name: 'Curriculum',  webflow: '/academic-and-curriculum.html',  nextjs: '/curriculum' },
   { name: 'Admissions',  webflow: '/admission.html',                nextjs: '/admissions' },
-  { name: 'Application', webflow: '/application.html',              nextjs: '/admissions/apply' },
+  { name: 'ElementaryTeacher', webflow: '/application.html',        nextjs: '/careers/elementary-school-teacher' },
   { name: 'Careers',     webflow: '/careers.html',                  nextjs: '/careers' },
   { name: 'Contact',     webflow: '/contact.html',                  nextjs: '/contact' },
   { name: 'Donate',      webflow: '/donate.html',                   nextjs: '/donate' },
   { name: 'SchoolPlans', webflow: '/school-plans.html',             nextjs: '/school-plan' },
 ];
+// Note: /admissions/apply has no Webflow HTML baseline and is therefore not included in PAGES.
 
 /** Extract all visible text from headings on a page */
 export async function extractHeadings(page: Page) {
@@ -31,13 +32,13 @@ export async function extractHeadings(page: Page) {
   );
 }
 
-/** Extract all nav links */
+/** Extract all nav links and nav buttons (e.g. Search) */
 export async function extractNavLinks(page: Page) {
   return page.evaluate(() =>
-    Array.from(document.querySelectorAll('nav a, header a')).map(el => ({
-      text: (el as HTMLAnchorElement).innerText.trim(),
+    Array.from(document.querySelectorAll('nav a, nav button, header a')).map(el => ({
+      text: (el as HTMLElement).innerText.trim(),
       href: (el as HTMLAnchorElement).getAttribute('href') ?? '',
-    }))
+    })).filter(item => item.text.length > 0)
   );
 }
 

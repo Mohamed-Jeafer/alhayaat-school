@@ -3,10 +3,10 @@ id: TASK-062
 title: >-
   [BUG] Admissions page missing "Fees" subsection under Required Items for
   Registration
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-17 21:28'
-updated_date: '2026-03-17 21:44'
+updated_date: '2026-03-17 22:03'
 labels:
   - bug
   - admissions
@@ -43,3 +43,9 @@ The Next.js Admissions page has a full School Fee Summary table (`fees` section 
 - [ ] #3 Visually matches Webflow's layout for this subsection
 - [ ] #4 Distinct from the School Fee Summary table which remains unchanged
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Added fees subsection to admissions page. Updated admissions.json with requirements.fees (heading + 2 items) and admissions/page.tsx to render a Fees subsection card with CheckCircle2 bullets after the forms/documents grid.
+<!-- SECTION:FINAL_SUMMARY:END -->

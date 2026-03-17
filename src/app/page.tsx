@@ -16,6 +16,7 @@ type Collaborator = {
   logo: { src: string; alt: string };
 };
 type PaymentLogo = { id: string; src: string; alt: string };
+type NewsArticle = { id: string; title: string; excerpt: string; date: string; href: string };
 
 const WHY_ICONS = [
   <BookOpen key="faith" className="h-6 w-6 text-brand-blue" />,
@@ -198,7 +199,7 @@ export default function HomePage() {
 
           <FadeIn>
             <div className="rounded-2xl bg-white/10 p-8 text-center">
-              <h3 className="mb-6 text-white">{growthPlan.educators.heading}</h3>
+              <h2 className="mb-6 text-white">{growthPlan.educators.heading}</h2>
               <div className="mx-auto max-w-3xl space-y-4">
                 {growthPlan.educators.paragraphs.map((paragraph) => (
                   <p key={paragraph} className="text-base leading-relaxed text-white/80">
@@ -237,6 +238,40 @@ export default function HomePage() {
                       <p className="mb-5 text-sm leading-relaxed text-brand-black/75">{item.description}</p>
                     ) : null}
                     <h3 className="text-[2rem] text-brand-black">{item.title}</h3>
+                  </div>
+                </article>
+              </FadeIn>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* News & Announcements */}
+      <Section background="gray" padding="lg">
+        <Container maxWidth="7xl">
+          <FadeIn>
+            <div className="mb-12 text-center">
+              <h2 className="text-brand-black">{homeContent.sections.news.heading}</h2>
+            </div>
+          </FadeIn>
+          <div className="grid gap-6 md:grid-cols-3">
+            {(homeContent.sections.news.articles as NewsArticle[]).map((article, index) => (
+              <FadeIn key={article.id} delay={index * 120}>
+                <article className="flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm">
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="mb-3 text-xs font-medium uppercase tracking-widest text-brand-blue">
+                      {new Date(article.date).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
+                    </p>
+                    <h3 className="mb-3 text-[1.5rem] leading-snug text-brand-black">{article.title}</h3>
+                    <p className="flex-1 text-sm leading-relaxed text-brand-black/65">{article.excerpt}</p>
+                    <div className="mt-5">
+                      <Link
+                        href={article.href}
+                        className="text-sm font-semibold text-brand-blue hover:underline"
+                      >
+                        Read more →
+                      </Link>
+                    </div>
                   </div>
                 </article>
               </FadeIn>

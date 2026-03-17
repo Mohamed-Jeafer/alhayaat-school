@@ -1,10 +1,10 @@
 ---
 id: TASK-063
 title: '[BUG] Contact form missing Subject field'
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-17 21:29'
-updated_date: '2026-03-17 21:44'
+updated_date: '2026-03-17 22:03'
 labels:
   - bug
   - contact
@@ -27,3 +27,9 @@ The Webflow contact form has 4 fields: Name*, Email*, Subject (optional), Messag
 - [ ] #3 Subject value included in the admin notification email
 - [ ] #4 Zod schema and API route updated to handle subject field
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Added Subject field to contact form. Updated forms.ts (optional subject field), ContactForm.tsx (field render), route.ts (destructure + pass to email), and templates.ts (include in admin notification email details).
+<!-- SECTION:FINAL_SUMMARY:END -->

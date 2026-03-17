@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Heart } from 'lucide-react';
+import { Heart, Search } from 'lucide-react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -56,6 +56,14 @@ export function MobileNav() {
               </Link>
             );
           })}
+          <button
+            type="button"
+            aria-label="Search"
+            className="flex items-center gap-3 rounded-xl px-4 py-3 text-base text-white/80 transition-colors hover:bg-white/10 hover:text-brand-blue"
+          >
+            <Search className="size-5" />
+            Search
+          </button>
           <div className="mt-4 px-4">
             <Button
               render={<Link href={cta.href} />}

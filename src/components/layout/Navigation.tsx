@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Heart } from 'lucide-react';
+import { Heart, Search } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { MobileNav } from './MobileNav';
@@ -39,6 +39,15 @@ export function Navigation() {
                 isActive={pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))}
               />
             ))}
+            <button
+              type="button"
+              aria-label="Search"
+              className="flex items-center gap-1.5 rounded-full px-3 py-2 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+              onClick={() => {/* search handler – future implementation */}}
+            >
+              <Search className="size-4" />
+              <span className="text-lg">Search</span>
+            </button>
           </nav>
 
           <div className="flex items-center gap-3">

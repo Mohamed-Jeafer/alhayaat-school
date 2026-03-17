@@ -160,6 +160,36 @@
         }
       ]
     },
+    "news": {
+      "heading": "News and announcements",
+      "articles": [
+        {
+          "id": "article-1",
+          "title": "Think Before You Act! 3 Ways to Develop Impulse Control in Your Child",
+          "excerpt": "Helping children develop impulse control is one of the most valuable gifts we can give them. Discover three practical, faith-based strategies to nurture patience and self-regulation in your child.",
+          "date": "2025-11-01",
+          "href": "#"
+        },
+        {
+          "id": "article-2",
+          "title": "Building a Love of Learning: Faith and Academics in Harmony",
+          "excerpt": "At Al-Hayaat School, we believe that academic excellence and spiritual growth are not in conflict — they strengthen each other. Here is how we weave values into every lesson.",
+          "date": "2025-10-15",
+          "href": "#"
+        },
+        {
+          "id": "article-3",
+          "title": "Preparing Students for the Future: Our Curriculum Approach",
+          "excerpt": "Our curriculum blends Ontario standards with character development. Learn how our teachers prepare students to excel academically while staying grounded in their identity.",
+          "date": "2025-09-30",
+          "href": "#"
+        }
+      ],
+      "cta": {
+        "label": "View all posts",
+        "href": "#"
+      }
+    },
     "finalCta": {
       "id": "home-final-cta",
       "heading": "Join our community",

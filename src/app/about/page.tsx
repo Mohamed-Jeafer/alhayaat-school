@@ -80,7 +80,7 @@ export default function AboutPage() {
       <Section background="gray" padding="lg">
         <Container maxWidth="7xl">
           <FadeIn>
-            <h2 className="mb-10 text-center text-brand-black">{missionVision.heading}</h2>
+            <h3 className="mb-10 text-center text-brand-black">{missionVision.heading}</h3>
           </FadeIn>
 
           <FadeIn delay={80}>
@@ -117,7 +117,7 @@ export default function AboutPage() {
                     ) : null}
                   </div>
                   <div className="p-6">
-                    <h3 className="text-[2rem] text-brand-black">{member.name}</h3>
+                    <h4 className="text-[2rem] text-brand-black">{member.name}</h4>
                     <p className="mb-3 text-sm font-medium uppercase tracking-[0.18em] text-brand-blue">
                       {member.role}
                     </p>
