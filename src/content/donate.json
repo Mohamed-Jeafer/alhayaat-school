@@ -1,0 +1,80 @@
+{
+  "page": "donate",
+  "meta": {
+    "id": "donate-meta",
+    "title": "Donate | Al-Hayaat School",
+    "description": "Support Al-Hayaat School with your donation. All donations are eligible for an official tax receipt.",
+    "og_title": "Donate to Al-Hayaat School",
+    "og_description": "Support Al-Hayaat School. Registered charity — all donations receive an official tax receipt."
+  },
+  "sections": {
+    "hero": {
+      "id": "donate-hero",
+      "headline": "Donate",
+      "arabic_verse": "بِسْمِ اللّهِ الرَّحْمنِ الرَّحِيْمِ\nمَثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنۢبَتَتْ سَبْعَ سَنَابِلَ فِي كُلِّ سُنۢبُلَةٍۢ مِّا۟ئَةُ حَبَّةٍۢ وَٱللَّهُ يُضَـٰعِفُ لِمَن يَشَآءُ وَٱللَّهُ وَٰسِعٌ عَلِيمٌ",
+      "verse_translation": "The example of those who spend their wealth in the way of Allah is like a seed [of grain] which grows seven spikes; in each spike is a hundred grains. And Allah multiplies [His reward] for whom He wills. And Allah is all-Encompassing and Knowing.",
+      "verse_reference": "(Quran 2:261)"
+    },
+    "info": {
+      "id": "donate-info",
+      "subheadline": "Contribute Today For a Brighter Tomorrow",
+      "body": "Thank you for considering to donate to Al-Hayaat. Your donations go the long way in making a difference in society.",
+      "khums_note": "Khums: Al-Hayaat School can collect khums to use a portion for the school. Please reach out at finance@alhayaat.ca for further information.",
+      "comments_note": "Please always mention your full-name and address in the comments.",
+      "charity_note": "Al-Hayaat School is a registered charity. All donations made are eligible for an official tax receipt.",
+      "finance_email": "finance@alhayaat.ca"
+    },
+    "payment_form": {
+      "id": "donate-payment-form",
+      "form_headline": "Make a Donation",
+      "preset_amounts": [25, 50, 100, 250],
+      "custom_label": "Custom amount (CAD)",
+      "name_label": "Full name",
+      "email_label": "Email address",
+      "address_label": "Mailing address (optional — required for tax receipt)",
+      "anonymous_label": "Make this donation anonymous",
+      "submit_label": "Donate Securely",
+      "processing_label": "Processing...",
+      "stripe_note": "You will be redirected to our secure payment processor."
+    },
+    "success": {
+      "id": "donate-success",
+      "headline": "Thank You for Your Donation!",
+      "body": "Your generous contribution helps shape the next generation of students. A tax receipt has been emailed to you.",
+      "receipt_cta": "Download Receipt",
+      "home_cta": "Return to Home"
+    },
+    "other_methods": {
+      "id": "donate-other-methods",
+      "headline": "Other Ways to Give",
+      "methods": [
+        {
+          "id": "donate-method-pledge",
+          "title": "Pledge for Donations",
+          "body": "Please don't hesitate to contact us for pledges or make your pledges here, and our team member will reach out to you."
+        },
+        {
+          "id": "donate-method-etransfer",
+          "title": "E-Transfer",
+          "body": "Please send your contributions to finance@alhayaat.ca. Please include your address in the email for the tax receipt.",
+          "email": "finance@alhayaat.ca"
+        },
+        {
+          "id": "donate-method-cheque",
+          "title": "Cheques",
+          "body": "You can write your cheques to Al-Hayaat School, and mail it to \"158 Newbury Drive, Kitchener, ON, N2N 2N8\""
+        },
+        {
+          "id": "donate-method-credit-card",
+          "title": "Credit Card",
+          "body": "Click below to make a secure donation using your credit or debit card. You will be redirected to our secure payment processor."
+        },
+        {
+          "id": "donate-method-wire",
+          "title": "EFT/Wire",
+          "body": "AL-HAYAAT SCHOOL — Transit # 06052, Inst. # 010, Account # 1579916"
+        }
+      ]
+    }
+  }
+}

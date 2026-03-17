@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Track Tool Outcomes",
+  "description": "Silently tracks tool usage and outcomes during the session to identify patterns for learning",
+  "version": "1",
+  "when": {
+    "type": "postToolUse",
+    "toolTypes": [
+      "*"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Silently observe this tool outcome. If it reveals a pattern, mistake, or insight worth remembering, note it for end-of-session reflection. Don't interrupt the workflow."
+  }
+}

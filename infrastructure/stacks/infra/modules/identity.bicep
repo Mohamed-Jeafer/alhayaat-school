@@ -1,0 +1,13 @@
+param identityName string
+param location string
+param tags object
+
+resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
+  name: identityName
+  location: location
+  tags: tags
+}
+
+output identityResourceId string = managedIdentity.id
+output identityPrincipalId string = managedIdentity.properties.principalId
+output identityClientId string = managedIdentity.properties.clientId

@@ -1,0 +1,48 @@
+{
+  "page": "school-plan",
+  "hero": {
+    "title": "School Plans",
+    "breadcrumbs": [
+      { "label": "Home", "href": "/" },
+      { "label": "School Plans" }
+    ]
+  },
+  "intro": {
+    "body": "Al-Hayaat School is set to open its doors in September 2026, offering a faith-based, high-quality education for the Kitchener-Waterloo community. Our carefully phased growth plan ensures a strong foundation for the school's future:"
+  },
+  "openingPlan": {
+    "heading": "Set to open",
+    "phases": [
+      {
+        "id": "phase-2026",
+        "trigger": "2026",
+        "content": "Opening with Junior Kindergarten (JK) to Grade 3."
+      },
+      {
+        "id": "phase-expansion",
+        "trigger": "Annual Expansion",
+        "content": "Adding one grade each year until reaching Grade 8 in 2031."
+      }
+    ],
+    "note": "This gradual development allows us to focus on creating a robust academic and spiritual environment tailored to each age group."
+  },
+  "community": {
+    "heading": "Connect with our community",
+    "body": "With a blend of modern facilities and values, Al-Hayaat School is dedicated to nurturing the next generation of leaders, innovators, and contributors to society. Join us on this journey to build a strong, faith-centered community.",
+    "cta": { "label": "Join our community", "href": "/admissions" }
+  },
+  "mission": {
+    "heading": "Support Our Mission",
+    "points": [
+      "Covering essential school costs and daily learning",
+      "Ensuring a high-quality education system rooted in principles.",
+      "Current fundraising target ($350,000 for 2026-2027)"
+    ],
+    "cta": { "label": "Donate", "href": "/donate" }
+  },
+  "cta": {
+    "heading": "Join Our Community",
+    "body": "Together, we're building a brighter future for our children and the community.",
+    "primaryCta": { "label": "Enroll now", "href": "/admissions" }
+  }
+}

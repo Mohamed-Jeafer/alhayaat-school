@@ -1,0 +1,60 @@
+name: Deploy Infrastructure (Staging)
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "staging" to confirm infrastructure deployment'
+        required: true
+
+jobs:
+  deploy-infra:
+    name: Deploy Infra Stack → rg-alhayaat-infra-staging
+    runs-on: ubuntu-latest
+    if: github.event.inputs.confirm == 'staging'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS_STAGING }}
+
+      - name: Create resource groups if absent
+        run: |
+          az group create --name rg-alhayaat-infra-staging --location canadacentral \
+            --tags project=al-hayaat-school environment=staging stack=infra 2>/dev/null || true
+          az group create --name rg-alhayaat-app-staging --location canadacentral \
+            --tags project=al-hayaat-school environment=staging stack=app 2>/dev/null || true
+
+      - name: Deploy Infrastructure Stack
+        id: infra
+        run: |
+          OUTPUT=$(az deployment group create \
+            --resource-group rg-alhayaat-infra-staging \
+            --template-file infrastructure/stacks/infra/main.bicep \
+            --parameters infrastructure/stacks/infra/parameters/staging.json \
+            --parameters dbAdminPassword="${{ secrets.DB_ADMIN_PASSWORD_STAGING }}" \
+            --output json)
+          echo "$OUTPUT" | jq '.properties.outputs'
+          IDENTITY_ID=$(echo "$OUTPUT" | jq -r '.properties.outputs.identityResourceId.value')
+          IDENTITY_CLIENT=$(echo "$OUTPUT" | jq -r '.properties.outputs.identityClientId.value')
+          echo "identityResourceId=$IDENTITY_ID" >> $GITHUB_OUTPUT
+          echo "identityClientId=$IDENTITY_CLIENT" >> $GITHUB_OUTPUT
+
+      - name: Deploy Application Stack
+        run: |
+          az deployment group create \
+            --resource-group rg-alhayaat-app-staging \
+            --template-file infrastructure/stacks/app/main.bicep \
+            --parameters infrastructure/stacks/app/parameters/staging.json \
+            --parameters identityResourceId="${{ steps.infra.outputs.identityResourceId }}" \
+            --parameters identityClientId="${{ steps.infra.outputs.identityClientId }}" \
+            --output json | jq '.properties.outputs'
+
+      - name: Print deployment summary
+        run: |
+          echo "✅ Infrastructure deployed to staging"
+          echo "   Infra RG : rg-alhayaat-infra-staging"
+          echo "   App RG   : rg-alhayaat-app-staging"

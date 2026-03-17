@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "Careers | Al-Hayaat School",
+    "description": "Join the Al-Hayaat School team. Explore career opportunities and help shape the next generation of leaders."
+  },
+  "hero": {
+    "headline": "Ready to make an Impact? Join us on Our Journey.",
+    "subtext": "Join our Team"
+  },
+  "intro": {
+    "heading": "Welcome to Al-Hayaat School",
+    "body": "At Al-Hayaat School, our mission is to provide a well-rounded education rooted in the teachings of the Quran and Ahlulbayt [A.S.]. Guided by the principles of حَيَاةٌ طَيِّبَةٌ (pure life), we are dedicated to cultivating a conducive learning environment that nurtures values, academic excellence, and holistic development. Our school is set to open in 2026, and we are actively building a team of passionate educators and professionals to help bring our vision to life.\n\nThis is more than a job—it's an opportunity to shape the next generation of leaders, innovators, and contributors to humanity and the community."
+  },
+  "why_join": {
+    "heading": "Why Join Al-Hayaat School?",
+    "reasons": [
+      {
+        "id": "faith-driven",
+        "title": "Faith-Driven Mission",
+        "description": "Contribute to a school grounded in Quranic teachings and the values of Ahlulbayt [A.S.]"
+      },
+      {
+        "id": "innovative-education",
+        "title": "Innovative Education",
+        "description": "Be part of an institution that integrates morals with high academic standards."
+      },
+      {
+        "id": "collaborative-growth",
+        "title": "Collaborative Growth",
+        "description": "Work alongside a dedicated team, benefiting from tailored professional development and training programs."
+      },
+      {
+        "id": "community-impact",
+        "title": "Community Impact",
+        "description": "Help establish a much-needed school in the Kitchener-Waterloo region, addressing the educational needs and aspirations of local families."
+      }
+    ]
+  },
+  "openings": {
+    "heading": "Current Job Openings",
+    "positions": [
+      {
+        "id": "elementary-school-teacher",
+        "slug": "elementary-school-teacher",
+        "title": "Elementary School Teacher",
+        "grades": "Grades 3, 4, 5",
+        "description": "As an elementary teacher, you will provide a well-rounded education rooted in both academic excellence and values. This role requires delivering core subjects (such as Language Arts, Mathematics, Science, and Social Studies), all while fostering a nurturing and respectful classroom environment that aligns with principles.",
+        "responsibilities": [
+          "Integrate principles into lessons and school activities to support the students' understanding of their faith.",
+          "Collaborate with the school administration to ensure the curriculum includes aspects of Studies and the Quran.",
+          "Teach core subjects while incorporating values, fostering a respectful, disciplined, and inclusive classroom.",
+          "Use varied teaching methods to engage different learning styles and support students' academic and social growth.",
+          "Manage classroom behavior by setting high standards in alignment with the school's values.",
+          "Serve as a role model for students, embodying the principles of conduct and ethics.",
+          "Provide moral and character education, guiding students in kindness, respect, and personal responsibility.",
+          "Regularly assess and monitor student progress, including through formative and summative assessments.",
+          "Provide detailed reports and constructive feedback to students and parents, fostering open communication with families.",
+          "Participate in ongoing professional development to stay current with teaching approaches.",
+          "Work collaboratively with other teachers and administrative staff to create a supportive educational environment.",
+          "Respond to various inquiries from students' parents/guardians regarding instructional programs and student progress.",
+          "Engage with the broader school community by leading or participating in school events, assemblies, and other activities.",
+          "Plan and supervise extra-curricular activities, field trips, or events that enrich students' learning and experiences.",
+          "Attend staff meetings and prepare and deliver Parent-Teacher meetings."
+        ],
+        "qualifications": [
+          "Degree or diploma in Education or a relevant field. An Ontario Teaching Certification (OCT) is often preferred.",
+          "Prior teaching experience in an elementary school setting; experience in an environment is an asset.",
+          "Familiarity with the teachings of Ahlul-Bayt to align with the school's mission."
+        ],
+        "skills": [
+          "Strong knowledge of Ontario's elementary curriculum and teaching standards.",
+          "Understanding teachings, culture, and values, with the ability to incorporate them appropriately into the curriculum.",
+          "Proficiency in English is a must.",
+          "Proficiency in Arabic is often preferred but not always required."
+        ],
+        "application_note": "We encourage all interested candidates to apply, even if you don't meet every requirement listed. Skills and experience can be developed; we value potential and a willingness to learn. If this role excites you and you believe you can bring value to our team, we want to hear from you!",
+        "how_to_apply": "Send an email to admin@alhayaat.ca that includes your cover letter and resume."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Support Our Mission",
+    "body": "Together, we're building a brighter future for our children and the community.",
+    "primary_cta": { "label": "Apply", "href": "/careers/elementary-school-teacher" },
+    "secondary_cta": { "label": "Donate", "href": "/donate" }
+  }
+}

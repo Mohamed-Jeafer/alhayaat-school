@@ -1,0 +1,29 @@
+{
+  "servers": {
+    "backlog": {
+      "command": "backlog",
+      "args": ["mcp", "start"],
+      "env": {
+        "BACKLOG_CWD": "c:\\Users\\mohdr\\projects\\webflow"
+      }
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "Azure MCP Server": {
+      "command": "dnx",
+      "args": [
+        "Azure.Mcp",
+        "--source",
+        "https://api.nuget.org/v3/index.json",
+        "--yes",
+        "--",
+        "azmcp",
+        "server",
+        "start"
+      ],
+      "type": "stdio"
+    }
+  }
+}

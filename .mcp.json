@@ -1,0 +1,48 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_TOKEN}"
+      }
+    },
+    "backlog": {
+      "command": "backlog",
+      "args": [
+        "mcp",
+        "start"
+      ],
+      "env": {
+        "BACKLOG_CWD": "C:\\Users\\mohdr\\projects\\webflow\\"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "milestone_list",
+        "task_list",
+        "milestone_add",
+        "milestone_rename",
+        "task_edit",
+        "task_archive",
+        "task_create",
+        "task_view",
+        "get_workflow_overview"
+      ]
+    },
+    "webflow": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.webflow.com/sse"
+      ]
+    }
+  },
+  "powers": {
+    "mcpServers": {
+      "power-stripe-stripe": {
+        "url": "https://mcp.stripe.com",
+        "disabled": true
+      }
+    }
+  }
+}

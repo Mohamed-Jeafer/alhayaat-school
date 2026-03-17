@@ -1,0 +1,70 @@
+name: Deploy Infrastructure (Production)
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "prod" to confirm PRODUCTION infrastructure deployment'
+        required: true
+
+jobs:
+  approve:
+    name: Manual Approval Gate
+    runs-on: ubuntu-latest
+    environment: production   # requires environment protection rule in GitHub
+    if: github.event.inputs.confirm == 'prod'
+
+    steps:
+      - name: Awaiting approval
+        run: echo "Production infrastructure deployment approved"
+
+  deploy-infra:
+    name: Deploy Infra Stack → rg-alhayaat-infra-prod
+    runs-on: ubuntu-latest
+    needs: approve
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS_PROD }}
+
+      - name: Create resource groups if absent
+        run: |
+          az group create --name rg-alhayaat-infra-prod --location canadacentral \
+            --tags project=al-hayaat-school environment=prod stack=infra 2>/dev/null || true
+          az group create --name rg-alhayaat-app-prod --location canadacentral \
+            --tags project=al-hayaat-school environment=prod stack=app 2>/dev/null || true
+
+      - name: Deploy Infrastructure Stack
+        id: infra
+        run: |
+          OUTPUT=$(az deployment group create \
+            --resource-group rg-alhayaat-infra-prod \
+            --template-file infrastructure/stacks/infra/main.bicep \
+            --parameters infrastructure/stacks/infra/parameters/prod.json \
+            --parameters dbAdminPassword="${{ secrets.DB_ADMIN_PASSWORD_PROD }}" \
+            --output json)
+          echo "$OUTPUT" | jq '.properties.outputs'
+          IDENTITY_ID=$(echo "$OUTPUT" | jq -r '.properties.outputs.identityResourceId.value')
+          IDENTITY_CLIENT=$(echo "$OUTPUT" | jq -r '.properties.outputs.identityClientId.value')
+          echo "identityResourceId=$IDENTITY_ID" >> $GITHUB_OUTPUT
+          echo "identityClientId=$IDENTITY_CLIENT" >> $GITHUB_OUTPUT
+
+      - name: Deploy Application Stack
+        run: |
+          az deployment group create \
+            --resource-group rg-alhayaat-app-prod \
+            --template-file infrastructure/stacks/app/main.bicep \
+            --parameters infrastructure/stacks/app/parameters/prod.json \
+            --parameters identityResourceId="${{ steps.infra.outputs.identityResourceId }}" \
+            --parameters identityClientId="${{ steps.infra.outputs.identityClientId }}" \
+            --output json | jq '.properties.outputs'
+
+      - name: Print deployment summary
+        run: |
+          echo "✅ Infrastructure deployed to production"
+          echo "   Infra RG : rg-alhayaat-infra-prod"
+          echo "   App RG   : rg-alhayaat-app-prod"

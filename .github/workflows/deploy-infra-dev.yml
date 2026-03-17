@@ -1,0 +1,60 @@
+name: Deploy Infrastructure (Dev)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [develop]
+    paths:
+      - 'infrastructure/stacks/infra/**'
+
+jobs:
+  deploy-infra:
+    name: Deploy Infra Stack → rg-alhayaat-infra-dev
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS_DEV }}
+
+      - name: Create resource groups if absent
+        run: |
+          az group create --name rg-alhayaat-infra-dev --location canadacentral \
+            --tags project=al-hayaat-school environment=dev stack=infra 2>/dev/null || true
+          az group create --name rg-alhayaat-app-dev --location canadacentral \
+            --tags project=al-hayaat-school environment=dev stack=app 2>/dev/null || true
+
+      - name: Deploy Infrastructure Stack
+        id: infra
+        run: |
+          OUTPUT=$(az deployment group create \
+            --resource-group rg-alhayaat-infra-dev \
+            --template-file infrastructure/stacks/infra/main.bicep \
+            --parameters infrastructure/stacks/infra/parameters/dev.json \
+            --parameters dbAdminPassword="${{ secrets.DB_ADMIN_PASSWORD_DEV }}" \
+            --output json)
+          echo "$OUTPUT" | jq '.properties.outputs'
+          IDENTITY_ID=$(echo "$OUTPUT" | jq -r '.properties.outputs.identityResourceId.value')
+          IDENTITY_CLIENT=$(echo "$OUTPUT" | jq -r '.properties.outputs.identityClientId.value')
+          echo "identityResourceId=$IDENTITY_ID" >> $GITHUB_OUTPUT
+          echo "identityClientId=$IDENTITY_CLIENT" >> $GITHUB_OUTPUT
+
+      - name: Deploy Application Stack
+        run: |
+          az deployment group create \
+            --resource-group rg-alhayaat-app-dev \
+            --template-file infrastructure/stacks/app/main.bicep \
+            --parameters infrastructure/stacks/app/parameters/dev.json \
+            --parameters identityResourceId="${{ steps.infra.outputs.identityResourceId }}" \
+            --parameters identityClientId="${{ steps.infra.outputs.identityClientId }}" \
+            --output json | jq '.properties.outputs'
+
+      - name: Print deployment summary
+        run: |
+          echo "✅ Infrastructure deployed to dev"
+          echo "   Infra RG : rg-alhayaat-infra-dev"
+          echo "   App RG   : rg-alhayaat-app-dev"
+          echo "   Identity : ${{ steps.infra.outputs.identityResourceId }}"

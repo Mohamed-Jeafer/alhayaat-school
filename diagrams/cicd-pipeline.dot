@@ -1,0 +1,55 @@
+digraph CICDPipeline {
+    rankdir=LR;
+    node [shape=box, style=rounded, fontname="Arial"];
+    edge [fontname="Arial"];
+    
+    // Developer
+    Dev [label="Developer\nLocal Machine", shape=ellipse, fillcolor="#e1f5ff", style=filled];
+    
+    // GitHub
+    subgraph cluster_github {
+        label="GitHub Repository";
+        style=filled;
+        color="#f6f8fa";
+        
+        PR [label="Pull Request", fillcolor="#ffffff", style=filled];
+        Develop [label="develop branch", fillcolor="#28a745", style=filled, fontcolor=white];
+        Main [label="main branch", fillcolor="#0366d6", style=filled, fontcolor=white];
+    }
+    
+    // GitHub Actions
+    subgraph cluster_actions {
+        label="GitHub Actions";
+        style=filled;
+        color="#fff8e1";
+        
+        CI [label="CI Workflow\n• Lint\n• Type Check\n• Test\n• Build", fillcolor="#2ea44f", style=filled, fontcolor=white];
+        DeployDev [label="Deploy Dev\n• Build\n• Deploy to Azure\n• Run Smoke Tests", fillcolor="#0969da", style=filled, fontcolor=white];
+        DeployProd [label="Deploy Production\n• Build\n• Test\n• Manual Approval\n• Deploy to Azure", fillcolor="#cf222e", style=filled, fontcolor=white];
+    }
+    
+    // Azure Environments
+    subgraph cluster_azure {
+        label="Azure Environments";
+        style=filled;
+        color="#e8f4f8";
+        
+        DevEnv [label="Dev Environment\nal-hayaat-dev", fillcolor="#0078d4", style=filled, fontcolor=white];
+        ProdEnv [label="Production Environment\nal-hayaat-prod", fillcolor="#d13438", style=filled, fontcolor=white];
+    }
+    
+    // Workflow
+    Dev -> PR [label="1. Create PR"];
+    PR -> CI [label="2. Trigger CI"];
+    CI -> Develop [label="3. Merge if Pass", color="#2ea44f", penwidth=2];
+    Develop -> DeployDev [label="4. Auto Deploy", color="#0969da", penwidth=2];
+    DeployDev -> DevEnv [label="5. Deploy", color="#0078d4", penwidth=2];
+    
+    Develop -> Main [label="6. Merge to Main", color="#0366d6"];
+    Main -> DeployProd [label="7. Trigger Deploy", color="#cf222e", penwidth=2];
+    DeployProd -> ProdEnv [label="8. Deploy\n(After Approval)", color="#d13438", penwidth=2, style=dashed];
+    
+    // Feedback loops
+    DevEnv -> Dev [label="Test & Verify", style=dashed, color=gray];
+    ProdEnv -> Dev [label="Monitor", style=dashed, color=gray];
+}

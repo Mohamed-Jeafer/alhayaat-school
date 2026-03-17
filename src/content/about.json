@@ -1,0 +1,150 @@
+{
+  "page": "about",
+  "meta": {
+    "id": "about",
+    "title": "About Us",
+    "description": "Learn about Al-Hayaat School — our mission, vision, team, and commitment to nurturing young minds through academic excellence and spiritual development.",
+    "og_title": "About Al-Hayaat School",
+    "og_description": "Welcome to Al-Hayaat School, an educational institution dedicated to nurturing young minds through a unique blend of academic excellence and spiritual development."
+  },
+  "sections": {
+    "hero": {
+      "id": "about-hero",
+      "headline": "About Al-Hayaat",
+      "subtext": "Welcome to Al-Hayaat School, an educational institution dedicated to nurturing young minds through a unique blend of academic excellence and spiritual development. Located in the heart of the Kitchener-Waterloo region, our school is set to become a beacon of knowledge and values for the local Muslim community.",
+      "cta": { "label": "Enroll Now", "href": "/admissions" },
+      "decor": {
+        "shapeOne": "/images/decor-about-1.webp",
+        "shapeTwo": "/images/decor-about-2.webp"
+      },
+      "carousel": [
+        {
+          "id": "about-carousel-1",
+          "src": "/images/MUN03200-1.png",
+          "alt": "Students sitting at desks in a classroom, with two raising their hands, and a teacher standing near a whiteboard."
+        },
+        {
+          "id": "about-carousel-2",
+          "src": "/images/MUN03349-1.png",
+          "alt": "Four young girls wearing hijabs sitting at a table with lunchboxes and a juice box, sharing a moment together."
+        },
+        {
+          "id": "about-carousel-3",
+          "src": "/images/MUN03448-1.png",
+          "alt": "Group of children playing and jumping inside a gymnasium near basketball hoops."
+        },
+        {
+          "id": "about-carousel-4",
+          "src": "/images/MUN03541-1.png",
+          "alt": "Five children, including two wearing hijabs, playing or running in an indoor gymnasium with a beige brick wall background."
+        },
+        {
+          "id": "about-carousel-5",
+          "src": "/images/MUN03667.png",
+          "alt": "A group of children sitting on the floor in a gymnasium, listening to two women standing and talking to them."
+        },
+        {
+          "id": "about-carousel-6",
+          "src": "/images/MUN03627.png",
+          "alt": "Young boy in orange hoodie sitting cross-legged on a gym floor, looking attentively at someone off-frame."
+        }
+      ]
+    },
+    "missionVision": {
+      "id": "about-mission-vision",
+      "heading": "Our Mission, Vision and Values",
+      "tabs": [
+        {
+          "id": "mission",
+          "label": "Our Mission",
+          "text": "Our mission is to shape individuals who are academically competent, spiritually grounded, and morally upright, ready to contribute to society with confidence and pride in their identity."
+        },
+        {
+          "id": "vision",
+          "label": "Our Vision",
+          "text": "At Al-Hayaat School, we believe in empowering students with a holistic education rooted in the teachings of the Holy Quran and the principles of Ahlulbayt [A.S.]."
+        }
+      ]
+    },
+    "team": {
+      "id": "about-team",
+      "heading": "Our Team",
+      "members": [
+        {
+          "id": "team-president",
+          "name": "Dr. Hamid Reza Mohebbi",
+          "role": "President",
+          "image": {
+            "src": "/images/Frame-1362791640.webp",
+            "alt": "Headshot of a young man with short dark hair and a beard, wearing a black shirt against a beige background."
+          },
+          "bio": "Senior Scientist at Quantum Valley Investments in Waterloo and a passionate advocate for community development and education grounded in the teachings of the Qur'an and Ahlulbayt (AS). With more than 30 years of experience in academia across both high school and university settings, Dr. Mohebbi is among the founding members of several schools in Canada. He is an active educator and researcher in Islamic Studies and has dedicated many years to serving and strengthening local communities through education and leadership."
+        },
+        {
+          "id": "team-vp",
+          "name": "Zaman Alkhafagi",
+          "role": "Vice President",
+          "image": {
+            "src": "/images/MTZTGvDsHFY_1.webp",
+            "alt": "Portrait image associated with Zaman Alkhafagi."
+          },
+          "bio": "An experienced leader in municipal service delivery and currently serves as a Supervisor at the Regional Municipality of Waterloo. His work focuses on strategic planning, resident experience, communications, and optimizing public-sector service delivery. With expertise in operations management, stakeholder engagement, and educational leadership, Zaman is committed to enhancing community services, driving innovation, and fostering impactful learning environments."
+        },
+        {
+          "id": "team-principal",
+          "name": "Ms. Alaa Namus",
+          "role": "Principal",
+          "image": {
+            "src": "/images/MuslimWomanHijabIcon.png",
+            "alt": "Silhouette icon of a woman wearing a hijab."
+          },
+          "bio": "An experienced educator and dedicated leader committed to fostering academic excellence and Islamic values. She holds a Certification in Teaching English as a Second Language (TESL) and a Certification in School Management and Leadership (CSML) – Leading Learning. As Principal of Al-Hayaat School, Ms. Alaa Namus is dedicated to creating a faith-centered and engaging learning environment that empowers students to excel academically and spiritually."
+        }
+      ],
+      "boardCaption": "Board of Directors — from left to right: Syed Safdar, Zaman AlKhafagi, Hamid Reza Mohebbi, Muhammad Sajjad, Mohamed Jeafer",
+      "boardImage": {
+        "src": "/images/Board-Picture-1_1.webp",
+        "alt": "Five men standing side by side indoors with smiling expressions, traditional Arabic calligraphy displayed above them."
+      }
+    },
+    "why": {
+      "id": "about-why",
+      "heading": "Why Al-Hayaat?",
+      "intro": "Al-Hayaat School offers a unique educational experience that seamlessly integrates values with academic excellence. Here's why we stand out:",
+      "cards": [
+        {
+          "id": "about-why-faith",
+          "title": "Faith-based education",
+          "description": "At Al-Hayaat School, our mission is deeply rooted in the teachings of the Quran and the principles of Ahlulbayt [a.s.]. We emphasize the importance of living a pure life \u062d\u064e\u064a\u0650\u0651\u064a\u064e\u0629\u064c \u0637\u064e\u064a\u0650\u0651\u0628\u064e\u0629\u064c, fostering qualities such as honesty, patience, respect, and compassion in our students."
+        },
+        {
+          "id": "about-why-curriculum",
+          "title": "Comprehensive curriculum",
+          "description": "Our curriculum blends Ontario's academic standards with Islamic studies, Quranic education, and Arabic language. This combination ensures students receive a well-rounded education that nurtures intellectual growth while strengthening their identity."
+        },
+        {
+          "id": "about-why-excellence",
+          "title": "Commitment to academic excellence",
+          "description": "We provide a high-quality education that equips students with the tools they need to thrive in modern society. Our focus on intellectual development, physical health, and recreational activities ensures a holistic learning experience."
+        },
+        {
+          "id": "about-why-community",
+          "title": "Community-focused vision",
+          "description": "Al-Hayaat School is dedicated to fostering a nurturing environment where students grow into skilled professionals, compassionate leaders, and contributors to the Shia community and humanity at large."
+        }
+      ]
+    },
+    "office": {
+      "id": "about-office",
+      "heading": "Our Office",
+      "address": "1095 Bleams Rd, Petersburg, ON",
+      "description": "Our location at 1095 Bleams Rd, Petersburg, ON provides a serene and accessible environment conducive to learning and growth. With state-of-the-art facilities and a dedicated team of educators, Al-Hayaat School aims to inspire the next generation of leaders, innovators, and contributors to humanity."
+    },
+    "cta": {
+      "id": "about-cta",
+      "heading": "Join our community",
+      "body": "Together, we're building a brighter future for our children and the community.",
+      "cta": { "label": "Enroll Now", "href": "/admissions" }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+digraph SystemArchitecture {
+    rankdir=TB;
+    node [shape=box, style=rounded, fontname="Arial"];
+    edge [fontname="Arial"];
+    
+    // Client
+    Browser [label="Web Browser", shape=ellipse, fillcolor="#e1f5ff", style=filled];
+    
+    // Azure Services
+    subgraph cluster_azure {
+        label="Azure Cloud";
+        style=filled;
+        color=lightgrey;
+        
+        subgraph cluster_frontend {
+            label="Frontend";
+            style=filled;
+            color="#e8f4f8";
+            
+            AppService [label="Azure App Service\nNext.js 15", fillcolor="#0078d4", style=filled, fontcolor=white];
+            CDN [label="Azure CDN\nStatic Assets", fillcolor="#00a4ef", style=filled, fontcolor=white];
+        }
+        
+        subgraph cluster_backend {
+            label="Backend Services";
+            style=filled;
+            color="#f0f0f0";
+            
+            DB [label="PostgreSQL\nFlexible Server", shape=cylinder, fillcolor="#336791", style=filled, fontcolor=white];
+            Storage [label="Blob Storage\nResume Files", fillcolor="#ffd700", style=filled];
+            KeyVault [label="Key Vault\nSecrets", fillcolor="#ff6b6b", style=filled, fontcolor=white];
+            Insights [label="Application Insights\nMonitoring", fillcolor="#90ee90", style=filled];
+        }
+    }
+    
+    // External Services
+    subgraph cluster_external {
+        label="External Services";
+        style=filled;
+        color="#fff0f0";
+        
+        Stripe [label="Stripe API\nPayments", fillcolor="#635bff", style=filled, fontcolor=white];
+        Resend [label="Resend API\nEmails", fillcolor="#000000", style=filled, fontcolor=white];
+    }
+    
+    // Connections
+    Browser -> AppService [label="HTTPS", color="#0078d4", penwidth=2];
+    AppService -> CDN [label="Static Assets", color="#00a4ef"];
+    AppService -> DB [label="SQL Queries", color="#336791", penwidth=2];
+    AppService -> Storage [label="File Upload", color="#ffd700"];
+    AppService -> KeyVault [label="Get Secrets", color="#ff6b6b"];
+    AppService -> Insights [label="Logs/Metrics", color="#90ee90"];
+    AppService -> Stripe [label="Process Payment", color="#635bff", penwidth=2];
+    AppService -> Resend [label="Send Email", color="#000000"];
+    Stripe -> AppService [label="Webhook", style=dashed, color="#635bff"];
+}

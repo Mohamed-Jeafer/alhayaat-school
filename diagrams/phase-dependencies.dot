@@ -1,0 +1,74 @@
+digraph PhaseDependencies {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fontname="Arial"];
+    edge [fontname="Arial"];
+    
+    // Phases
+    Phase0 [label="Phase 0\nRepo & Infrastructure Setup\n(Week 1: Days 1-2)", fillcolor="#ffd700", fontcolor=black];
+    Phase1 [label="Phase 1\nFoundation & Design System\n(Week 1: Days 3-5)", fillcolor="#90ee90", fontcolor=black];
+    Phase2 [label="Phase 2\nComponent Library\n(Week 2)", fillcolor="#90ee90", fontcolor=black];
+    Phase3 [label="Phase 3\nContent & Static Pages\n(Week 3)", fillcolor="#87ceeb", fontcolor=black];
+    Phase4 [label="Phase 4\nInteractive Pages & DB\n(Week 4)", fillcolor="#87ceeb", fontcolor=black];
+    Phase5 [label="Phase 5\nAuth & Admin Dashboard\n(Week 5)", fillcolor="#dda0dd", fontcolor=black];
+    Phase6 [label="Phase 6\nStripe Integration\n(Week 6)", fillcolor="#dda0dd", fontcolor=black];
+    Phase7 [label="Phase 7\nPolish & Optimization\n(Week 7)", fillcolor="#ffa07a", fontcolor=black];
+    Phase8 [label="Phase 8\nTesting & Deployment\n(Week 8)", fillcolor="#ff6b6b", fontcolor=white];
+    
+    // Main dependency chain
+    Phase0 -> Phase1 [label="Setup Complete", penwidth=2];
+    Phase1 -> Phase2 [label="Design System Ready", penwidth=2];
+    Phase2 -> Phase3 [label="Components Built", penwidth=2];
+    Phase3 -> Phase4 [label="Static Pages Done", penwidth=2];
+    Phase4 -> Phase5 [label="DB & APIs Ready", penwidth=2];
+    Phase5 -> Phase6 [label="Auth Working", penwidth=2];
+    Phase6 -> Phase7 [label="Features Complete", penwidth=2];
+    Phase7 -> Phase8 [label="Optimized", penwidth=2];
+    
+    // Parallel work
+    Phase0 -> Phase4 [label="DB Setup\n(Parallel)", style=dashed, color="#0078d4"];
+    
+    // Legend
+    subgraph cluster_legend {
+        label="Timeline Legend";
+        style=filled;
+        color=white;
+        
+        legend [shape=plaintext, label=<
+            <table border="0" cellborder="0" cellspacing="0">
+                <tr><td bgcolor="#ffd700" width="20"> </td><td align="left">  Setup Phase</td></tr>
+                <tr><td bgcolor="#90ee90" width="20"> </td><td align="left">  Foundation</td></tr>
+                <tr><td bgcolor="#87ceeb" width="20"> </td><td align="left">  Page Development</td></tr>
+                <tr><td bgcolor="#dda0dd" width="20"> </td><td align="left">  Backend Features</td></tr>
+                <tr><td bgcolor="#ffa07a" width="20"> </td><td align="left">  Optimization</td></tr>
+                <tr><td bgcolor="#ff6b6b" width="20"> </td><td align="left">  Launch</td></tr>
+            </table>
+        >];
+    }
+    
+    // Deliverables
+    subgraph cluster_deliverables {
+        label="Key Deliverables";
+        style=filled;
+        color="#f0f0f0";
+        
+        D0 [label="• GitHub Repo\n• Azure Infrastructure\n• CI/CD Pipelines", shape=note, fillcolor=white];
+        D1 [label="• Design System\n• Database Schema", shape=note, fillcolor=white];
+        D2 [label="• 39 Components", shape=note, fillcolor=white];
+        D3 [label="• 4 Static Pages", shape=note, fillcolor=white];
+        D4 [label="• 4 Interactive Pages\n• API Routes", shape=note, fillcolor=white];
+        D5 [label="• Admin Dashboard", shape=note, fillcolor=white];
+        D6 [label="• Donation Flow", shape=note, fillcolor=white];
+        D7 [label="• Lighthouse 95+", shape=note, fillcolor=white];
+        D8 [label="• Production Live", shape=note, fillcolor=white];
+    }
+    
+    Phase0 -> D0 [style=dotted];
+    Phase1 -> D1 [style=dotted];
+    Phase2 -> D2 [style=dotted];
+    Phase3 -> D3 [style=dotted];
+    Phase4 -> D4 [style=dotted];
+    Phase5 -> D5 [style=dotted];
+    Phase6 -> D6 [style=dotted];
+    Phase7 -> D7 [style=dotted];
+    Phase8 -> D8 [style=dotted];
+}

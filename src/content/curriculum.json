@@ -1,0 +1,32 @@
+{
+  "page": "curriculum",
+  "hero": {
+    "title": "Academic and Curriculum Focus",
+    "breadcrumbs": [
+      { "label": "Home", "href": "/" },
+      { "label": "Curriculum" }
+    ]
+  },
+  "intro": {
+    "body": "At Al-Hayaat School, our curriculum is designed to provide students with a comprehensive education that balances academic excellence with spiritual growth. Rooted in principles, our approach ensures students thrive intellectually, morally, and spiritually.",
+    "subtext": "Our academic program integrates the Ontario educational standards with teachings, offering a well-rounded education."
+  },
+  "subjects": [
+    { "id": "language-arts", "label": "Language arts", "icon": "BookOpen" },
+    { "id": "studies", "label": "studies", "icon": "GraduationCap" },
+    { "id": "mathematics", "label": "Mathematics", "icon": "Calculator" },
+    { "id": "quranic-education", "label": "Quranic education", "icon": "BookMarked" },
+    { "id": "science", "label": "Science", "icon": "FlaskConical" },
+    { "id": "arabic-language", "label": "Arabic language", "icon": "Globe" },
+    { "id": "social-studies", "label": "Social studies", "icon": "Users" }
+  ],
+  "educators": {
+    "heading": "Guidance from Experienced Educators",
+    "body": "Our dedicated team of teachers, principal, and board of directors bring a wealth of knowledge and experience to the classroom. They are committed to equipping students with the skills and mindset needed to succeed in the modern era while remaining firmly grounded in their identity. Their collective efforts ensure that the curriculum not only meets academic standards but also prepares students to face the challenges of today's dynamic world. By combining a strong academic foundation with guidance from experienced leaders, Al-Hayaat School is committed to nurturing students who excel in all aspects of life, contributing positively to their communities and beyond."
+  },
+  "cta": {
+    "heading": "Join Our Community",
+    "body": "Together, we're building a brighter future for our children and the community.",
+    "primaryCta": { "label": "Enroll now", "href": "/admissions" }
+  }
+}

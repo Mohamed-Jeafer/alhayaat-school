@@ -1,0 +1,36 @@
+digraph DatabaseSchema {
+    rankdir=TB;
+    node [shape=record, fontname="Arial"];
+    edge [fontname="Arial"];
+    
+    // Tables
+    ContactSubmissions [label="{CONTACT_SUBMISSIONS|+ id : SERIAL (PK)\l+ name : VARCHAR(255)\l+ email : VARCHAR(255)\l+ phone : VARCHAR(50)\l+ message : TEXT\l+ created_at : TIMESTAMP\l}", fillcolor="#e3f2fd", style=filled];
+    
+    JobApplications [label="{JOB_APPLICATIONS|+ id : SERIAL (PK)\l+ name : VARCHAR(255)\l+ email : VARCHAR(255)\l+ position : VARCHAR(255)\l+ resume_url : TEXT\l+ created_at : TIMESTAMP\l}", fillcolor="#e8f5e9", style=filled];
+    
+    NewsletterSubscribers [label="{NEWSLETTER_SUBSCRIBERS|+ id : SERIAL (PK)\l+ email : VARCHAR(255) (UK)\l+ subscribed_at : TIMESTAMP\l+ active : BOOLEAN\l}", fillcolor="#fff3e0", style=filled];
+    
+    Donations [label="{DONATIONS|+ id : SERIAL (PK)\l+ amount : DECIMAL(10,2)\l+ donor_name : VARCHAR(255)\l+ donor_email : VARCHAR(255)\l+ donor_address : TEXT\l+ stripe_session_id : VARCHAR(255) (UK)\l+ created_at : TIMESTAMP\l}", fillcolor="#f3e5f5", style=filled];
+    
+    Users [label="{USERS|+ id : SERIAL (PK)\l+ email : VARCHAR(255) (UK)\l+ password_hash : TEXT\l+ role : VARCHAR(50)\l+ created_at : TIMESTAMP\l}", fillcolor="#ffebee", style=filled];
+    
+    Sessions [label="{SESSIONS|+ id : SERIAL (PK)\l+ user_id : INTEGER (FK)\l+ session_token : VARCHAR(255) (UK)\l+ expires : TIMESTAMP\l+ created_at : TIMESTAMP\l}", fillcolor="#fce4ec", style=filled];
+    
+    // Relationships
+    Users -> Sessions [label="1:N", color="#e74c3c", penwidth=2];
+    
+    // Legend
+    subgraph cluster_legend {
+        label="Legend";
+        style=filled;
+        color=white;
+        
+        legend [shape=plaintext, label=<
+            <table border="0" cellborder="0" cellspacing="0">
+                <tr><td align="left"><b>PK</b> = Primary Key</td></tr>
+                <tr><td align="left"><b>FK</b> = Foreign Key</td></tr>
+                <tr><td align="left"><b>UK</b> = Unique Key</td></tr>
+            </table>
+        >];
+    }
+}

@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "Admissions | Al-Hayaat School",
+    "description": "Join Al-Hayaat School for 2025-2026. Learn about our admissions process, requirements, and fee structure."
+  },
+  "hero": {
+    "headline": "Admission",
+    "subtext": "A faith-based educational journey for your child."
+  },
+  "enrollment": {
+    "heading": "Building a Bright Future – Enroll for 2025-2026!",
+    "cards": [
+      {
+        "id": "jk-grade2",
+        "title": "JK to Grade 2",
+        "body": "At Al-Hayaat School, we are shaping the next generation of confident, faith-driven leaders! Our doors officially open in September 2025, offering JK, SK, Grade 1, and Grade 2."
+      },
+      {
+        "id": "grade3-grade5",
+        "title": "Grade 3 to Grade 5",
+        "body": "With strong community interest and enrollment, we are eager to expand our offerings to include Grades 3, 4, and 5! The more families that join us, the closer we get to making this vision a reality. We invite parents to register their children today and help us create an inspiring environment that grows with our students. Together, we can pave the way for a thriving academic journey where young minds flourish in knowledge and character."
+      }
+    ]
+  },
+  "why_choose": {
+    "heading": "Why choose Al-Hayaat School?",
+    "cards": [
+      {
+        "id": "academic-excellence",
+        "title": "Academic Excellence",
+        "description": "Integrating Canadian, UK, and US standards"
+      },
+      {
+        "id": "faith-based",
+        "title": "Faith-Based Education",
+        "description": "Rooted in the teachings of Quran and Ahlulbayt (a.s.)"
+      },
+      {
+        "id": "holistic",
+        "title": "Holistic Development",
+        "description": "Intellectual, moral, and spiritual growth"
+      }
+    ]
+  },
+  "how_to_apply": {
+    "heading": "How to Apply",
+    "intro": "The registration process involves submission of required documents, a student assessment, and payment of registration and resource fees, as outlined below:",
+    "steps": [
+      "Download the registration forms, sign, and email the forms and documents to admin@alhayaat.ca. The required forms and documents are listed below.",
+      "Pay the registration fee. The fee can be paid online through e-transfer to finance@alhayaat.ca or via cheque payable to Al-Hayaat School.",
+      "The school administration will contact you to arrange a student assessment.",
+      "After the assessment, the school will confirm the enrolment.",
+      "Once confirmed, parents are required to pay the resource fee to finalize and complete the student registration and enrolment process."
+    ]
+  },
+  "requirements": {
+    "heading": "Required items for registration",
+    "documents": [
+      "Copy of last year's final report card or current year's last report card (if applicable)",
+      "Copy of immunization record",
+      "Copy of health card",
+      "Copy of child's birth certificate, PR card, or passport"
+    ],
+    "forms": [
+      { "id": "registration-form", "label": "Registration Form" },
+      { "id": "pad-agreement", "label": "Pre-Authorized Debit (PAD) Agreement" },
+      { "id": "financial-agreement", "label": "Financial Agreement" },
+      { "id": "parental-agreement", "label": "Parental Agreement" },
+      { "id": "liability-waiver", "label": "Liability Waiver" }
+    ]
+  },
+  "fees": {
+    "heading": "School fee summary",
+    "academic_year": "2025/26",
+    "items": [
+      {
+        "id": "registration-fee",
+        "type": "One-time Registration Fee",
+        "amount": "$100",
+        "note": ""
+      },
+      {
+        "id": "resource-fee",
+        "type": "One-time Resource Fee",
+        "amount": "$200",
+        "note": ""
+      },
+      {
+        "id": "annual-tuition",
+        "type": "Annual Tuition Fee",
+        "amount": "$5,500",
+        "note": "5% discount if paid in full upfront"
+      },
+      {
+        "id": "sibling-tuition",
+        "type": "Annual Tuition Fee for Sibling",
+        "amount": "$5,225",
+        "note": "5% discount on second and subsequent children"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Join Our Community",
+    "body": "Together, we're building a brighter future for our children and the community.",
+    "primary_cta": { "label": "Enroll now", "href": "/admissions/apply" }
+  },
+  "apply": {
+    "heading": "Student Registration",
+    "subtext": "Complete the form below or download our registration forms and email them to admin@alhayaat.ca.",
+    "note": "Online form submission is coming soon. In the meantime, please download the registration forms, complete them, and email to admin@alhayaat.ca.",
+    "sections": {
+      "student": "Student Information",
+      "parent": "Parent / Guardian Information",
+      "documents": "Documents & Agreements"
+    },
+    "fields": {
+      "student_first_name": { "label": "First Name", "type": "text", "required": true },
+      "student_last_name": { "label": "Last Name", "type": "text", "required": true },
+      "date_of_birth": { "label": "Date of Birth", "type": "date", "required": true },
+      "grade": {
+        "label": "Grade Applying For",
+        "type": "select",
+        "required": true,
+        "options": ["JK", "SK", "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5"]
+      },
+      "parent_name": { "label": "Parent / Guardian Name", "type": "text", "required": true },
+      "parent_email": { "label": "Email Address", "type": "email", "required": true },
+      "parent_phone": { "label": "Phone Number", "type": "tel", "required": true },
+      "message": { "label": "Additional Comments", "type": "textarea", "required": false }
+    },
+    "submit_label": "Submit Registration"
+  }
+}

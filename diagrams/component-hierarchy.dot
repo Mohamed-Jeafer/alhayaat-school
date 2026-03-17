@@ -1,0 +1,109 @@
+digraph ComponentHierarchy {
+    rankdir=LR;
+    node [shape=box, fontname="Arial"];
+    edge [fontname="Arial"];
+    
+    // Pages
+    subgraph cluster_pages {
+        label="Pages";
+        style=filled;
+        color="#e1f5ff";
+        
+        Home [label="Home Page", fillcolor="#4a90e2", style=filled, fontcolor=white];
+        About [label="About Page", fillcolor="#4a90e2", style=filled, fontcolor=white];
+        Contact [label="Contact Page", fillcolor="#4a90e2", style=filled, fontcolor=white];
+        Donate [label="Donate Page", fillcolor="#4a90e2", style=filled, fontcolor=white];
+        Admin [label="Admin Dashboard", fillcolor="#e74c3c", style=filled, fontcolor=white];
+    }
+    
+    // Layout Components
+    subgraph cluster_layout {
+        label="Layout Components (7)";
+        style=filled;
+        color="#f0f8ff";
+        
+        Nav [label="Navigation"];
+        Footer [label="Footer"];
+        Container [label="Container"];
+        Section [label="Section"];
+        Grid [label="Grid"];
+        PageHeader [label="PageHeader"];
+        Layout [label="Layout"];
+    }
+    
+    // UI Components
+    subgraph cluster_ui {
+        label="UI Components (15)";
+        style=filled;
+        color="#fff8e1";
+        
+        Button [label="Button"];
+        Hero [label="HeroSection"];
+        FeatureCard [label="FeatureCard"];
+        WhyCard [label="WhyCard"];
+        CTASection [label="CTASection"];
+        Card [label="Card"];
+        Badge [label="Badge"];
+        Icon [label="Icon"];
+        Image [label="Image"];
+    }
+    
+    // Form Components
+    subgraph cluster_forms {
+        label="Form Components (10)";
+        style=filled;
+        color="#e8f5e9";
+        
+        Form [label="Form"];
+        Input [label="Input"];
+        Textarea [label="Textarea"];
+        Select [label="Select"];
+        FileUpload [label="FileUpload"];
+        SubmitButton [label="SubmitButton"];
+    }
+    
+    // Data Display Components
+    subgraph cluster_data {
+        label="Data Display (6)";
+        style=filled;
+        color="#f3e5f5";
+        
+        Table [label="Table"];
+        DataCard [label="DataCard"];
+        Pagination [label="Pagination"];
+    }
+    
+    // Relationships - Home Page
+    Home -> Nav;
+    Home -> Hero;
+    Home -> FeatureCard;
+    Home -> WhyCard;
+    Home -> CTASection;
+    Home -> Footer;
+    
+    // Relationships - Contact Page
+    Contact -> Nav;
+    Contact -> Form;
+    Contact -> Input;
+    Contact -> Textarea;
+    Contact -> SubmitButton;
+    Contact -> Footer;
+    
+    // Relationships - Donate Page
+    Donate -> Nav;
+    Donate -> Form;
+    Donate -> Input;
+    Donate -> Button;
+    Donate -> Footer;
+    
+    // Relationships - Admin Dashboard
+    Admin -> Nav;
+    Admin -> Table;
+    Admin -> DataCard;
+    Admin -> Pagination;
+    Admin -> Grid;
+    
+    // Common Layout Usage
+    {Home About Contact Donate} -> Container;
+    {Home About Contact Donate} -> Section;
+}

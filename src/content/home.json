@@ -1,0 +1,170 @@
+{
+  "page": "home",
+  "meta": {
+    "id": "home",
+    "title": "Al-Hayaat School",
+    "description": "Al-Hayaat School — Bridging education and values. A faith-based school opening in 2026 in the Kitchener-Waterloo region.",
+    "og_title": "Al-Hayaat School",
+    "og_description": "Bridging education and values. Nurturing young minds through academic excellence and spiritual development."
+  },
+  "sections": {
+    "hero": {
+      "id": "home-hero",
+      "headline": "Al-Hayaat School",
+      "subtext": "Bridging education and values",
+      "cta": { "label": "Enroll Now", "href": "/admissions" },
+      "backgroundVariant": "primary",
+      "background": {
+        "glitter": "/images/glitter-bg.webp",
+        "dashlines": "/images/dashlines.webp",
+        "dots": "/images/Framedots.webp"
+      }
+    },
+    "feature": {
+      "id": "home-feature",
+      "heading": "Welcome to Al-Hayaat School",
+      "eyebrow": "School vision statement",
+      "writtenImage": "/images/islam-written.webp",
+      "featureImage": {
+        "src": "/images/MUN03197-3241.png",
+        "alt": "Female teacher wearing a hijab writing Arabic letters on a whiteboard in a classroom with students."
+      },
+      "paragraphs": [
+        "With constant mindfulness of Allah, the Most High, and the Hereafter, we strive to provide our students with the strongest foundation in a secure environment. Through exemplary role models and high-quality, Islamically-oriented education, we aim to empower them to navigate the world as confident, contributing Muslims. In doing so, we prioritize the character of the School above all else.",
+        "Al-Hayaat School is set to open its doors in 2026, initially offering classes from Junior Kindergarten to Grade 3. We have ambitious plans to expand our grade offerings in the future."
+      ],
+      "decorativeDots": [
+        { "id": "feature-decor-1", "color": "cyan-light" },
+        { "id": "feature-decor-2", "color": "yellow" },
+        { "id": "feature-decor-3", "color": "green-2" },
+        { "id": "feature-decor-4", "color": "white" }
+      ]
+    },
+    "why": {
+      "id": "home-why",
+      "heading": "Why Al-Hayaat?",
+      "intro": "Al-Hayaat School offers a unique educational experience that seamlessly integrates values with academic excellence. Here's why we stand out:",
+      "cards": [
+        {
+          "id": "why-faith",
+          "title": "Faith-based education",
+          "description": "At Al-Hayaat School, our mission is deeply rooted in the teachings of the Quran and the principles of Ahlulbayt [a.s.]. We emphasize the importance of living a pure life \u062d\u064e\u064a\u0650\u0651\u064a\u064e\u0629\u064c \u0637\u064e\u064a\u0650\u0651\u0628\u064e\u0629\u064c, fostering qualities such as honesty, patience, respect, and compassion in our students."
+        },
+        {
+          "id": "why-curriculum",
+          "title": "Comprehensive curriculum",
+          "description": "Our curriculum blends Ontario's academic standards with Islamic studies, Quranic education, and Arabic language. This combination ensures students receive a well-rounded education that nurtures intellectual growth while strengthening their identity."
+        },
+        {
+          "id": "why-excellence",
+          "title": "Commitment to academic excellence",
+          "description": "We provide a high-quality education that equips students with the tools they need to thrive in modern society. Our focus on intellectual development, physical health, and recreational activities ensures a holistic learning experience."
+        },
+        {
+          "id": "why-community",
+          "title": "Community-focused vision",
+          "description": "Al-Hayaat School is dedicated to fostering a nurturing environment where students grow into skilled professionals, compassionate leaders, and contributors to the Shia community and humanity at large."
+        }
+      ]
+    },
+    "curriculum": {
+      "id": "home-curriculum",
+      "heading": "Academic and curriculum focus",
+      "intro": "Our academic program integrates the Ontario educational standards with Islamic teachings, offering a well-rounded education.",
+      "subjects": [
+        "Language arts",
+        "Islamic studies",
+        "Mathematics",
+        "Quranic education",
+        "Science",
+        "Arabic language",
+        "Social studies"
+      ],
+      "cta": { "label": "Explore More", "href": "/curriculum" }
+    },
+    "growthPlan": {
+      "id": "home-growth-plan",
+      "heading": "Our growth plan",
+      "intro": "We're delighted you're considering Al-Hayaat School for your child's education. Your journey starts with our warm and welcoming admissions team, who will guide you through our application process.",
+      "stats": [
+        { "value": 100, "suffix": "%", "label": "Student guidance" },
+        { "value": 100, "suffix": "%", "label": "Qualified teachers" },
+        { "value": 90, "suffix": "%", "label": "Student satisfaction" }
+      ],
+      "educators": {
+        "heading": "Guidance from experienced educators",
+        "paragraphs": [
+          "Our dedicated team of teachers, principal, and board of directors bring a wealth of knowledge and experience to the classroom. They are committed to equipping students with the skills and mindset needed to succeed in the modern era while remaining firmly grounded in their identity. Their collective efforts ensure that the curriculum not only meets academic standards but also prepares students to face the challenges of today's dynamic world.",
+          "By combining a strong academic foundation with guidance from experienced leaders, Al-Hayaat School is committed to nurturing students who excel in all aspects of life, contributing positively to their communities and beyond."
+        ]
+      }
+    },
+    "supportMission": {
+      "id": "home-support-mission",
+      "heading": "Support Our Mission",
+      "image": {
+        "src": "/images/MUN03216-1.png",
+        "alt": "Child in an orange hoodie drawing smiley faces on a whiteboard in a classroom."
+      },
+      "decor": {
+        "main": "/images/support-mission.webp"
+      },
+      "paymentLogos": [
+        { "id": "visa", "src": "/images/visa.webp", "alt": "Visa credit card company logo." },
+        { "id": "mastercard", "src": "/images/master-card.webp", "alt": "Mastercard logo with overlapping red and yellow circles." },
+        { "id": "paypal", "src": "/images/paypal.webp", "alt": "PayPal logo with stylized blue letter P." },
+        { "id": "apple-pay", "src": "/images/apple-pay.webp", "alt": "Apple Pay logo." },
+        { "id": "google-pay", "src": "/images/g-pay.webp", "alt": "Google Pay logo." },
+        { "id": "shop", "src": "/images/shop.webp", "alt": "Shop Pay logo." },
+        { "id": "amex", "src": "/images/am-ex.webp", "alt": "American Express logo." }
+      ],
+      "points": [
+        "Covering essential school costs and daily learning",
+        "Ensuring a high-quality education system rooted in Islamic principles",
+        "Current fundraising target: $350,000 for 2026–2027"
+      ],
+      "cta": { "label": "Donate", "href": "/donate" }
+    },
+    "collaborators": {
+      "id": "home-collaborators",
+      "heading": "Our collaborators",
+      "items": [
+        {
+          "id": "collaborator-wali",
+          "title": "Wali ul Asr Learning Institute",
+          "description": "Al-Hayaat School is honored to collaborate with esteemed educational institutions that share our commitment to holistic development and academic excellence. These partnerships enhance our educational offerings and strengthen our community ties.",
+          "logo": {
+            "src": "/images/Logo-332x92-2.svg",
+            "alt": "Wali ul Asr Learning Institute logo."
+          },
+          "accent": "cyan-light"
+        },
+        {
+          "id": "collaborator-selm",
+          "title": "Selm Academy",
+          "logo": {
+            "src": "/images/cropped-Selm-21-95x57-1.webp",
+            "alt": "Selm Academy logo."
+          },
+          "accent": "yellow"
+        },
+        {
+          "id": "collaborator-haadi",
+          "title": "Al Haadi School",
+          "description": "Under the guidance of Dr. Mohammadreza Ardehali, Selm Academy is dedicated to offering a balanced education that integrates academic excellence with spiritual growth, mentoring students to become mindful, compassionate individuals.",
+          "logo": {
+            "src": "/images/Group-7-2-1.webp",
+            "alt": "Logo featuring a stylized crown above two red wings with the text NUMUZ."
+          },
+          "accent": "green-2"
+        }
+      ]
+    },
+    "finalCta": {
+      "id": "home-final-cta",
+      "heading": "Join our community",
+      "body": "Together, we're building a brighter future for our children and the community.",
+      "cta": { "label": "Enroll Now", "href": "/admissions" }
+    }
+  }
+}

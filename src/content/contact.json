@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "Contact | Al-Hayaat School",
+    "description": "Get in touch with Al-Hayaat School. We'd love to hear from you."
+  },
+  "hero": {
+    "heading": "Contact",
+    "subtext": "We would love to hear from you! If you have any questions or would like more information about Al-Hayaat School, please feel free to contact us using the information below."
+  },
+  "contact_info": {
+    "email_general": "info@alhayaat.ca",
+    "email_admin": "admin@alhayaat.ca",
+    "phone": "519-589-9669",
+    "address": "158 Newbury Drive, Kitchener, ON, N2N 2N8"
+  },
+  "form": {
+    "heading": "Send us a Message",
+    "fields": [
+      { "name": "name", "label": "Name", "type": "text", "required": true, "maxlength": 256 },
+      { "name": "email", "label": "Email", "type": "email", "required": true, "maxlength": 256 },
+      { "name": "subject", "label": "Subject", "type": "text", "required": false, "maxlength": 256 },
+      { "name": "message", "label": "Message", "type": "textarea", "required": true, "maxlength": 5000 }
+    ],
+    "submit_label": "Submit",
+    "success_message": "Thank you! Your submission has been received!",
+    "error_message": "Oops! Something went wrong while submitting the form.",
+    "coming_soon_note": "Form submission coming soon. In the meantime, please email us directly at info@alhayaat.ca."
+  },
+  "cta": {
+    "heading": "Join Our Community",
+    "body": "Together, we're building a brighter future for our children and the community.",
+    "primary_cta": { "label": "Enroll now", "href": "/admissions/apply" }
+  }
+}
