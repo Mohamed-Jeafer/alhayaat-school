@@ -40,5 +40,5 @@ Files to create:
 ## Final Summary
 
 <!-- SECTION:FINAL_SUMMARY:BEGIN -->
-Created `src/components/ui/ColoredBorderCard.tsx` with 5 accent variants (yellow, orange, blue, green, red) and border/bar accent styles. Exported from `src/components/ui/index.ts`. Used across Admissions, Donate, School Plan, Careers, Contact, and Curriculum pages.
+Created ColoredBorderCard component with 5 color accent variants and border/bar styles. Exported from the ui index barrel. Used across Admissions, Donate, School Plan, Careers, Contact, and Curriculum pages.
 <!-- SECTION:FINAL_SUMMARY:END -->
