@@ -3,9 +3,10 @@ id: TASK-057
 title: >-
   [P3] Complete Careers page: job listing layout, job cards, sidebar, empty
   state
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-17 11:18'
+updated_date: '2026-03-17 12:21'
 labels:
   - P3
   - page-migration
@@ -46,3 +47,9 @@ Dependencies: TASK-052 (design tokens), TASK-048 (Button)
 - [ ] #5 jobs__sticky sidebar renders on desktop (position sticky, top 6rem)
 - [ ] #6 Careers page text sourced from src/content/careers.json
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Rewrote src/app/careers/page.tsx. Sections: page header, intro, Why Join cards (2-col ColoredBorderCard grid), job listing with green-accent cards and qualification checklists, and support-mission section with image and payment logos.
+<!-- SECTION:FINAL_SUMMARY:END -->
