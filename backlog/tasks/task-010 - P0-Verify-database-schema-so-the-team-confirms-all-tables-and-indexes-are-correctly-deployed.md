@@ -7,7 +7,7 @@ status: In Progress
 assignee:
   - Copilot
 created_date: '2026-03-15 10:52'
-updated_date: '2026-03-17 12:14'
+updated_date: '2026-03-17 12:16'
 labels:
   - phase-0
   - database
@@ -22,31 +22,17 @@ priority: high
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
 **Story**
-As a developer on the Al-Hayaat project, I want to run SQL verification queries against the dev database, so that I can confirm all 5 tables, columns, indexes, and seed data are correctly deployed before building API routes that depend on them.
+As a developer on the Al-Hayaat project, I want a repeatable verification workflow for the current PostgreSQL schema, so that the team can confirm the deployed tables, columns, and indexes match the active application code before building more database-dependent features.
 
 **Business Context**
-A missing table or index in the database silently breaks API routes and form submissions in later phases. Verification catches schema drift early and ensures the data layer matches the documented contract in docs/database-schema.md.
+Verification must now validate the real application contract instead of an outdated planning snapshot. Without current verification, schema drift can break submissions, donations, and admin pages silently.
 
 **Technical Specification**
 - Rendering: N/A — database verification only
-- Data: SQL verification queries against PostgreSQL dev database
-- Infrastructure: Azure PostgreSQL Flexible Server (dev environment)
-- Stack constraints: `psql` CLI with $DATABASE_URL from Key Vault, raw SQL verification queries
-- Phase dependencies: TASK-003 (schema must be deployed), TASK-006 (PostgreSQL server must be provisioned)
-- Spec reference: `.kiro/specs/phase-0-infrastructure-setup.md`
-
-**Error Handling**
-| Code | Meaning | UI Recovery |
-|------|---------|-------------|
-| Connection refused | PostgreSQL unreachable from client | Verify firewall rules allow client IP |
-| Table not found | Schema not deployed | Re-run scripts/db/schema.sql |
-| Index missing | Index creation failed silently | Check schema.sql for CREATE INDEX statements |
-
-**Recommended Skills**
-- `#senior-backend` — database verification, PostgreSQL administration
-
-**Story Points**: 1
-*Sizing rationale: Single verification script with SQL queries — minimal complexity.*
+- Data: verification SQL and documented verification commands against local PostgreSQL
+- Scope: validate the actual current table set and critical columns/indexes used by `src/lib/db/queries.ts` and the active API/admin surfaces
+- Stack constraints: `psql` against the active `DATABASE_URL` / local `alhayaat_db`
+- References: `scripts/db/schema.sql`, `scripts/db/verify.sql`, `src/lib/db/queries.ts`, `src/app/api/**`, `al-hayaat.webflow/`
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
@@ -78,6 +64,20 @@ Then it reports FAIL for donations table with the expected CREATE TABLE statemen
 <!-- SECTION:PLAN:END -->
 
 ## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+TASK-010 is being advanced together with TASK-003 because the existing verification story is based on an outdated 5-table assumption and must be updated to validate the actual current schema surface.
+<!-- SECTION:NOTES:END -->
+
+## Definition of Done
+<!-- DOD:BEGIN -->
+- [ ] #1 scripts/db/verify.sql exits with code 0
+- [ ] #2 All 5 tables confirmed with correct columns
+- [ ] #3 All 3 indexes confirmed present
+- [ ] #4 Seed data verified with row counts > 0
+- [ ] #5 TASK-003 confirmed complete
+<!-- DOD:END -->
+otes
 
 <!-- SECTION:NOTES:BEGIN -->
 TASK-010 is being advanced together with TASK-003 because the existing verification story is based on an outdated 5-table assumption and must be updated to validate the actual current schema surface.
