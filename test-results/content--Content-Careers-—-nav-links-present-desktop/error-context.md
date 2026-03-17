@@ -1,0 +1,183 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name. Al-Hayaat School" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name." [ref=e6]
+        - generic [ref=e7]: Al-Hayaat School
+      - navigation "Primary navigation" [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "About Us" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "School Plan" [ref=e11] [cursor=pointer]:
+          - /url: /school-plan
+        - link "Curriculum" [ref=e12] [cursor=pointer]:
+          - /url: /curriculum
+        - link "Careers" [ref=e13] [cursor=pointer]:
+          - /url: /careers
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /contact
+      - button "Donate" [ref=e16] [cursor=pointer]:
+        - img
+        - text: Donate
+  - main [ref=e17]:
+    - main [ref=e18]:
+      - generic [ref=e21]:
+        - navigation "Breadcrumb" [ref=e22]:
+          - list [ref=e23]:
+            - listitem [ref=e24]:
+              - link "Home" [ref=e25] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e26]:
+              - generic [ref=e27]: /
+              - generic [ref=e28]: Careers
+        - heading "Ready to make an Impact? Join us on Our Journey." [level=1] [ref=e29]
+        - paragraph [ref=e30]: Join our Team
+      - generic [ref=e34]:
+        - heading "Welcome to Al-Hayaat School" [level=2] [ref=e35]
+        - paragraph [ref=e36]: At Al-Hayaat School, our mission is to provide a well-rounded education rooted in the teachings of the Quran and Ahlulbayt [A.S.]. Guided by the principles of حَيَاةٌ طَيِّبَةٌ (pure life), we are dedicated to cultivating a conducive learning environment that nurtures values, academic excellence, and holistic development. Our school is set to open in 2026, and we are actively building a team of passionate educators and professionals to help bring our vision to life.
+        - paragraph [ref=e37]: This is more than a job—it's an opportunity to shape the next generation of leaders, innovators, and contributors to humanity and the community.
+      - generic [ref=e40]:
+        - heading "Why Join Al-Hayaat School?" [level=2] [ref=e42]
+        - generic [ref=e43]:
+          - article [ref=e44]:
+            - generic [ref=e45]:
+              - img [ref=e48]
+              - heading "Faith-Driven Mission" [level=3] [ref=e52]
+              - paragraph [ref=e53]: Contribute to a school grounded in Quranic teachings and the values of Ahlulbayt [A.S.]
+          - article [ref=e55]:
+            - generic [ref=e56]:
+              - img [ref=e59]
+              - heading "Innovative Education" [level=3] [ref=e61]
+              - paragraph [ref=e62]: Be part of an institution that integrates morals with high academic standards.
+          - article [ref=e64]:
+            - generic [ref=e65]:
+              - img [ref=e68]
+              - heading "Collaborative Growth" [level=3] [ref=e73]
+              - paragraph [ref=e74]: Work alongside a dedicated team, benefiting from tailored professional development and training programs.
+          - article [ref=e76]:
+            - generic [ref=e77]:
+              - img [ref=e80]
+              - heading "Community Impact" [level=3] [ref=e83]
+              - paragraph [ref=e84]: Help establish a much-needed school in the Kitchener-Waterloo region, addressing the educational needs and aspirations of local families.
+      - generic [ref=e88]:
+        - heading "Current Job Openings" [level=2] [ref=e90]
+        - article [ref=e92]:
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - heading "Elementary School Teacher" [level=3] [ref=e96]
+              - paragraph [ref=e97]: As an elementary teacher, you will provide a well-rounded education rooted in both academic excellence and values. This role requires delivering core subjects (such as Language Arts, Mathematics, Science, and Social Studies), all while fostering a nurturing and respectful classroom environment that aligns with principles.
+              - generic [ref=e98]:
+                - heading "Key Qualifications" [level=4] [ref=e99]
+                - list [ref=e100]:
+                  - listitem [ref=e101]:
+                    - img [ref=e102]
+                    - generic [ref=e105]: Degree or diploma in Education or a relevant field. An Ontario Teaching Certification (OCT) is often preferred.
+                  - listitem [ref=e106]:
+                    - img [ref=e107]
+                    - generic [ref=e110]: Prior teaching experience in an elementary school setting; experience in an environment is an asset.
+                  - listitem [ref=e111]:
+                    - img [ref=e112]
+                    - generic [ref=e115]: Familiarity with the teachings of Ahlul-Bayt to align with the school's mission.
+            - generic [ref=e116]:
+              - button "View Details" [ref=e117] [cursor=pointer]
+              - button "Apply" [ref=e118] [cursor=pointer]
+      - generic [ref=e122]:
+        - generic [ref=e124]:
+          - heading "Support Our Mission" [level=2] [ref=e125]
+          - paragraph [ref=e126]: Together, we're building a brighter future for our children and the community.
+          - generic [ref=e127]:
+            - button "Apply" [ref=e128] [cursor=pointer]
+            - button "Donate" [ref=e129] [cursor=pointer]
+          - generic [ref=e130]:
+            - paragraph [ref=e131]: "Guaranteed safe & secure checkout:"
+            - generic [ref=e132]:
+              - img "Visa credit card company logo." [ref=e134]
+              - img "Mastercard logo." [ref=e136]
+              - img "PayPal logo." [ref=e138]
+              - img "Apple Pay logo." [ref=e140]
+              - img "Google Pay logo." [ref=e142]
+              - img "Shop Pay logo." [ref=e144]
+              - img "American Express logo." [ref=e146]
+        - generic [ref=e148]:
+          - img "Child in an orange hoodie drawing smiley faces on a whiteboard in a classroom." [ref=e151]
+          - img [ref=e153]
+  - contentinfo "Site footer" [ref=e156]:
+    - generic [ref=e158]:
+      - generic [ref=e159]:
+        - link "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name. Al-Hayaat School" [ref=e160] [cursor=pointer]:
+          - /url: /
+          - img "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name." [ref=e161]
+          - generic [ref=e162]: Al-Hayaat School
+        - paragraph [ref=e163]: Provides high quality education and character building in a safe and caring environment.
+        - generic [ref=e164]:
+          - link "Facebook" [ref=e165] [cursor=pointer]:
+            - /url: https://www.facebook.com/alhayaatschool
+            - img [ref=e166]
+          - link "Instagram" [ref=e168] [cursor=pointer]:
+            - /url: https://www.instagram.com/alhayaatschool
+            - img [ref=e169]
+          - link "Youtube" [ref=e172] [cursor=pointer]:
+            - /url: https://www.youtube.com/@alhayaatschool
+            - img [ref=e173]
+          - link "Twitter" [ref=e176] [cursor=pointer]:
+            - /url: https://x.com/alhayaatschool
+            - img [ref=e177]
+      - generic [ref=e179]:
+        - heading "Menu" [level=3] [ref=e180]
+        - list [ref=e181]:
+          - listitem [ref=e182]:
+            - link "Home" [ref=e183] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e184]:
+            - link "About Us" [ref=e185] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e186]:
+            - link "School Plan" [ref=e187] [cursor=pointer]:
+              - /url: /school-plan
+          - listitem [ref=e188]:
+            - link "Curriculum" [ref=e189] [cursor=pointer]:
+              - /url: /curriculum
+          - listitem [ref=e190]:
+            - link "Careers" [ref=e191] [cursor=pointer]:
+              - /url: /careers
+          - listitem [ref=e192]:
+            - link "Donate" [ref=e193] [cursor=pointer]:
+              - /url: /donate
+      - generic [ref=e194]:
+        - heading "Contact" [level=3] [ref=e195]
+        - list [ref=e196]:
+          - listitem [ref=e197]:
+            - img [ref=e198]
+            - link "info@alhayaat.ca" [ref=e201] [cursor=pointer]:
+              - /url: mailto:info@alhayaat.ca
+          - listitem [ref=e202]:
+            - img [ref=e203]
+            - link "519-589-9669" [ref=e205] [cursor=pointer]:
+              - /url: tel:519-589-9669
+          - listitem [ref=e206]: 158 Newbury Drive, Kitchener, ON, N2N 2N8
+      - generic [ref=e207]:
+        - heading "Newsletter" [level=3] [ref=e208]
+        - generic [ref=e209]:
+          - paragraph [ref=e210]: Stay Updated
+          - paragraph [ref=e211]: Get the latest news and updates from Al-Hayaat School.
+          - generic [ref=e212]:
+            - textbox "Email address for newsletter" [ref=e213]:
+              - /placeholder: Enter your email
+            - button "Subscribe" [ref=e214]
+    - generic [ref=e216]:
+      - paragraph [ref=e217]: © 2026 Al-Hayaat School. All Rights Reserved.
+      - generic [ref=e218]:
+        - link "Privacy Policy" [ref=e219] [cursor=pointer]:
+          - /url: /privacy-policy
+        - link "Terms of Service" [ref=e220] [cursor=pointer]:
+          - /url: /terms-of-service
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e226] [cursor=pointer]:
+    - img [ref=e227]
+  - alert [ref=e230]
+```

@@ -1,0 +1,164 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name. Al-Hayaat School" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name." [ref=e6]
+        - generic [ref=e7]: Al-Hayaat School
+      - navigation "Primary navigation" [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "About Us" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "School Plan" [ref=e11] [cursor=pointer]:
+          - /url: /school-plan
+        - link "Curriculum" [ref=e12] [cursor=pointer]:
+          - /url: /curriculum
+        - link "Careers" [ref=e13] [cursor=pointer]:
+          - /url: /careers
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /contact
+      - button "Donate" [ref=e16] [cursor=pointer]:
+        - img
+        - text: Donate
+  - main [ref=e17]:
+    - generic [ref=e20]:
+      - navigation "Breadcrumb" [ref=e21]:
+        - list [ref=e22]:
+          - listitem [ref=e23]:
+            - link "Home" [ref=e24] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e25]:
+            - generic [ref=e26]: /
+            - generic [ref=e27]: School Plans
+      - heading "School Plans" [level=1] [ref=e28]
+    - generic [ref=e30]:
+      - paragraph [ref=e33]: "Al-Hayaat School is set to open its doors in September 2026, offering a faith-based, high-quality education for the Kitchener-Waterloo community. Our carefully phased growth plan ensures a strong foundation for the school's future:"
+      - generic [ref=e34]:
+        - article [ref=e36]:
+          - generic [ref=e37]:
+            - heading "Set to open" [level=3] [ref=e38]
+            - list [ref=e39]:
+              - listitem [ref=e40]:
+                - img [ref=e41]
+                - generic [ref=e44]: "2026: Opening with Junior Kindergarten (JK) to Grade 3."
+              - listitem [ref=e45]:
+                - img [ref=e46]
+                - generic [ref=e49]: "Annual Expansion: Adding one grade each year until reaching Grade 8 in 2031."
+              - listitem [ref=e50]:
+                - img [ref=e51]
+                - generic [ref=e54]: This gradual development allows us to focus on creating a robust academic and spiritual environment tailored to each age group.
+        - article [ref=e57]:
+          - generic [ref=e58]:
+            - heading "Connect with our community" [level=3] [ref=e59]
+            - paragraph [ref=e60]: With a blend of modern facilities and values, Al-Hayaat School is dedicated to nurturing the next generation of leaders, innovators, and contributors to society. Join us on this journey to build a strong, faith-centered community.
+            - button "Join our community" [ref=e62] [cursor=pointer]
+    - generic [ref=e66]:
+      - generic [ref=e68]:
+        - heading "Support Our Mission" [level=2] [ref=e69]
+        - list [ref=e70]:
+          - listitem [ref=e71]:
+            - img [ref=e72]
+            - generic [ref=e75]: Covering essential school costs and daily learning
+          - listitem [ref=e76]:
+            - img [ref=e77]
+            - generic [ref=e80]: Ensuring a high-quality education system rooted in principles.
+          - listitem [ref=e81]:
+            - img [ref=e82]
+            - generic [ref=e85]: Current fundraising target ($350,000 for 2026-2027)
+        - button "Donate" [ref=e87] [cursor=pointer]
+        - generic [ref=e88]:
+          - paragraph [ref=e89]: "Guaranteed safe & secure checkout:"
+          - generic [ref=e90]:
+            - img "Visa credit card company logo." [ref=e92]
+            - img "Mastercard logo." [ref=e94]
+            - img "PayPal logo." [ref=e96]
+            - img "Apple Pay logo." [ref=e98]
+            - img "Google Pay logo." [ref=e100]
+            - img "Shop Pay logo." [ref=e102]
+            - img "American Express logo." [ref=e104]
+      - generic [ref=e106]:
+        - img "Child in an orange hoodie drawing smiley faces on a whiteboard in a classroom." [ref=e109]
+        - img [ref=e111]
+    - generic [ref=e115]:
+      - heading "Join Our Community" [level=2] [ref=e116]
+      - paragraph [ref=e117]: Together, we're building a brighter future for our children and the community.
+      - button "Enroll now" [ref=e119] [cursor=pointer]
+  - contentinfo "Site footer" [ref=e120]:
+    - generic [ref=e122]:
+      - generic [ref=e123]:
+        - link "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name. Al-Hayaat School" [ref=e124] [cursor=pointer]:
+          - /url: /
+          - img "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name." [ref=e125]
+          - generic [ref=e126]: Al-Hayaat School
+        - paragraph [ref=e127]: Provides high quality education and character building in a safe and caring environment.
+        - generic [ref=e128]:
+          - link "Facebook" [ref=e129] [cursor=pointer]:
+            - /url: https://www.facebook.com/alhayaatschool
+            - img [ref=e130]
+          - link "Instagram" [ref=e132] [cursor=pointer]:
+            - /url: https://www.instagram.com/alhayaatschool
+            - img [ref=e133]
+          - link "Youtube" [ref=e136] [cursor=pointer]:
+            - /url: https://www.youtube.com/@alhayaatschool
+            - img [ref=e137]
+          - link "Twitter" [ref=e140] [cursor=pointer]:
+            - /url: https://x.com/alhayaatschool
+            - img [ref=e141]
+      - generic [ref=e143]:
+        - heading "Menu" [level=3] [ref=e144]
+        - list [ref=e145]:
+          - listitem [ref=e146]:
+            - link "Home" [ref=e147] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e148]:
+            - link "About Us" [ref=e149] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e150]:
+            - link "School Plan" [ref=e151] [cursor=pointer]:
+              - /url: /school-plan
+          - listitem [ref=e152]:
+            - link "Curriculum" [ref=e153] [cursor=pointer]:
+              - /url: /curriculum
+          - listitem [ref=e154]:
+            - link "Careers" [ref=e155] [cursor=pointer]:
+              - /url: /careers
+          - listitem [ref=e156]:
+            - link "Donate" [ref=e157] [cursor=pointer]:
+              - /url: /donate
+      - generic [ref=e158]:
+        - heading "Contact" [level=3] [ref=e159]
+        - list [ref=e160]:
+          - listitem [ref=e161]:
+            - img [ref=e162]
+            - link "info@alhayaat.ca" [ref=e165] [cursor=pointer]:
+              - /url: mailto:info@alhayaat.ca
+          - listitem [ref=e166]:
+            - img [ref=e167]
+            - link "519-589-9669" [ref=e169] [cursor=pointer]:
+              - /url: tel:519-589-9669
+          - listitem [ref=e170]: 158 Newbury Drive, Kitchener, ON, N2N 2N8
+      - generic [ref=e171]:
+        - heading "Newsletter" [level=3] [ref=e172]
+        - generic [ref=e173]:
+          - paragraph [ref=e174]: Stay Updated
+          - paragraph [ref=e175]: Get the latest news and updates from Al-Hayaat School.
+          - generic [ref=e176]:
+            - textbox "Email address for newsletter" [ref=e177]:
+              - /placeholder: Enter your email
+            - button "Subscribe" [ref=e178]
+    - generic [ref=e180]:
+      - paragraph [ref=e181]: © 2026 Al-Hayaat School. All Rights Reserved.
+      - generic [ref=e182]:
+        - link "Privacy Policy" [ref=e183] [cursor=pointer]:
+          - /url: /privacy-policy
+        - link "Terms of Service" [ref=e184] [cursor=pointer]:
+          - /url: /terms-of-service
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e190] [cursor=pointer]:
+    - img [ref=e191]
+  - alert [ref=e194]
+```

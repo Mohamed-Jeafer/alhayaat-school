@@ -1,9 +1,10 @@
 ---
 id: TASK-067
 title: '[BUG] Fix Playwright test mapping for application.html'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-17 21:34'
+updated_date: '2026-03-17 21:44'
 labels: []
 dependencies: []
 priority: high

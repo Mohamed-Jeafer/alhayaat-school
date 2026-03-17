@@ -1,0 +1,168 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name. Al-Hayaat School" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name." [ref=e6]
+        - generic [ref=e7]: Al-Hayaat School
+      - navigation "Primary navigation" [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "About Us" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "School Plan" [ref=e11] [cursor=pointer]:
+          - /url: /school-plan
+        - link "Curriculum" [ref=e12] [cursor=pointer]:
+          - /url: /curriculum
+        - link "Careers" [ref=e13] [cursor=pointer]:
+          - /url: /careers
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /contact
+      - button "Donate" [ref=e16] [cursor=pointer]:
+        - img
+        - text: Donate
+  - main [ref=e17]:
+    - main [ref=e18]:
+      - generic [ref=e21]:
+        - navigation "Breadcrumb" [ref=e22]:
+          - list [ref=e23]:
+            - listitem [ref=e24]:
+              - link "Home" [ref=e25] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e26]:
+              - generic [ref=e27]: /
+              - generic [ref=e28]: Contact
+        - heading "Contact" [level=1] [ref=e29]
+        - paragraph [ref=e30]: We would love to hear from you! If you have any questions or would like more information about Al-Hayaat School, please feel free to contact us using the information below.
+      - generic [ref=e33]:
+        - generic [ref=e35]:
+          - article [ref=e36]:
+            - generic [ref=e38]:
+              - img [ref=e40]
+              - generic [ref=e43]:
+                - heading "Email" [level=3] [ref=e44]
+                - generic [ref=e45]:
+                  - paragraph [ref=e46]:
+                    - link "info@alhayaat.ca" [ref=e47] [cursor=pointer]:
+                      - /url: mailto:info@alhayaat.ca
+                  - paragraph [ref=e48]:
+                    - link "admin@alhayaat.ca" [ref=e49] [cursor=pointer]:
+                      - /url: mailto:admin@alhayaat.ca
+          - article [ref=e51]:
+            - generic [ref=e53]:
+              - img [ref=e55]
+              - generic [ref=e57]:
+                - heading "Phone" [level=3] [ref=e58]
+                - paragraph [ref=e59]:
+                  - link "519-589-9669" [ref=e60] [cursor=pointer]:
+                    - /url: tel:5195899669
+          - article [ref=e62]:
+            - generic [ref=e64]:
+              - img [ref=e66]
+              - generic [ref=e69]:
+                - heading "Address" [level=3] [ref=e70]
+                - paragraph [ref=e71]: 158 Newbury Drive, Kitchener, ON, N2N 2N8
+        - generic [ref=e74]:
+          - heading "Send us a Message" [level=2] [ref=e75]
+          - form "Contact form" [ref=e76]:
+            - generic [ref=e77]:
+              - generic [ref=e78]:
+                - text: Name
+                - generic [ref=e79]: "*"
+              - textbox "Name" [ref=e80]:
+                - /placeholder: Your name
+            - generic [ref=e81]:
+              - generic [ref=e82]:
+                - text: Email
+                - generic [ref=e83]: "*"
+              - textbox "Email" [ref=e84]:
+                - /placeholder: your@email.com
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - text: Message
+                - generic [ref=e87]: "*"
+              - textbox "Message" [ref=e88]:
+                - /placeholder: Your message
+            - button "Submit" [ref=e89]
+      - generic [ref=e91]:
+        - heading "Join Our Community" [level=2] [ref=e92]
+        - paragraph [ref=e93]: Together, we're building a brighter future for our children and the community.
+        - button "Enroll now" [ref=e95] [cursor=pointer]
+  - contentinfo "Site footer" [ref=e96]:
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - link "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name. Al-Hayaat School" [ref=e100] [cursor=pointer]:
+          - /url: /
+          - img "Al Hayaat logo with stylized blue Arabic calligraphy forming a symmetrical pattern around the name." [ref=e101]
+          - generic [ref=e102]: Al-Hayaat School
+        - paragraph [ref=e103]: Provides high quality education and character building in a safe and caring environment.
+        - generic [ref=e104]:
+          - link "Facebook" [ref=e105] [cursor=pointer]:
+            - /url: https://www.facebook.com/alhayaatschool
+            - img [ref=e106]
+          - link "Instagram" [ref=e108] [cursor=pointer]:
+            - /url: https://www.instagram.com/alhayaatschool
+            - img [ref=e109]
+          - link "Youtube" [ref=e112] [cursor=pointer]:
+            - /url: https://www.youtube.com/@alhayaatschool
+            - img [ref=e113]
+          - link "Twitter" [ref=e116] [cursor=pointer]:
+            - /url: https://x.com/alhayaatschool
+            - img [ref=e117]
+      - generic [ref=e119]:
+        - heading "Menu" [level=3] [ref=e120]
+        - list [ref=e121]:
+          - listitem [ref=e122]:
+            - link "Home" [ref=e123] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e124]:
+            - link "About Us" [ref=e125] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e126]:
+            - link "School Plan" [ref=e127] [cursor=pointer]:
+              - /url: /school-plan
+          - listitem [ref=e128]:
+            - link "Curriculum" [ref=e129] [cursor=pointer]:
+              - /url: /curriculum
+          - listitem [ref=e130]:
+            - link "Careers" [ref=e131] [cursor=pointer]:
+              - /url: /careers
+          - listitem [ref=e132]:
+            - link "Donate" [ref=e133] [cursor=pointer]:
+              - /url: /donate
+      - generic [ref=e134]:
+        - heading "Contact" [level=3] [ref=e135]
+        - list [ref=e136]:
+          - listitem [ref=e137]:
+            - img [ref=e138]
+            - link "info@alhayaat.ca" [ref=e141] [cursor=pointer]:
+              - /url: mailto:info@alhayaat.ca
+          - listitem [ref=e142]:
+            - img [ref=e143]
+            - link "519-589-9669" [ref=e145] [cursor=pointer]:
+              - /url: tel:519-589-9669
+          - listitem [ref=e146]: 158 Newbury Drive, Kitchener, ON, N2N 2N8
+      - generic [ref=e147]:
+        - heading "Newsletter" [level=3] [ref=e148]
+        - generic [ref=e149]:
+          - paragraph [ref=e150]: Stay Updated
+          - paragraph [ref=e151]: Get the latest news and updates from Al-Hayaat School.
+          - generic [ref=e152]:
+            - textbox "Email address for newsletter" [ref=e153]:
+              - /placeholder: Enter your email
+            - button "Subscribe" [ref=e154]
+    - generic [ref=e156]:
+      - paragraph [ref=e157]: © 2026 Al-Hayaat School. All Rights Reserved.
+      - generic [ref=e158]:
+        - link "Privacy Policy" [ref=e159] [cursor=pointer]:
+          - /url: /privacy-policy
+        - link "Terms of Service" [ref=e160] [cursor=pointer]:
+          - /url: /terms-of-service
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e166] [cursor=pointer]:
+    - img [ref=e167]
+  - alert [ref=e170]
+```

@@ -1,9 +1,10 @@
 ---
 id: TASK-063
 title: '[BUG] Contact form missing Subject field'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-17 21:29'
+updated_date: '2026-03-17 21:44'
 labels:
   - bug
   - contact

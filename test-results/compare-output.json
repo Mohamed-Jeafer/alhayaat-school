@@ -1,0 +1,2323 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\mohdr\\projects\\webflow\\playwright.config.ts",
+    "rootDir": "C:/Users/mohdr/projects/webflow/tests/compare",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/mohdr/projects/webflow/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/mohdr/projects/webflow/tests/compare",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/mohdr/projects/webflow/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "C:/Users/mohdr/projects/webflow/tests/compare",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "content.spec.ts",
+      "file": "content.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[Content] Home ÔÇö headings match",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8529,
+                  "error": {
+                    "message": "Error: Missing heading \"News and announcements\" (h2) on Next.js Home page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Missing heading \"News and announcements\" (h2) on Next.js Home page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:32:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 32
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 31 |\u001b[39m         \u001b[32m`Missing heading \"${wfH.text}\" (${wfH.tag}) on Next.js ${entry.name} page`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     }\n \u001b[90m 34 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 32
+                      },
+                      "message": "Error: Missing heading \"News and announcements\" (h2) on Next.js Home page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  30 |         found,\n  31 |         `Missing heading \"${wfH.text}\" (${wfH.tag}) on Next.js ${entry.name} page`\n> 32 |       ).toBe(true);\n     |         ^\n  33 |     }\n  34 |   });\n  35 |\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:32:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Home Headings ===\n"
+                    },
+                    {
+                      "text": "Webflow : h1: \"Al-Hayaat School\" | h2: \"Welcome to Al-Hayaat school\" | h2: \"Why Al-Hayaat?\" | h3: \"Faith-based education\" | h3: \"Comprehensive curriculum\" | h3: \"Commitment to academic excellence\" | h3: \"Community-focused vision\" | h2: \"Academic and curriculum focus\" | h2: \"Our growth plan\" | h2: \"Guidance from experienced educators\" | h2: \"Our collaborators\" | h3: \"Support Our Mission\" | h2: \"News and announcements\" | h5: \"Think Before You Act! 3 Ways to Develop Impulse Control in Your Child\" | h5: \"Think Before You Act! 3 Ways to Develop Impulse Control in Your Child\" | h5: \"Think Before You Act! 3 Ways to Develop Impulse Control in Your Child\" | h2: \"Join our community\"\n"
+                    },
+                    {
+                      "text": "Next.js : h1: \"Al-Hayaat School\" | h2: \"Welcome to Al-Hayaat School\" | h2: \"Why Al-Hayaat?\" | h3: \"Faith-based education\" | h3: \"Comprehensive curriculum\" | h3: \"Commitment to academic excellence\" | h3: \"Community-focused vision\" | h2: \"Academic and curriculum focus\" | h2: \"Our growth plan\" | h3: \"Guidance from experienced educators\" | h2: \"Our collaborators\" | h3: \"Wali ul Asr Learning Institute\" | h3: \"Selm Academy\" | h3: \"Al Haadi School\" | h2: \"Support Our Mission\" | h2: \"Join our community\" | h3: \"MENU\" | h3: \"CONTACT\" | h3: \"NEWSLETTER\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:12.494Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Home-ÔÇö-headings-match-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 32
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-9a69fee315cd6d0d93e0",
+          "file": "content.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "[Content] Home ÔÇö paragraph text coverage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4840,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Home Paragraphs ===\n"
+                    },
+                    {
+                      "text": "Webflow: 0 paragraphs\n"
+                    },
+                    {
+                      "text": "Next.js: 21 paragraphs\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:24.874Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-eabe71e75aa84abe2969",
+          "file": "content.spec.ts",
+          "line": 36,
+          "column": 7
+        },
+        {
+          "title": "[Content] Home ÔÇö nav links present",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5167,
+                  "error": {
+                    "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Home\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Nav link \"Search\" from Webflow not found in Next.js Home\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[32m`Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m     }\n \u001b[90m 74 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 72
+                      },
+                      "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Home\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  70 |         found,\n  71 |         `Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\n> 72 |       ).toBe(true);\n     |         ^\n  73 |     }\n  74 |   });\n  75 | }\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Home Nav Links ===\n"
+                    },
+                    {
+                      "text": "Webflow : About us, School plan, Curriculum, Search, Careers, Donate, Contact\n"
+                    },
+                    {
+                      "text": "Next.js : Al-Hayaat School, Home, About Us, School Plan, Curriculum, Careers, Contact, Donate\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:29.936Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Home-ÔÇö-nav-links-present-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-f1219f28eaa5603a8f0e",
+          "file": "content.spec.ts",
+          "line": 54,
+          "column": 7
+        },
+        {
+          "title": "[Content] About ÔÇö headings match",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4405,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== About Headings ===\n"
+                    },
+                    {
+                      "text": "Webflow : h1: \"About Al-Hayaat\" | h3: \"Our Mission, Vision and Value\" | h2: \"Our Team\" | h4: \"Dr. Hamid Reza Mohebb\" | h4: \"Zaman Alkhafagi\" | h4: \"Ms. Alaa Namus\" | h2: \"Why Al-Hayaat?\" | h3: \"Faith-Based Education\" | h3: \"Comprehensive Curriculum\" | h3: \"Commitment to Academic Excellence\" | h3: \"Community-Focused Vision\" | h2: \"Our Office\" | h2: \"Join Our Community\"\n"
+                    },
+                    {
+                      "text": "Next.js : h1: \"About Al-Hayaat\" | h1: \"\" | h2: \"Our Mission, Vision and Values\" | h2: \"Our Team\" | h3: \"Dr. Hamid Reza Mohebbi\" | h3: \"Zaman Alkhafagi\" | h3: \"Ms. Alaa Namus\" | h2: \"Why Al-Hayaat?\" | h3: \"Faith-based education\" | h3: \"Comprehensive curriculum\" | h3: \"Commitment to academic excellence\" | h3: \"Community-focused vision\" | h2: \"Our Office\" | h2: \"Join our community\" | h3: \"MENU\" | h3: \"CONTACT\" | h3: \"NEWSLETTER\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:38.192Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-45e0bfe9953793a45526",
+          "file": "content.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "[Content] About ÔÇö paragraph text coverage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3958,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== About Paragraphs ===\n"
+                    },
+                    {
+                      "text": "Webflow: 3 paragraphs\n"
+                    },
+                    {
+                      "text": "Next.js: 20 paragraphs\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:42.833Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-d00bc66748e0a6487372",
+          "file": "content.spec.ts",
+          "line": 36,
+          "column": 7
+        },
+        {
+          "title": "[Content] About ÔÇö nav links present",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4598,
+                  "error": {
+                    "message": "Error: Nav link \"Search\" from Webflow not found in Next.js About\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Nav link \"Search\" from Webflow not found in Next.js About\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[32m`Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m     }\n \u001b[90m 74 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 72
+                      },
+                      "message": "Error: Nav link \"Search\" from Webflow not found in Next.js About\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  70 |         found,\n  71 |         `Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\n> 72 |       ).toBe(true);\n     |         ^\n  73 |     }\n  74 |   });\n  75 | }\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== About Nav Links ===\n"
+                    },
+                    {
+                      "text": "Webflow : About us, School plan, Curriculum, Search, Careers, Donate, Contact\n"
+                    },
+                    {
+                      "text": "Next.js : Al-Hayaat School, Home, About Us, School Plan, Curriculum, Careers, Contact, Donate, Home\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:46.826Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-About-ÔÇö-nav-links-present-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-caee79cd3345e3bdb3bd",
+          "file": "content.spec.ts",
+          "line": 54,
+          "column": 7
+        },
+        {
+          "title": "[Content] Curriculum ÔÇö headings match",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5561,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Curriculum Headings ===\n"
+                    },
+                    {
+                      "text": "Webflow : h1: \"Academic and Curriculum Focus\" | h2: \"Guidance from Experienced Educators\" | h2: \"Join Our Community\"\n"
+                    },
+                    {
+                      "text": "Next.js : h1: \"Academic and Curriculum Focus\" | h2: \"Academic and Curriculum Focus\" | h2: \"Guidance from Experienced Educators\" | h2: \"Join Our Community\" | h3: \"MENU\" | h3: \"CONTACT\" | h3: \"NEWSLETTER\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:55.341Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-5382ede1bd0352f0b155",
+          "file": "content.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "[Content] Curriculum ÔÇö paragraph text coverage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11183,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Curriculum Paragraphs ===\n"
+                    },
+                    {
+                      "text": "Webflow: 0 paragraphs\n"
+                    },
+                    {
+                      "text": "Next.js: 15 paragraphs\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:01.515Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-a097ca2d18fa31dc7040",
+          "file": "content.spec.ts",
+          "line": 36,
+          "column": 7
+        },
+        {
+          "title": "[Content] Curriculum ÔÇö nav links present",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4286,
+                  "error": {
+                    "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Curriculum\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Nav link \"Search\" from Webflow not found in Next.js Curriculum\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[32m`Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m     }\n \u001b[90m 74 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 72
+                      },
+                      "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Curriculum\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  70 |         found,\n  71 |         `Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\n> 72 |       ).toBe(true);\n     |         ^\n  73 |     }\n  74 |   });\n  75 | }\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Curriculum Nav Links ===\n"
+                    },
+                    {
+                      "text": "Webflow : About us, School plan, Curriculum, Search, Careers, Donate, Contact\n"
+                    },
+                    {
+                      "text": "Next.js : Al-Hayaat School, Home, About Us, School Plan, Curriculum, Careers, Contact, Donate, Home\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:12.750Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Curriculum-ÔÇö-nav-links-present-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-ceacfbf8c09ee6763aba",
+          "file": "content.spec.ts",
+          "line": 54,
+          "column": 7
+        },
+        {
+          "title": "[Content] Admissions ÔÇö headings match",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10926,
+                  "error": {
+                    "message": "Error: Missing heading \"Fees\" (h4) on Next.js Admissions page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Missing heading \"Fees\" (h4) on Next.js Admissions page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:32:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 32
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 31 |\u001b[39m         \u001b[32m`Missing heading \"${wfH.text}\" (${wfH.tag}) on Next.js ${entry.name} page`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     }\n \u001b[90m 34 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 32
+                      },
+                      "message": "Error: Missing heading \"Fees\" (h4) on Next.js Admissions page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  30 |         found,\n  31 |         `Missing heading \"${wfH.text}\" (${wfH.tag}) on Next.js ${entry.name} page`\n> 32 |       ).toBe(true);\n     |         ^\n  33 |     }\n  34 |   });\n  35 |\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:32:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Admissions Headings ===\n"
+                    },
+                    {
+                      "text": "Webflow : h1: \"Admission\" | h2: \"Building a Bright Future ÔÇô Enroll for 2025-2026!\" | h4: \"JK to Grade 2\" | h4: \"Grade 3 to Grade 5\" | h2: \"Why choose Al-hayaat School?\" | h5: \"Academic Excellence\" | h5: \"Faith-Based Education\" | h5: \"Holistic Development\" | h2: \"How to Apply\" | h2: \"Required items for registration\" | h4: \"Required Documents\" | h4: \"Fees\" | h2: \"School fee summary\" | h2: \"Join Our Community\"\n"
+                    },
+                    {
+                      "text": "Next.js : h1: \"Admission\" | h2: \"Building a Bright Future ÔÇô Enroll for 2025-2026!\" | h3: \"JK to Grade 2\" | h3: \"Grade 3 to Grade 5\" | h2: \"Why choose Al-Hayaat School?\" | h3: \"Academic Excellence\" | h3: \"Faith-Based Education\" | h3: \"Holistic Development\" | h2: \"How to Apply\" | h2: \"Required items for registration\" | h3: \"Required Documents\" | h2: \"School fee summary\" | h2: \"Join Our Community\" | h3: \"MENU\" | h3: \"CONTACT\" | h3: \"NEWSLETTER\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:20.773Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Admissions-ÔÇö-headings-match-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 32
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-bfdb8918731afa449ea7",
+          "file": "content.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "[Content] Admissions ÔÇö paragraph text coverage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5576,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Admissions Paragraphs ===\n"
+                    },
+                    {
+                      "text": "Webflow: 0 paragraphs\n"
+                    },
+                    {
+                      "text": "Next.js: 24 paragraphs\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:34.598Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-2c478d08a71a8b0e77ca",
+          "file": "content.spec.ts",
+          "line": 36,
+          "column": 7
+        },
+        {
+          "title": "[Content] Admissions ÔÇö nav links present",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5225,
+                  "error": {
+                    "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Admissions\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Nav link \"Search\" from Webflow not found in Next.js Admissions\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[32m`Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m     }\n \u001b[90m 74 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 72
+                      },
+                      "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Admissions\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  70 |         found,\n  71 |         `Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\n> 72 |       ).toBe(true);\n     |         ^\n  73 |     }\n  74 |   });\n  75 | }\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Admissions Nav Links ===\n"
+                    },
+                    {
+                      "text": "Webflow : About us, School plan, Curriculum, Search, Careers, Donate, Contact\n"
+                    },
+                    {
+                      "text": "Next.js : Al-Hayaat School, Home, About Us, School Plan, Curriculum, Careers, Contact, Donate, Home\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:40.396Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Admissions-ÔÇö-nav-links-present-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-50219ce0c4981a1adb8d",
+          "file": "content.spec.ts",
+          "line": 54,
+          "column": 7
+        },
+        {
+          "title": "[Content] Application ÔÇö headings match",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3737,
+                  "error": {
+                    "message": "Error: Missing heading \"Elementary School Teacher\" (h1) on Next.js Application page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Missing heading \"Elementary School Teacher\" (h1) on Next.js Application page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:32:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 32
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 31 |\u001b[39m         \u001b[32m`Missing heading \"${wfH.text}\" (${wfH.tag}) on Next.js ${entry.name} page`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     }\n \u001b[90m 34 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 32
+                      },
+                      "message": "Error: Missing heading \"Elementary School Teacher\" (h1) on Next.js Application page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  30 |         found,\n  31 |         `Missing heading \"${wfH.text}\" (${wfH.tag}) on Next.js ${entry.name} page`\n> 32 |       ).toBe(true);\n     |         ^\n  33 |     }\n  34 |   });\n  35 |\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:32:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Application Headings ===\n"
+                    },
+                    {
+                      "text": "Webflow : h1: \"Elementary School Teacher\" | h2: \"Job Description\" | h2: \"Key Responsibilities\" | h2: \"Qualifications\" | h2: \"Knowledge and Skills\" | h2: \"Join Our Community\"\n"
+                    },
+                    {
+                      "text": "Next.js : h1: \"Student Registration\" | h3: \"MENU\" | h3: \"CONTACT\" | h3: \"NEWSLETTER\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:47.819Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Application-ÔÇö-headings-match-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 32
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-f69848d8646fb17b6fec",
+          "file": "content.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "[Content] Application ÔÇö paragraph text coverage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4026,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Application Paragraphs ===\n"
+                    },
+                    {
+                      "text": "Webflow: 3 paragraphs\n"
+                    },
+                    {
+                      "text": "Next.js: 5 paragraphs\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:53.851Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-26eea59a4db46832bfb0",
+          "file": "content.spec.ts",
+          "line": 36,
+          "column": 7
+        },
+        {
+          "title": "[Content] Application ÔÇö nav links present",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3240,
+                  "error": {
+                    "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Application\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Nav link \"Search\" from Webflow not found in Next.js Application\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[32m`Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m     }\n \u001b[90m 74 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 72
+                      },
+                      "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Application\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  70 |         found,\n  71 |         `Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\n> 72 |       ).toBe(true);\n     |         ^\n  73 |     }\n  74 |   });\n  75 | }\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Application Nav Links ===\n"
+                    },
+                    {
+                      "text": "Webflow : About us, School plan, Curriculum, Search, Careers, Donate, Contact\n"
+                    },
+                    {
+                      "text": "Next.js : Al-Hayaat School, Home, About Us, School Plan, Curriculum, Careers, Contact, Donate, Home, Admissions\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:58.111Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Application-ÔÇö-nav-links-present-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-a8e89644366c35d35fda",
+          "file": "content.spec.ts",
+          "line": 54,
+          "column": 7
+        },
+        {
+          "title": "[Content] Careers ÔÇö headings match",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3875,
+                  "error": {
+                    "message": "Error: Missing heading \"Join our Team\" (h2) on Next.js Careers page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Missing heading \"Join our Team\" (h2) on Next.js Careers page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:32:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 32
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 31 |\u001b[39m         \u001b[32m`Missing heading \"${wfH.text}\" (${wfH.tag}) on Next.js ${entry.name} page`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     }\n \u001b[90m 34 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 32
+                      },
+                      "message": "Error: Missing heading \"Join our Team\" (h2) on Next.js Careers page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  30 |         found,\n  31 |         `Missing heading \"${wfH.text}\" (${wfH.tag}) on Next.js ${entry.name} page`\n> 32 |       ).toBe(true);\n     |         ^\n  33 |     }\n  34 |   });\n  35 |\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:32:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Careers Headings ===\n"
+                    },
+                    {
+                      "text": "Webflow : h2: \"Join our Team\" | h1: \"Ready to make an Impact ?┬áJoin us on Our Journey.\" | h2: \"Welcome to Al-Hayaat School\" | h2: \"Why Join Al-Hayaat School?\" | h2: \"Current Job Openings\" | h4: \"Elementary School Teacher\" | h3: \"Support Our Mission\"\n"
+                    },
+                    {
+                      "text": "Next.js : h1: \"Ready to make an Impact? Join us on Our Journey.\" | h2: \"Welcome to Al-Hayaat School\" | h2: \"Why Join Al-Hayaat School?\" | h3: \"Faith-Driven Mission\" | h3: \"Innovative Education\" | h3: \"Collaborative Growth\" | h3: \"Community Impact\" | h2: \"Current Job Openings\" | h3: \"Elementary School Teacher\" | h4: \"KEY QUALIFICATIONS\" | h2: \"Support Our Mission\" | h3: \"MENU\" | h3: \"CONTACT\" | h3: \"NEWSLETTER\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:03.511Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Careers-ÔÇö-headings-match-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 32
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-e986b62b756daa71fa85",
+          "file": "content.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "[Content] Careers ÔÇö paragraph text coverage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3358,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Careers Paragraphs ===\n"
+                    },
+                    {
+                      "text": "Webflow: 1 paragraphs\n"
+                    },
+                    {
+                      "text": "Next.js: 14 paragraphs\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:09.901Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-adc02ae56c4f1fc51ac4",
+          "file": "content.spec.ts",
+          "line": 36,
+          "column": 7
+        },
+        {
+          "title": "[Content] Careers ÔÇö nav links present",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3433,
+                  "error": {
+                    "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Careers\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Nav link \"Search\" from Webflow not found in Next.js Careers\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[32m`Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m     }\n \u001b[90m 74 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 72
+                      },
+                      "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Careers\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  70 |         found,\n  71 |         `Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\n> 72 |       ).toBe(true);\n     |         ^\n  73 |     }\n  74 |   });\n  75 | }\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Careers Nav Links ===\n"
+                    },
+                    {
+                      "text": "Webflow : About us, School plan, Curriculum, Search, Careers, Donate, Contact\n"
+                    },
+                    {
+                      "text": "Next.js : Al-Hayaat School, Home, About Us, School Plan, Curriculum, Careers, Contact, Donate, Home\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:13.487Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Careers-ÔÇö-nav-links-present-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-f2c41ada34a419596e24",
+          "file": "content.spec.ts",
+          "line": 54,
+          "column": 7
+        },
+        {
+          "title": "[Content] Contact ÔÇö headings match",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3490,
+                  "error": {
+                    "message": "Error: Missing heading \"Style Guide\" (h1) on Next.js Contact page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Missing heading \"Style Guide\" (h1) on Next.js Contact page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:32:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 32
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 31 |\u001b[39m         \u001b[32m`Missing heading \"${wfH.text}\" (${wfH.tag}) on Next.js ${entry.name} page`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     }\n \u001b[90m 34 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 32
+                      },
+                      "message": "Error: Missing heading \"Style Guide\" (h1) on Next.js Contact page\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  30 |         found,\n  31 |         `Missing heading \"${wfH.text}\" (${wfH.tag}) on Next.js ${entry.name} page`\n> 32 |       ).toBe(true);\n     |         ^\n  33 |     }\n  34 |   });\n  35 |\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:32:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Contact Headings ===\n"
+                    },
+                    {
+                      "text": "Webflow : h1: \"Style Guide\" | h2: \"Structure Classes\" | h2: \"Headings\" | h1: \"Sample text helps you understand how real text may look. Sample text is being used as a placeholder.\" | h1: \"Sample text helps you understand how real text may look. Sample text is being used as a placeholder.\" | h2: \"Sample text is being used as a placeholder. Sample text helps you understand how real text may look.\" | h2: \"Sample text is being used as a placeholder. Sample text helps you understand how real text may look.\" | h3: \"Sample text helps you understand how real text may look on your website. Sample text is being used as a placeholder for real text that is normally present.\" | h3: \"Sample text helps you understand how real text may look on your website. Sample text is being used as a placeholder for real text that is normally present.\" | h4: \"Sample text is being used as a placeholder. Sample text helps you understand how real text may look. Sample text is being used as a placeholder for real text that is normally present.\" | h4: \"Sample text is being used as a placeholder. Sample text helps you understand how real text may look. Sample text is being used as a placeholder for real text that is normally present.\" | h5: \"Sample text is being used as a placeholder. Sample text helps you understand how real text may look. Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look.\" | h5: \"Sample text is being used as a placeholder. Sample text helps you understand how real text may look. Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look.\" | h6: \"Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look. Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look.\" | h6: \"Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look. Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look.\" | h2: \"Other HTML Tags\" | h2: \"Text Classes\" | h3: \"Text Sizes\" | h3: \"Text Styles\" | h3: \"Text Weights\" | h3: \"Text Alignments\" | h2: \"Buttons\" | h2: \"Colors\" | h3: \"Text Colors\" | h3: \"Background Colors\" | h2: \"Max widths\" | h2: \"Paddings\" | h3: \"Direction Classes\" | h3: \"Size Classes\" | h2: \"Margins\" | h3: \"Direction Classes\" | h3: \"Size Classes\" | h2: \"Spacers\" | h2: \"Icons\" | h2: \"Useful utility systems\" | h2: \"Webflow elements\" | h1: \"Heading 1\" | h2: \"Heading 2\" | h3: \"Heading 3\" | h4: \"Heading 4\" | h5: \"Heading 5\" | h6: \"Heading 6\" | h1: \"Contact\" | h2: \"Join Our Community\"\n"
+                    },
+                    {
+                      "text": "Next.js : h1: \"Contact\" | h3: \"Email\" | h3: \"Phone\" | h3: \"Address\" | h2: \"Send us a Message\" | h2: \"Join Our Community\" | h3: \"MENU\" | h3: \"CONTACT\" | h3: \"NEWSLETTER\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:19.277Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Contact-ÔÇö-headings-match-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 32
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-2204d82e012136a9a09a",
+          "file": "content.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "[Content] Contact ÔÇö paragraph text coverage",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3489,
+                  "error": {
+                    "message": "Error: Contact: Next.js has fewer paragraphs (10) than Webflow (32)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m32\u001b[39m\nReceived:    \u001b[31m10\u001b[39m",
+                    "stack": "Error: Contact: Next.js has fewer paragraphs (10) than Webflow (32)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m32\u001b[39m\nReceived:    \u001b[31m10\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:51:7",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 7,
+                      "line": 51
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 49 |\u001b[39m       njParas\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m\n \u001b[90m 50 |\u001b[39m       \u001b[32m`${entry.name}: Next.js has fewer paragraphs (${njParas.length}) than Webflow (${wfParas.length})`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 51 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(wfParas\u001b[33m.\u001b[39mlength)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 52 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 53 |\u001b[39m\n \u001b[90m 54 |\u001b[39m   test(\u001b[32m`[Content] ${entry.name} ÔÇö nav links present`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 7,
+                        "line": 51
+                      },
+                      "message": "Error: Contact: Next.js has fewer paragraphs (10) than Webflow (32)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m32\u001b[39m\nReceived:    \u001b[31m10\u001b[39m\n\n  49 |       njParas.length,\n  50 |       `${entry.name}: Next.js has fewer paragraphs (${njParas.length}) than Webflow (${wfParas.length})`\n> 51 |     ).toBeGreaterThanOrEqual(wfParas.length);\n     |       ^\n  52 |   });\n  53 |\n  54 |   test(`[Content] ${entry.name} ÔÇö nav links present`, async ({ page }) => {\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:51:7"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Contact Paragraphs ===\n"
+                    },
+                    {
+                      "text": "Webflow: 32 paragraphs\n"
+                    },
+                    {
+                      "text": "Next.js: 10 paragraphs\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:25.264Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Contact-ÔÇö-paragraph-text-coverage-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 7,
+                    "line": 51
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-94f87da5f98d1eaa8254",
+          "file": "content.spec.ts",
+          "line": 36,
+          "column": 7
+        },
+        {
+          "title": "[Content] Contact ÔÇö nav links present",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3247,
+                  "error": {
+                    "message": "Error: Nav link \"Read the docs\" from Webflow not found in Next.js Contact\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Nav link \"Read the docs\" from Webflow not found in Next.js Contact\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[32m`Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m     }\n \u001b[90m 74 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 72
+                      },
+                      "message": "Error: Nav link \"Read the docs\" from Webflow not found in Next.js Contact\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  70 |         found,\n  71 |         `Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\n> 72 |       ).toBe(true);\n     |         ^\n  73 |     }\n  74 |   });\n  75 | }\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Contact Nav Links ===\n"
+                    },
+                    {
+                      "text": "Webflow : Read the docs, About Finsweet, About us, School plan, Curriculum, Search, Careers, Donate, Contact\n"
+                    },
+                    {
+                      "text": "Next.js : Al-Hayaat School, Home, About Us, School Plan, Curriculum, Careers, Contact, Donate, Home\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:31.297Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Contact-ÔÇö-nav-links-present-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-1d3466c847509aae79bf",
+          "file": "content.spec.ts",
+          "line": 54,
+          "column": 7
+        },
+        {
+          "title": "[Content] Donate ÔÇö headings match",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5718,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Donate Headings ===\n"
+                    },
+                    {
+                      "text": "Webflow : h1: \"Donate\" | h2: \"Contribute Today For a Brighter Tomorrow\" | h4: \"Pledge for Donations\" | h4: \"E-Transfer\" | h4: \"Cheques\" | h4: \"Credit Card\" | h4: \"EFT/Wire\" | h2: \"Join Our Community\"\n"
+                    },
+                    {
+                      "text": "Next.js : h1: \"Donate\" | h2: \"Contribute Today For a Brighter Tomorrow\" | h3: \"Pledge for Donations\" | h3: \"E-Transfer\" | h3: \"Cheques\" | h3: \"Credit Card\" | h3: \"EFT/Wire\" | h2: \"Make a Donation\" | h2: \"Join Our Community\" | h3: \"MENU\" | h3: \"CONTACT\" | h3: \"NEWSLETTER\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:36.925Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-1642d3120d95c54dae58",
+          "file": "content.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "[Content] Donate ÔÇö paragraph text coverage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3315,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Donate Paragraphs ===\n"
+                    },
+                    {
+                      "text": "Webflow: 1 paragraphs\n"
+                    },
+                    {
+                      "text": "Next.js: 17 paragraphs\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:42.853Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-fe55afdbefefbeb1bef2",
+          "file": "content.spec.ts",
+          "line": 36,
+          "column": 7
+        },
+        {
+          "title": "[Content] Donate ÔÇö nav links present",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3059,
+                  "error": {
+                    "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Donate\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Nav link \"Search\" from Webflow not found in Next.js Donate\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[32m`Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m     }\n \u001b[90m 74 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 72
+                      },
+                      "message": "Error: Nav link \"Search\" from Webflow not found in Next.js Donate\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  70 |         found,\n  71 |         `Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\n> 72 |       ).toBe(true);\n     |         ^\n  73 |     }\n  74 |   });\n  75 | }\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Donate Nav Links ===\n"
+                    },
+                    {
+                      "text": "Webflow : About us, School plan, Curriculum, Search, Careers, Donate, Contact\n"
+                    },
+                    {
+                      "text": "Next.js : Al-Hayaat School, Home, About Us, School Plan, Curriculum, Careers, Contact, Donate\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:46.190Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-Donate-ÔÇö-nav-links-present-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-9cdf24c94ba95c03f4be",
+          "file": "content.spec.ts",
+          "line": 54,
+          "column": 7
+        },
+        {
+          "title": "[Content] SchoolPlans ÔÇö headings match",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3912,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== SchoolPlans Headings ===\n"
+                    },
+                    {
+                      "text": "Webflow : h1: \"School Plans\" | h5: \"Set to open\" | h5: \"Connect with our community\" | h3: \"Support Our Mission\" | h2: \"Join Our Community\"\n"
+                    },
+                    {
+                      "text": "Next.js : h1: \"School Plans\" | h3: \"Set to open\" | h3: \"Connect with our community\" | h2: \"Support Our Mission\" | h2: \"Join Our Community\" | h3: \"MENU\" | h3: \"CONTACT\" | h3: \"NEWSLETTER\"\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:51.443Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-7f596c6e939555af10b3",
+          "file": "content.spec.ts",
+          "line": 12,
+          "column": 7
+        },
+        {
+          "title": "[Content] SchoolPlans ÔÇö paragraph text coverage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3135,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== SchoolPlans Paragraphs ===\n"
+                    },
+                    {
+                      "text": "Webflow: 0 paragraphs\n"
+                    },
+                    {
+                      "text": "Next.js: 8 paragraphs\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:55.544Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-fc33afc6d766eb928233",
+          "file": "content.spec.ts",
+          "line": 36,
+          "column": 7
+        },
+        {
+          "title": "[Content] SchoolPlans ÔÇö nav links present",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3145,
+                  "error": {
+                    "message": "Error: Nav link \"Search\" from Webflow not found in Next.js SchoolPlans\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Nav link \"Search\" from Webflow not found in Next.js SchoolPlans\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                      "column": 9,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[32m`Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m     }\n \u001b[90m 74 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                        "column": 9,
+                        "line": 72
+                      },
+                      "message": "Error: Nav link \"Search\" from Webflow not found in Next.js SchoolPlans\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  70 |         found,\n  71 |         `Nav link \"${wfLink.text}\" from Webflow not found in Next.js ${entry.name}`\n> 72 |       ).toBe(true);\n     |         ^\n  73 |     }\n  74 |   });\n  75 | }\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts:72:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== SchoolPlans Nav Links ===\n"
+                    },
+                    {
+                      "text": "Webflow : About us, School plan, Curriculum, Search, Careers, Donate, Contact\n"
+                    },
+                    {
+                      "text": "Next.js : Al-Hayaat School, Home, About Us, School Plan, Curriculum, Careers, Contact, Donate, Home\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:22:58.710Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\content--Content-SchoolPlans-ÔÇö-nav-links-present-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\content.spec.ts",
+                    "column": 9,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d74cd27346db6aa64657-757c821770701f8b9408",
+          "file": "content.spec.ts",
+          "line": 54,
+          "column": 7
+        }
+      ]
+    },
+    {
+      "title": "forms.spec.ts",
+      "file": "forms.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[Forms] Application ÔÇö input fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8323,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Application Forms ===\n"
+                    },
+                    {
+                      "text": "Webflow inputs (0): []\n"
+                    },
+                    {
+                      "text": "Next.js inputs (6): [\n  {\n    \"type\": \"text\",\n    \"name\": \"student.firstName\",\n    \"placeholder\": \"First name\",\n    \"required\": false\n  },\n  {\n    \"type\": \"text\",\n    \"name\": \"student.lastName\",\n    \"placeholder\": \"Last name\",\n    \"required\": false\n  },\n  {\n    \"type\": \"date\",\n    \"name\": \"student.dateOfBirth\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"text\",\n    \"name\": \"\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"text\",\n    \"name\": \"student.previousSchool\",\n    \"placeholder\": \"Previous school name (if applicable)\",\n    \"required\": false\n  },\n  {\n    \"type\": \"email\",\n    \"name\": \"email\",\n    \"placeholder\": \"Enter your email\",\n    \"required\": false\n  }\n]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:12.530Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-da29e73244215a8b6a0e",
+          "file": "forms.spec.ts",
+          "line": 14,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Application ÔÇö labels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4123,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Application Labels ===\n"
+                    },
+                    {
+                      "text": "Webflow: \n"
+                    },
+                    {
+                      "text": "Next.js: First Name\n*, Last Name\n*, Date of Birth\n*, Grade Applying For\n*, Previous School\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:21.170Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-1346fd45cdf3a551d500",
+          "file": "forms.spec.ts",
+          "line": 32,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Application ÔÇö submit button",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4558,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Application Buttons ===\n"
+                    },
+                    {
+                      "text": "Webflow submit: \u001b[90mundefined\u001b[39m\n"
+                    },
+                    {
+                      "text": "Next.js submit: { tag: \u001b[32m'button'\u001b[39m, text: \u001b[32m''\u001b[39m, type: \u001b[32m'button'\u001b[39m }\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:25.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-f4eeea1cabde562bd58a",
+          "file": "forms.spec.ts",
+          "line": 55,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Careers ÔÇö input fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5047,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Careers Forms ===\n"
+                    },
+                    {
+                      "text": "Webflow inputs (0): []\n"
+                    },
+                    {
+                      "text": "Next.js inputs (1): [\n  {\n    \"type\": \"email\",\n    \"name\": \"email\",\n    \"placeholder\": \"Enter your email\",\n    \"required\": false\n  }\n]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:29.936Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-29b29adec6911b70f026",
+          "file": "forms.spec.ts",
+          "line": 14,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Careers ÔÇö labels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3320,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Careers Labels ===\n"
+                    },
+                    {
+                      "text": "Webflow: \n"
+                    },
+                    {
+                      "text": "Next.js: \n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:35.051Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-81ae2c0ecb8f3254ad20",
+          "file": "forms.spec.ts",
+          "line": 32,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Careers ÔÇö submit button",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4999,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Careers Buttons ===\n"
+                    },
+                    {
+                      "text": "Webflow submit: \u001b[90mundefined\u001b[39m\n"
+                    },
+                    {
+                      "text": "Next.js submit: { tag: \u001b[32m'button'\u001b[39m, text: \u001b[32m''\u001b[39m, type: \u001b[32m'button'\u001b[39m }\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:38.411Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-50d1fd79873fb94c0ecf",
+          "file": "forms.spec.ts",
+          "line": 55,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Contact ÔÇö input fields",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 4284,
+                  "error": {
+                    "message": "Error: Contact: Next.js has fewer inputs (5) than Webflow (11)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m11\u001b[39m\nReceived:    \u001b[31m5\u001b[39m",
+                    "stack": "Error: Contact: Next.js has fewer inputs (5) than Webflow (11)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m11\u001b[39m\nReceived:    \u001b[31m5\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\forms.spec.ts:29:7",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\forms.spec.ts",
+                      "column": 7,
+                      "line": 29
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 27 |\u001b[39m       njForm\u001b[33m.\u001b[39minputs\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m\n \u001b[90m 28 |\u001b[39m       \u001b[32m`${entry.name}: Next.js has fewer inputs (${njForm.inputs.length}) than Webflow (${wfForm.inputs.length})`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 29 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(wfForm\u001b[33m.\u001b[39minputs\u001b[33m.\u001b[39mlength)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 30 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m\n \u001b[90m 32 |\u001b[39m   test(\u001b[32m`[Forms] ${entry.name} ÔÇö labels`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\forms.spec.ts",
+                        "column": 7,
+                        "line": 29
+                      },
+                      "message": "Error: Contact: Next.js has fewer inputs (5) than Webflow (11)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m11\u001b[39m\nReceived:    \u001b[31m5\u001b[39m\n\n  27 |       njForm.inputs.length,\n  28 |       `${entry.name}: Next.js has fewer inputs (${njForm.inputs.length}) than Webflow (${wfForm.inputs.length})`\n> 29 |     ).toBeGreaterThanOrEqual(wfForm.inputs.length);\n     |       ^\n  30 |   });\n  31 |\n  32 |   test(`[Forms] ${entry.name} ÔÇö labels`, async ({ page }) => {\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\forms.spec.ts:29:7"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Contact Forms ===\n"
+                    },
+                    {
+                      "text": "Webflow inputs (11): [\n  {\n    \"type\": \"text\",\n    \"name\": \"First-Name\",\n    \"placeholder\": \"First Name\",\n    \"required\": false\n  },\n  {\n    \"type\": \"textarea\",\n    \"name\": \"Message\",\n    \"placeholder\": \"Message\",\n    \"required\": false\n  },\n  {\n    \"type\": \"select-one\",\n    \"name\": \"Select\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"checkbox\",\n    \"name\": \"Checkbox\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"radio\",\n    \"name\": \"Radio\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"submit\",\n    \"name\": \"\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"text\",\n    \"name\": \"name\",\n    \"placeholder\": \"\",\n    \"required\": true\n  },\n  {\n    \"type\": \"email\",\n    \"name\": \"email\",\n    \"placeholder\": \"\",\n    \"required\": true\n  },\n  {\n    \"type\": \"text\",\n    \"name\": \"Subject\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"textarea\",\n    \"name\": \"Message\",\n    \"placeholder\": \"\",\n    \"required\": true\n  },\n  {\n    \"type\": \"submit\",\n    \"name\": \"\",\n    \"placeholder\": \"\",\n    \"required\": false\n  }\n]\n"
+                    },
+                    {
+                      "text": "Next.js inputs (5): [\n  {\n    \"type\": \"text\",\n    \"name\": \"honeypot\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"text\",\n    \"name\": \"name\",\n    \"placeholder\": \"Your name\",\n    \"required\": false\n  },\n  {\n    \"type\": \"email\",\n    \"name\": \"email\",\n    \"placeholder\": \"your@email.com\",\n    \"required\": false\n  },\n  {\n    \"type\": \"textarea\",\n    \"name\": \"message\",\n    \"placeholder\": \"Your message\",\n    \"required\": false\n  },\n  {\n    \"type\": \"email\",\n    \"name\": \"email\",\n    \"placeholder\": \"Enter your email\",\n    \"required\": false\n  }\n]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:43.449Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\forms--Forms-Contact-ÔÇö-input-fields-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\forms.spec.ts",
+                    "column": 7,
+                    "line": 29
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-0aaaff1200af33c1a7a3",
+          "file": "forms.spec.ts",
+          "line": 14,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Contact ÔÇö labels",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 4167,
+                  "error": {
+                    "message": "Error: Label \"Text Input\" from Webflow not found in Next.js Contact form\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Label \"Text Input\" from Webflow not found in Next.js Contact form\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\forms.spec.ts:51:9",
+                    "location": {
+                      "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\forms.spec.ts",
+                      "column": 9,
+                      "line": 51
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 49 |\u001b[39m         found\u001b[33m,\u001b[39m\n \u001b[90m 50 |\u001b[39m         \u001b[32m`Label \"${wfLabel.text}\" from Webflow not found in Next.js ${entry.name} form`\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 51 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 52 |\u001b[39m     }\n \u001b[90m 53 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 54 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\forms.spec.ts",
+                        "column": 9,
+                        "line": 51
+                      },
+                      "message": "Error: Label \"Text Input\" from Webflow not found in Next.js Contact form\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  49 |         found,\n  50 |         `Label \"${wfLabel.text}\" from Webflow not found in Next.js ${entry.name} form`\n> 51 |       ).toBe(true);\n     |         ^\n  52 |     }\n  53 |   });\n  54 |\n    at C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\forms.spec.ts:51:9"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "\n=== Contact Labels ===\n"
+                    },
+                    {
+                      "text": "Webflow: Text Input, Text Area, Select field, Checkbox field, Checkbox, Radio button, Radio, Name *, Email *, Subject, Message *\n"
+                    },
+                    {
+                      "text": "Next.js: Name\n*, Email\n*, Message\n*\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:20:52.686Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mohdr\\projects\\webflow\\test-results\\forms--Forms-Contact-ÔÇö-labels-desktop\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mohdr\\projects\\webflow\\tests\\compare\\forms.spec.ts",
+                    "column": 9,
+                    "line": 51
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-adcea4e937afaa9a96a9",
+          "file": "forms.spec.ts",
+          "line": 32,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Contact ÔÇö submit button",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4834,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Contact Buttons ===\n"
+                    },
+                    {
+                      "text": "Webflow submit: { tag: \u001b[32m'input'\u001b[39m, text: \u001b[32m''\u001b[39m, type: \u001b[32m'submit'\u001b[39m }\n"
+                    },
+                    {
+                      "text": "Next.js submit: { tag: \u001b[32m'button'\u001b[39m, text: \u001b[32m''\u001b[39m, type: \u001b[32m'button'\u001b[39m }\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:00.955Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-db008ba2293af08a581f",
+          "file": "forms.spec.ts",
+          "line": 55,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Donate ÔÇö input fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6252,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Donate Forms ===\n"
+                    },
+                    {
+                      "text": "Webflow inputs (0): []\n"
+                    },
+                    {
+                      "text": "Next.js inputs (5): [\n  {\n    \"type\": \"text\",\n    \"name\": \"donorName\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"email\",\n    \"name\": \"donorEmail\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"text\",\n    \"name\": \"donorAddress\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"checkbox\",\n    \"name\": \"\",\n    \"placeholder\": \"\",\n    \"required\": false\n  },\n  {\n    \"type\": \"email\",\n    \"name\": \"email\",\n    \"placeholder\": \"Enter your email\",\n    \"required\": false\n  }\n]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:06.077Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-e3140f91796ab4f5bc6f",
+          "file": "forms.spec.ts",
+          "line": 14,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Donate ÔÇö labels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 9123,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Donate Labels ===\n"
+                    },
+                    {
+                      "text": "Webflow: \n"
+                    },
+                    {
+                      "text": "Next.js: Donation Amount (CAD), Full name, Email address, Mailing address (optional ÔÇö required for tax receipt), Make this donation anonymous\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:12.370Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-c6a2a75578aae8dc77ba",
+          "file": "forms.spec.ts",
+          "line": 32,
+          "column": 7
+        },
+        {
+          "title": "[Forms] Donate ÔÇö submit button",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4934,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\n=== Donate Buttons ===\n"
+                    },
+                    {
+                      "text": "Webflow submit: \u001b[90mundefined\u001b[39m\n"
+                    },
+                    {
+                      "text": "Next.js submit: { tag: \u001b[32m'button'\u001b[39m, text: \u001b[32m''\u001b[39m, type: \u001b[32m'button'\u001b[39m }\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T21:21:21.559Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3d495e9d89fc3701f213-4f95ca614e36807d4823",
+          "file": "forms.spec.ts",
+          "line": 55,
+          "column": 7
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-03-17T21:18:53.176Z",
+    "duration": 249446.988,
+    "expected": 22,
+    "skipped": 0,
+    "unexpected": 17,
+    "flaky": 0
+  }
+}

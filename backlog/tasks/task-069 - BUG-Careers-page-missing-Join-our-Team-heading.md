@@ -1,9 +1,10 @@
 ---
 id: TASK-069
 title: '[BUG] Careers page missing Join our Team heading'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-17 21:34'
+updated_date: '2026-03-17 21:44'
 labels: []
 dependencies: []
 priority: medium

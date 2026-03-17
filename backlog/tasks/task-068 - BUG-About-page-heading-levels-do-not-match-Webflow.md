@@ -1,9 +1,10 @@
 ---
 id: TASK-068
 title: '[BUG] About page heading levels do not match Webflow'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-17 21:34'
+updated_date: '2026-03-17 21:44'
 labels: []
 dependencies: []
 priority: medium
