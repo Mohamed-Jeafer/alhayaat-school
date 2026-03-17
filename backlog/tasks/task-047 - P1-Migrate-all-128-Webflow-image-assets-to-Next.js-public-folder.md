@@ -1,9 +1,10 @@
 ---
 id: TASK-047
 title: '[P1] Migrate all 128 Webflow image assets to Next.js public folder'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-17 11:13'
+updated_date: '2026-03-17 11:38'
 labels:
   - assets
   - P1
@@ -42,3 +43,9 @@ The Webflow source has 128 image assets in `al-hayaat.webflow/images/` that are 
 - [ ] #4 Hero background images render on home page
 - [ ] #5 No broken image icons visible on any page
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Copied 128 Webflow assets from `al-hayaat.webflow/images/` into `public/images/` and updated shared logo usage to point at the migrated asset path.
+<!-- SECTION:FINAL_SUMMARY:END -->

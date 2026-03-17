@@ -1,10 +1,10 @@
 ---
 id: TASK-052
 title: '[P1] Fix design tokens and typography to match Webflow brand'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-17 11:15'
-updated_date: '2026-03-17 11:16'
+updated_date: '2026-03-17 11:38'
 labels:
   - design-system
   - P1
@@ -56,3 +56,9 @@ Files to update:
 - [ ] #3 No hardcoded #1e3a5f remains in src/
 - [ ] #4 globals.css defines all Webflow brand CSS custom properties
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Aligned the global brand system with Webflow by importing the Webflow font stack in `src/app/layout.tsx`, defining brand CSS variables in `src/app/globals.css`, updating `tailwind.config.ts`, and replacing the old `#1e3a5f` primary blue literals across `src/` with the Webflow `#1453a5`.
+<!-- SECTION:FINAL_SUMMARY:END -->
