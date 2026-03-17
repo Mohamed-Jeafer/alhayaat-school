@@ -27,7 +27,7 @@ export function WhyCard({
     >
       <CardContent className="flex flex-col gap-5 p-8">
         <div className="flex items-start justify-between">
-          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-muted">
+          <div className="flex h-14 w-14 items-center justify-center">
             {icon}
           </div>
           <Badge variant="secondary" className="text-sm font-bold tabular-nums">

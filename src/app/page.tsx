@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { BookOpen, GraduationCap, HeartHandshake, Star, Users } from 'lucide-react';
+import { HeartHandshake } from 'lucide-react';
 import { Container, Grid, Section } from '@/components/layout';
 import { CTASection, FadeIn, WhyCard, AnimatedCounter } from '@/components/ui';
 import { Button } from '@/components/ui/button';
@@ -19,10 +19,10 @@ type PaymentLogo = { id: string; src: string; alt: string };
 type NewsArticle = { id: string; title: string; excerpt: string; date: string; href: string };
 
 const WHY_ICONS = [
-  <BookOpen key="faith" className="h-6 w-6 text-brand-blue" />,
-  <GraduationCap key="curriculum" className="h-6 w-6 text-brand-blue" />,
-  <Star key="excellence" className="h-6 w-6 text-brand-blue" />,
-  <Users key="community" className="h-6 w-6 text-brand-blue" />,
+  <Image key="faith" src="/images/vector-1.webp" alt="" width={56} height={56} />,
+  <Image key="curriculum" src="/images/vector-2.webp" alt="" width={56} height={56} />,
+  <Image key="excellence" src="/images/vector-3.webp" alt="" width={56} height={56} />,
+  <Image key="community" src="/images/vector-4.webp" alt="" width={56} height={56} />,
 ];
 
 const collaboratorAccentMap = {
@@ -125,7 +125,21 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section background="white" padding="lg">
+      <Section background="white" padding="lg" className="relative">
+        <div
+          className="pointer-events-none absolute -right-52 hidden xl:block"
+          style={{ top: '-16rem' }}
+          aria-hidden="true"
+        >
+          <Image src="/images/circle-light-green.webp" alt="" width={467} height={467} />
+        </div>
+        <div
+          className="pointer-events-none absolute -left-52 hidden xl:block"
+          style={{ bottom: '-7rem', zIndex: -1 }}
+          aria-hidden="true"
+        >
+          <Image src="/images/circle-light-orange.webp" alt="" width={467} height={467} />
+        </div>
         <Container maxWidth="7xl">
           <FadeIn>
             <div className="mb-12 text-center">
@@ -282,58 +296,60 @@ export default function HomePage() {
 
       <Section background="white" padding="lg">
         <Container maxWidth="7xl">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
-            <FadeIn>
-              <div className="relative">
-                <h2 className="text-brand-black">{supportMission.heading}</h2>
-                <ul className="mt-6 space-y-4">
-                  {supportMission.points.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-left text-brand-black/75">
-                      <HeartHandshake className="mt-1 h-5 w-5 flex-shrink-0 text-brand-blue" />
-                      <span className="text-base leading-relaxed">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8">
-                  <Button render={<Link href={supportMission.cta.href} />} variant="secondary">
-                    {supportMission.cta.label}
-                  </Button>
-                </div>
-                <div className="mt-8">
-                  <p className="mb-3 text-sm font-medium text-brand-black/75">
-                    Guaranteed safe &amp; secure checkout:
-                  </p>
-                  <div className="flex flex-wrap items-center gap-3">
-                    {(supportMission.paymentLogos as PaymentLogo[]).map((logo) => (
-                      <div key={logo.id} className="rounded-xl border border-black/10 bg-white px-3 py-2 shadow-sm">
-                        <Image src={logo.src} alt={logo.alt} width={58} height={30} className="h-6 w-auto object-contain" />
-                      </div>
+          <div className="relative overflow-hidden rounded-xl bg-brand-blue px-10 py-14">
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
+              <FadeIn>
+                <div className="relative">
+                  <h2 className="text-white">{supportMission.heading}</h2>
+                  <ul className="mt-6 space-y-4">
+                    {supportMission.points.map((point) => (
+                      <li key={point} className="flex items-start gap-3 text-left text-white/80">
+                        <HeartHandshake className="mt-1 h-5 w-5 flex-shrink-0 text-white/70" />
+                        <span className="text-base leading-relaxed">{point}</span>
+                      </li>
                     ))}
+                  </ul>
+                  <div className="mt-8">
+                    <Button render={<Link href={supportMission.cta.href} />} variant="secondary">
+                      {supportMission.cta.label}
+                    </Button>
+                  </div>
+                  <div className="mt-8">
+                    <p className="mb-3 text-sm font-medium text-white/75">
+                      Guaranteed safe &amp; secure checkout:
+                    </p>
+                    <div className="flex flex-wrap items-center gap-3">
+                      {(supportMission.paymentLogos as PaymentLogo[]).map((logo) => (
+                        <div key={logo.id} className="rounded-xl border border-white/20 bg-white/10 px-3 py-2">
+                          <Image src={logo.src} alt={logo.alt} width={58} height={30} className="h-6 w-auto object-contain" />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
 
-            <FadeIn delay={120}>
-              <div className="relative mx-auto w-full max-w-[32rem]">
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-black/10 bg-white p-3 shadow-xl">
-                  <div className="relative aspect-[0.92] overflow-hidden rounded-[1.25rem]">
-                    <Image
-                      src={supportMission.image.src}
-                      alt={supportMission.image.alt}
-                      fill
-                      sizes="(max-width: 1024px) 90vw, 520px"
-                      className="object-cover"
-                    />
+              <FadeIn delay={120}>
+                <div className="relative mx-auto w-full max-w-[32rem]">
+                  <div className="relative overflow-hidden rounded-[1.75rem] border border-white/20 bg-white/10 p-3">
+                    <div className="relative aspect-[0.92] overflow-hidden rounded-[1.25rem]">
+                      <Image
+                        src={supportMission.image.src}
+                        alt={supportMission.image.alt}
+                        fill
+                        sizes="(max-width: 1024px) 90vw, 520px"
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
+                  <div className="absolute -right-4 top-6 hidden rounded-2xl bg-white p-3 shadow-lg md:block">
+                    <Image src={supportMission.decor.main} alt="" width={88} height={88} aria-hidden="true" />
+                  </div>
+                  <span className="absolute -left-2 bottom-10 h-4 w-4 rotate-45 bg-brand-yellow" aria-hidden="true" />
+                  <span className="absolute right-8 top-full mt-3 h-4 w-4 rotate-12 bg-brand-orange-light" aria-hidden="true" />
                 </div>
-                <div className="absolute -right-4 top-6 hidden rounded-2xl bg-white p-3 shadow-lg md:block">
-                  <Image src={supportMission.decor.main} alt="" width={88} height={88} aria-hidden="true" />
-                </div>
-                <span className="absolute -left-2 bottom-10 h-4 w-4 rotate-45 bg-brand-yellow" aria-hidden="true" />
-                <span className="absolute right-8 top-full mt-3 h-4 w-4 rotate-12 bg-brand-orange-light" aria-hidden="true" />
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           </div>
         </Container>
       </Section>

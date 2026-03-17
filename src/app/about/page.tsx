@@ -39,30 +39,28 @@ export default function AboutPage() {
   return (
     <>
       <section className="overflow-hidden bg-brand-off-white-background">
-        <Container maxWidth="7xl" className="py-20 sm:py-24">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-center">
-            <FadeIn>
-              <div className="relative max-w-xl">
-                <h1 className="text-brand-black">{hero.headline}</h1>
-                <p className="mt-5 text-lg leading-relaxed text-brand-black/75">{hero.subtext}</p>
-                <div className="mt-8">
-                  <Button render={<Link href={hero.cta.href} />}>{hero.cta.label}</Button>
-                </div>
-
-                <div className="pointer-events-none absolute -left-8 top-0 hidden lg:block">
-                  <Image src={hero.decor.shapeOne} alt="" width={120} height={112} aria-hidden="true" />
-                </div>
-                <div className="pointer-events-none absolute -bottom-10 left-28 hidden lg:block">
-                  <Image src={hero.decor.shapeTwo} alt="" width={96} height={74} aria-hidden="true" />
-                </div>
+        <Container maxWidth="7xl" className="pb-10 pt-20 sm:pt-24">
+          <FadeIn>
+            <div className="relative mx-auto max-w-[48rem] text-center">
+              <div className="pointer-events-none absolute -left-8 top-0 hidden lg:block">
+                <Image src={hero.decor.shapeOne} alt="" width={120} height={112} aria-hidden="true" />
               </div>
-            </FadeIn>
-
-            <FadeIn delay={120}>
-              <AutoScrollCarousel images={hero.carousel} />
-            </FadeIn>
-          </div>
+              <h1 className="text-brand-black">{hero.headline}</h1>
+              <p className="mt-5 text-lg leading-relaxed text-brand-black/75">{hero.subtext}</p>
+              <div className="mt-8 flex justify-center">
+                <Button render={<Link href={hero.cta.href} />}>{hero.cta.label}</Button>
+              </div>
+              <div className="pointer-events-none absolute -bottom-10 right-20 hidden lg:block">
+                <Image src={hero.decor.shapeTwo} alt="" width={96} height={74} aria-hidden="true" />
+              </div>
+            </div>
+          </FadeIn>
         </Container>
+        <div className="pb-20 pt-8">
+          <FadeIn delay={80}>
+            <AutoScrollCarousel images={hero.carousel} />
+          </FadeIn>
+        </div>
       </section>
 
       <Section background="white" padding="sm">
