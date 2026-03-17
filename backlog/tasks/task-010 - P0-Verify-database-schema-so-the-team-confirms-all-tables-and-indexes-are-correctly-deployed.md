@@ -69,6 +69,8 @@ Then it reports FAIL for donations table with the expected CREATE TABLE statemen
 TASK-010 is being advanced together with TASK-003 because the existing verification story is based on an outdated 5-table assumption and must be updated to validate the actual current schema surface.
 
 Updated `scripts/db/verify.sql` to assert the current six-table contract, critical columns, and required indexes. Verified the script passes locally against `alhayaat_db` after schema application and seed insertion.
+
+Verification workflow now reflects the real six-table contract and passes locally after schema application.
 <!-- SECTION:NOTES:END -->
 
 ## Definition of Done
