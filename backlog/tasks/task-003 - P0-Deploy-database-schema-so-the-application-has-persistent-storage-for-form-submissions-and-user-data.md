@@ -7,7 +7,7 @@ status: In Progress
 assignee:
   - Copilot
 created_date: '2026-03-15 10:51'
-updated_date: '2026-03-17 12:16'
+updated_date: '2026-03-17 12:20'
 labels:
   - phase-0
   - database
@@ -42,27 +42,27 @@ The project has moved beyond planning: API routes and admin views already depend
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Given the current Next.js app architecture and Webflow reference flows in `al-hayaat.webflow/`, when the database task is reviewed, then the backlog story and technical scope reflect the active raw-SQL `pg` implementation instead of outdated Prisma/5-table assumptions.
+- [x] #1 Given the current Next.js app architecture and Webflow reference flows in `al-hayaat.webflow/`, when the database task is reviewed, then the backlog story and technical scope reflect the active raw-SQL `pg` implementation instead of outdated Prisma/5-table assumptions.
 When scripts/db/schema.sql is executed
 Then all 5 tables are created with correct columns, data types, and constraints
 When the developer executes psql $DATABASE_URL -f scripts/db/schema.sql
 Then all 5 tables are created in the public schema without errors
-- [ ] #2 Given `scripts/db/schema.sql` is the schema source of truth, when the schema is aligned with the current application code, then all persisted workflows are represented correctly: contact submissions, newsletter subscribers, donations, admissions applications, career/job applications, and admin-user groundwork.
+- [x] #2 Given `scripts/db/schema.sql` is the schema source of truth, when the schema is aligned with the current application code, then all persisted workflows are represented correctly: contact submissions, newsletter subscribers, donations, admissions applications, career/job applications, and admin-user groundwork.
 When a SELECT query runs against each table
 Then all tables return 0 rows with no errors
 When the developer queries pg_indexes for the public schema
 Then 3 indexes exist: idx_contact_created, idx_applications_created, idx_donations_created
-- [ ] #3 Given the careers application flow is implemented via `src/app/api/jobs/apply/route.ts` and `src/lib/db/queries.ts`, when the schema is updated, then the table/column definitions match the code paths without runtime column mismatches.
+- [x] #3 Given the careers application flow is implemented via `src/app/api/jobs/apply/route.ts` and `src/lib/db/queries.ts`, when the schema is updated, then the table/column definitions match the code paths without runtime column mismatches.
 When \d+ is used to inspect each table
 Then all expected indexes exist on the correct columns
 When the developer executes psql $DATABASE_URL -f scripts/db/seed.sql
 Then sample data is inserted and SELECT COUNT(*) on each table returns > 0 rows
-- [ ] #4 Given the local PostgreSQL database is available, when the schema is applied to `alhayaat_db`, then the expected tables, constraints, and indexes are created successfully and the schema remains safe to re-run.
+- [x] #4 Given the local PostgreSQL database is available, when the schema is applied to `alhayaat_db`, then the expected tables, constraints, and indexes are created successfully and the schema remains safe to re-run.
 When schema.sql is executed again
 Then no error is thrown and all tables remain unchanged (CREATE TABLE IF NOT EXISTS)
 When the developer re-runs scripts/db/schema.sql
 Then no errors occur and existing data is preserved
-- [ ] #5 Given the database task is completed, when future engineers review the backlog and docs, then they can see the architecture review rationale, current schema decisions, and references back to `al-hayaat.webflow/` and current app files.
+- [x] #5 Given the database task is completed, when future engineers review the backlog and docs, then they can see the architecture review rationale, current schema decisions, and references back to `al-hayaat.webflow/` and current app files.
 When multiple API routes import from lib/db.ts
 Then only one Pool instance exists in memory per process
 When multiple concurrent queries execute
@@ -83,6 +83,8 @@ Then connections are reused from the pool and no connection limit errors occur
 
 <!-- SECTION:NOTES:BEGIN -->
 Architecture review completed against current Next.js app and `al-hayaat.webflow/`. Findings: the project uses raw SQL via `pg`, not Prisma; `scripts/db/schema.sql` is the active schema source; backlog/docs are stale; and the careers/job application schema currently drifts from `src/lib/db/queries.ts` and `src/app/api/jobs/apply/route.ts`.
+
+Implemented schema alignment in `scripts/db/schema.sql`, including `pgcrypto`, replay-safe compatibility handling for legacy `job_applications` columns, semantic careers columns that match the live query layer, applicant phone persistence, and indexes for active workflows. Applied the schema locally to `alhayaat_db`, ran `scripts/db/verify.sql`, and seeded deterministic sample rows across all six current tables.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary

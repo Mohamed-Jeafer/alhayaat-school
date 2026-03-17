@@ -7,7 +7,7 @@ status: In Progress
 assignee:
   - Copilot
 created_date: '2026-03-15 10:52'
-updated_date: '2026-03-17 12:16'
+updated_date: '2026-03-17 12:20'
 labels:
   - phase-0
   - database
@@ -37,13 +37,13 @@ Verification must now validate the real application contract instead of an outda
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Given the current schema contract, when verification runs, then it confirms the actual expected table set and key columns used by the implemented app routes rather than an outdated 5-table snapshot.
+- [x] #1 Given the current schema contract, when verification runs, then it confirms the actual expected table set and key columns used by the implemented app routes rather than an outdated 5-table snapshot.
 When the developer runs psql $DATABASE_URL -f scripts/db/verify.sql
 Then the script exits with code 0 and confirms all checks pass
-- [ ] #2 Given local PostgreSQL access is now working, when the verification workflow is executed against `alhayaat_db`, then it confirms all required tables and indexes exist with no schema drift against the current code paths.
+- [x] #2 Given local PostgreSQL access is now working, when the verification workflow is executed against `alhayaat_db`, then it confirms all required tables and indexes exist with no schema drift against the current code paths.
 When the developer queries information_schema.tables for the public schema
 Then exactly 5 tables are returned
-- [ ] #3 Given the schema may evolve as more admin features are implemented, when verification documentation is updated, then it clearly identifies which checks validate active production-critical workflows versus future/planned tables.
+- [x] #3 Given the schema may evolve as more admin features are implemented, when verification documentation is updated, then it clearly identifies which checks validate active production-critical workflows versus future/planned tables.
 When the developer queries each table's column list
 Then all expected columns are present with correct data types
 When the developer queries pg_indexes
@@ -67,6 +67,8 @@ Then it reports FAIL for donations table with the expected CREATE TABLE statemen
 
 <!-- SECTION:NOTES:BEGIN -->
 TASK-010 is being advanced together with TASK-003 because the existing verification story is based on an outdated 5-table assumption and must be updated to validate the actual current schema surface.
+
+Updated `scripts/db/verify.sql` to assert the current six-table contract, critical columns, and required indexes. Verified the script passes locally against `alhayaat_db` after schema application and seed insertion.
 <!-- SECTION:NOTES:END -->
 
 ## Definition of Done
@@ -76,18 +78,9 @@ TASK-010 is being advanced together with TASK-003 because the existing verificat
 - [ ] #3 All 3 indexes confirmed present
 - [ ] #4 Seed data verified with row counts > 0
 - [ ] #5 TASK-003 confirmed complete
-<!-- DOD:END -->
-otes
-
-<!-- SECTION:NOTES:BEGIN -->
-TASK-010 is being advanced together with TASK-003 because the existing verification story is based on an outdated 5-table assumption and must be updated to validate the actual current schema surface.
-<!-- SECTION:NOTES:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 scripts/db/verify.sql exits with code 0
-- [ ] #2 All 5 tables confirmed with correct columns
-- [ ] #3 All 3 indexes confirmed present
-- [ ] #4 Seed data verified with row counts > 0
-- [ ] #5 TASK-003 confirmed complete
+- [ ] #6 scripts/db/verify.sql exits with code 0
+- [ ] #7 All 5 tables confirmed with correct columns
+- [ ] #8 All 3 indexes confirmed present
+- [ ] #9 Seed data verified with row counts > 0
+- [ ] #10 TASK-003 confirmed complete
 <!-- DOD:END -->
