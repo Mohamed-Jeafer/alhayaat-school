@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { BookOpen, GraduationCap, MapPin, Star, Users } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { Container, Grid, PageHeader, Section } from '@/components/layout';
-import { AutoScrollCarousel, CTASection, FadeIn, TabsPanel, WhyCard } from '@/components/ui';
+import { AutoScrollCarousel, CTASection, FadeIn, TabsPanel, WhyCard, aboutWhyIcons } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import aboutContent from '@/content/about.json';
 
@@ -16,12 +16,7 @@ type TeamMember = {
   image?: { src: string; alt: string };
 };
 
-const WHY_ICONS = [
-  <BookOpen key="faith" className="h-6 w-6 text-brand-blue" />,
-  <GraduationCap key="curriculum" className="h-6 w-6 text-brand-blue" />,
-  <Star key="excellence" className="h-6 w-6 text-brand-blue" />,
-  <Users key="community" className="h-6 w-6 text-brand-blue" />,
-];
+const WHY_ICONS = aboutWhyIcons;
 
 export const metadata = {
   title: aboutContent.meta.title,

@@ -44,3 +44,7 @@ export { default as ConfirmDialog } from './ConfirmDialog'
 export { FadeIn } from './FadeIn'
 export { SlideIn } from './SlideIn'
 export { AnimatedCounter } from './AnimatedCounter'
+
+// Shared icon sets
+export { subjectIcons, subjectIconList, homeWhyIcons, aboutWhyIcons } from './icons'
+export type { SubjectId } from './icons'

@@ -1,28 +1,66 @@
 {
   "page": "curriculum",
   "hero": {
-    "title": "Academic and Curriculum Focus",
-    "breadcrumbs": [
-      { "label": "Home", "href": "/" },
-      { "label": "Curriculum" }
-    ]
+    "title": "Academic and Curriculum Focus"
   },
   "intro": {
     "body": "At Al-Hayaat School, our curriculum is designed to provide students with a comprehensive education that balances academic excellence with spiritual growth. Rooted in principles, our approach ensures students thrive intellectually, morally, and spiritually.",
     "subtext": "Our academic program integrates the Ontario educational standards with teachings, offering a well-rounded education."
   },
   "subjects": [
-    { "id": "language-arts", "label": "Language arts", "icon": "BookOpen" },
-    { "id": "studies", "label": "studies", "icon": "GraduationCap" },
-    { "id": "mathematics", "label": "Mathematics", "icon": "Calculator" },
-    { "id": "quranic-education", "label": "Quranic education", "icon": "BookMarked" },
-    { "id": "science", "label": "Science", "icon": "FlaskConical" },
-    { "id": "arabic-language", "label": "Arabic language", "icon": "Globe" },
-    { "id": "social-studies", "label": "Social studies", "icon": "Users" }
+    { "id": "language-arts", "label": "Language arts" },
+    { "id": "studies", "label": "studies" },
+    { "id": "mathematics", "label": "Mathematics" },
+    { "id": "quranic-education", "label": "Quranic education" },
+    { "id": "science", "label": "Science" },
+    { "id": "arabic-language", "label": "Arabic language" },
+    { "id": "social-studies", "label": "Social studies" }
+  ],
+  "carousel": [
+    {
+      "id": "curriculum-carousel-1",
+      "src": "/images/MUN03267-1.png",
+      "alt": "Young boy in a red sweater smiling and reaching out to a woman in a black hijab who is seated at a desk and smiling back."
+    },
+    {
+      "id": "curriculum-carousel-2",
+      "src": "/images/MUN03249.png",
+      "alt": "A child writing in a workbook with an adult pointing at the page during a learning session."
+    },
+    {
+      "id": "curriculum-carousel-3",
+      "src": "/images/MUN03216-1.png",
+      "alt": "Child in an orange hoodie drawing smiley faces on a whiteboard in a classroom."
+    },
+    {
+      "id": "curriculum-carousel-4",
+      "src": "/images/MUN03284-1.png",
+      "alt": "Four children walking in a school hallway past lockers and decorated walls, two girls wearing hijabs and one boy wearing light-up shoes."
+    },
+    {
+      "id": "curriculum-carousel-5",
+      "src": "/images/MUN03242-1.png",
+      "alt": "Three young students seated at desks in a classroom, focused on writing in their notebooks."
+    },
+    {
+      "id": "curriculum-carousel-6",
+      "src": "/images/MUN03197-21.png",
+      "alt": "Female teacher in a black hijab teaching Arabic script to children in a classroom."
+    },
+    {
+      "id": "curriculum-carousel-7",
+      "src": "/images/MUN03651-321.png",
+      "alt": "Three children sitting on the ground, one girl wearing a white hijab looking to the side, a boy crouching with his hand on his chin, and another girl wearing a black headscarf."
+    }
   ],
   "educators": {
     "heading": "Guidance from Experienced Educators",
-    "body": "Our dedicated team of teachers, principal, and board of directors bring a wealth of knowledge and experience to the classroom. They are committed to equipping students with the skills and mindset needed to succeed in the modern era while remaining firmly grounded in their identity. Their collective efforts ensure that the curriculum not only meets academic standards but also prepares students to face the challenges of today's dynamic world. By combining a strong academic foundation with guidance from experienced leaders, Al-Hayaat School is committed to nurturing students who excel in all aspects of life, contributing positively to their communities and beyond."
+    "body1": "Our dedicated team of teachers, principal, and board of directors bring a wealth of knowledge and experience to the classroom. They are committed to equipping students with the skills and mindset needed to succeed in the modern era while remaining firmly grounded in their identity. Their collective efforts ensure that the curriculum not only meets academic standards but also prepares students to face the challenges of today's dynamic world",
+    "body2": "By combining a strong academic foundation with guidance from experienced leaders, Al-Hayaat School is committed to nurturing students who excel in all aspects of life, contributing positively to their communities and beyond.",
+    "image": {
+      "src": "/images/MUN03244-132.png",
+      "alt": "A female teacher in a black hijab smiling and leaning over to assist a young girl in a black hijab who is drawing at a desk with a pink pencil case and water bottle."
+    }
   },
   "cta": {
     "heading": "Join Our Community",
