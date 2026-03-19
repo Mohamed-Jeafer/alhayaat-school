@@ -3,9 +3,10 @@ id: TASK-112
 title: >-
   [P2] Build AdmissionsRequirementsSection component to extract the Admissions
   requirements inline section
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-19 15:18'
+updated_date: '2026-03-19 20:23'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -55,13 +56,17 @@ The requirements section combines a download forms grid, a required documents li
 *Sizing rationale: Three sub-lists + download links + content JSON extraction.*
 
 ## Definition of Done
-- [ ] `src/components/sections/AdmissionsRequirementsSection.tsx` created
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] Inline section JSX removed from `src/app/admissions/page.tsx`
-- [ ] All content sourced from `src/content/admissions.json`
-- [ ] No inline styles
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 `src/components/sections/AdmissionsRequirementsSection.tsx` created
+- [ ] #2 Added to `src/components/sections/index.ts`
+- [ ] #3 Inline section JSX removed from `src/app/admissions/page.tsx`
+- [ ] #4 All content sourced from `src/content/admissions.json`
+- [ ] #5 No inline styles
+- [ ] #6 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+<!-- DOD:END -->
+
+
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
