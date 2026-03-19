@@ -3,10 +3,10 @@ id: TASK-104
 title: >-
   [P2] Build HomeHeroSection component to extract the Home page hero inline
   section
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-19 15:16'
-updated_date: '2026-03-19 17:49'
+updated_date: '2026-03-19 17:50'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -87,9 +87,8 @@ The Home page hero is the highest-visibility section on the site — it is the f
 - [ ] #9 Lighthouse Performance >90 on Home page
 - [ ] #10 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+
 <!-- DOD:END -->
-
-
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
@@ -99,3 +98,9 @@ The Home page hero is the highest-visibility section on the site — it is the f
 - [ ] #4 Given the user is on a 375px wide screen, When HomeHeroSection renders, Then the text is legible (min 16px), the CTA button is full-width and tappable, and no horizontal scroll occurs
 - [ ] #5 Given a developer swaps HomeHeroSection for a different component in page.tsx, When the page renders, Then the hero area is fully replaced with zero residual inline JSX from the old implementation
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Extracted 33-line hero section from src/app/page.tsx into HomeHeroSection component. Props: headline, subtext, cta, background (glitter/dashlines/dots), className?. All three background images use next/image with priority on glitter. Barrel updated. Zero TS errors. page.tsx is shorter.
+<!-- SECTION:FINAL_SUMMARY:END -->
