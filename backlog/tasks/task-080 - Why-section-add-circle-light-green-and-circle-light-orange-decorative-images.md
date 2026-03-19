@@ -1,9 +1,10 @@
 ---
 id: TASK-080
 title: Why section - add circle-light-green and circle-light-orange decorative images
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-17 23:38'
+updated_date: '2026-03-19 03:41'
 labels:
   - visual-qa
 dependencies: []
