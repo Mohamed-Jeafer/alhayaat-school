@@ -3,9 +3,10 @@ id: TASK-121
 title: >-
   [P2] Build SchoolPlanCardsSection component to extract the School Plan page
   cards inline section
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-19 15:22'
+updated_date: '2026-03-19 20:30'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -55,13 +56,17 @@ The school plan cards section is a 2-column `ColoredBorderCard` grid. Currently 
 *Sizing rationale: Card grid + content JSON extraction.*
 
 ## Definition of Done
-- [ ] `src/components/sections/SchoolPlanCardsSection.tsx` created
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] Inline section JSX removed from `src/app/school-plan/page.tsx`
-- [ ] Card content sourced from `src/content/school-plan.json`
-- [ ] No inline styles
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 `src/components/sections/SchoolPlanCardsSection.tsx` created
+- [ ] #2 Added to `src/components/sections/index.ts`
+- [ ] #3 Inline section JSX removed from `src/app/school-plan/page.tsx`
+- [ ] #4 Card content sourced from `src/content/school-plan.json`
+- [ ] #5 No inline styles
+- [ ] #6 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+<!-- DOD:END -->
+
+
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
