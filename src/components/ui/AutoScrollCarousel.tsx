@@ -10,15 +10,17 @@ export interface AutoScrollCarouselImage {
 export interface AutoScrollCarouselProps {
   images: AutoScrollCarouselImage[];
   className?: string;
+  /** Tailwind `from-*` class used for the edge-fade gradient. Defaults to `from-white`. */
+  fadeColor?: string;
 }
 
-export function AutoScrollCarousel({ images, className }: AutoScrollCarouselProps) {
+export function AutoScrollCarousel({ images, className, fadeColor = 'from-white' }: AutoScrollCarouselProps) {
   const loopImages = [...images, ...images];
 
   return (
     <div className={cn('group relative overflow-hidden', className)}>
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-white via-white/80 to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white via-white/80 to-transparent" />
+      <div className={cn('pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r to-transparent', fadeColor)} />
+      <div className={cn('pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l to-transparent', fadeColor)} />
       <div className="flex min-w-max animate-[webflow-marquee_28s_linear_infinite] gap-[1.6875rem] group-hover:[animation-play-state:paused]">
         {loopImages.map((image, index) => (
           <div

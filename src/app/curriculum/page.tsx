@@ -86,12 +86,14 @@ export default function CurriculumPage() {
           </FadeIn>
         </Container>
 
-        {/* Auto-scroll image carousel — full-width, same component as about page */}
-        <div className="overflow-hidden pb-[2.9375rem]">
-          <FadeIn delay={120}>
-            <AutoScrollCarousel images={content.carousel} />
-          </FadeIn>
-        </div>
+        {/* Auto-scroll image carousel — matches about page wrapper */}
+        <section className="overflow-hidden bg-brand-off-white-background">
+          <Container maxWidth="7xl" className="py-[4.375rem]">
+            <FadeIn delay={120}>
+              <AutoScrollCarousel images={content.carousel} fadeColor="from-[#fffcf9]" />
+            </FadeIn>
+          </Container>
+        </section>
       </section>
 
       {/* ── Academic growth / educators section ────────────────────── */}
@@ -108,7 +110,7 @@ export default function CurriculumPage() {
             {/* our-growth-contatiner: blue card */}
             <div className="flex h-full flex-col justify-between gap-12 overflow-hidden rounded-xl border-b-[13px] border-brand-yellow bg-brand-blue p-10 sm:p-[2.8125rem] lg:flex-row lg:gap-20 lg:p-[2.8125rem_2.8125rem_5rem]">
               {/* Left text column */}
-              <div className="w-full lg:max-w-[calc(100%-32rem)]">
+              <div className="w-full lg:max-w-[57%]">
                 <div className="mb-4">
                   <h2 className="text-white">{content.educators.heading}</h2>
                 </div>
@@ -120,7 +122,7 @@ export default function CurriculumPage() {
               </div>
 
               {/* Educator image — absolute on desktop, inline on tablet/mobile */}
-              <div className="relative w-full overflow-hidden rounded-tl-lg rounded-br-lg lg:absolute lg:right-6 lg:top-1/2 lg:-translate-y-1/2 lg:h-[35rem] lg:w-[30.25rem] lg:rounded-lg">
+              <div className="relative w-full overflow-hidden rounded-tl-lg rounded-br-lg lg:absolute lg:right-6 lg:top-1/2 lg:-translate-y-1/2 lg:h-[85%] lg:w-[38%] lg:rounded-lg">
                 <Image
                   src={content.educators.image.src}
                   alt={content.educators.image.alt}

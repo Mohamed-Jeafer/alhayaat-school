@@ -50,7 +50,7 @@ export default function AboutPage() {
         <Container maxWidth="7xl" className="py-[4.375rem]">
           <FadeIn>
             <div id="about-hero-carousel">
-              <AutoScrollCarousel images={hero.carousel} />
+              <AutoScrollCarousel images={hero.carousel} fadeColor="from-[#fffcf9]" />
             </div>
           </FadeIn>
         </Container>
