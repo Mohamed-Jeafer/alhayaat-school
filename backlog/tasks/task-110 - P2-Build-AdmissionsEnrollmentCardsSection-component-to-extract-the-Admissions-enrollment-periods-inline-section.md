@@ -3,10 +3,10 @@ id: TASK-110
 title: >-
   [P2] Build AdmissionsEnrollmentCardsSection component to extract the
   Admissions enrollment periods inline section
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-19 15:18'
-updated_date: '2026-03-19 20:19'
+updated_date: '2026-03-19 20:20'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -64,9 +64,8 @@ The enrollment periods section uses a 2-column `ColoredBorderCard` grid. Current
 - [ ] #5 No inline styles
 - [ ] #6 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+
 <!-- DOD:END -->
-
-
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
@@ -74,3 +73,9 @@ The enrollment periods section uses a 2-column `ColoredBorderCard` grid. Current
 - [ ] #2 Given the cards prop has 2 items, When the section renders, Then both cards are visible with their titles and body text sourced from content JSON
 - [ ] #3 Given the user is on a 375px wide screen, When AdmissionsEnrollmentCardsSection renders, Then the 2-column grid stacks to single-column with no horizontal scroll
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Created AdmissionsEnrollmentCardsSection.tsx with props { id?, heading, cards: EnrollmentCard[], className? }. ACCENT_COLORS kept internal to component (JSON cards have no accentColor field — spec was aspirational). Removed enrollmentAccents const from page. Replaced 18-line inline Section block. Grid/ColoredBorderCard imports removed from page (no longer used there). Barrel updated. Zero TS errors.
+<!-- SECTION:FINAL_SUMMARY:END -->
