@@ -3,10 +3,10 @@ id: TASK-090
 title: >-
   [BUG] Navigation — donate button uses Heart icon instead of Webflow coin SVG
   and shows school name text not in Webflow
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-19 02:56'
-updated_date: '2026-03-19 11:57'
+updated_date: '2026-03-19 11:59'
 labels:
   - visual-qa
   - bug
