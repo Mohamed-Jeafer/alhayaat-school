@@ -3,9 +3,10 @@ id: TASK-102
 title: >-
   [P2] Migrate SupportMissionSection from ui/ to sections/ and update all page
   imports
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-19 15:15'
+updated_date: '2026-03-19 17:14'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -57,13 +58,16 @@ As a developer, I want `SupportMissionSection` to live in `src/components/sectio
 *Sizing rationale: File move + updating imports across 3 pages.*
 
 ## Definition of Done
-- [ ] File moved to `src/components/sections/SupportMissionSection.tsx`
-- [ ] Removed from `src/components/ui/index.ts`
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] All 3 page imports updated — zero TypeScript errors
-- [ ] Home, Careers, School Plan render identically post-move
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 File moved to `src/components/sections/SupportMissionSection.tsx`
+- [ ] #2 Removed from `src/components/ui/index.ts`
+- [ ] #3 Added to `src/components/sections/index.ts`
+- [ ] #4 All 3 page imports updated — zero TypeScript errors
+- [ ] #5 Home, Careers, School Plan render identically post-move
+- [ ] #6 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+
+<!-- DOD:END -->
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
@@ -72,3 +76,9 @@ As a developer, I want `SupportMissionSection` to live in `src/components/sectio
 - [ ] #3 Given the developer imports SupportMissionSection from '@/components/sections', When they compile, Then TypeScript reports zero errors
 - [ ] #4 Given the user is on a 375px wide screen, When SupportMissionSection renders, Then the blue card layout stacks correctly with no horizontal scroll
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Migrated SupportMissionSection from src/components/ui/ to src/components/sections/. Updated internal FadeIn import to absolute path. Added SupportMissionSection and SupportMissionContent exports to src/components/sections/index.ts. Removed SupportMissionSection export from src/components/ui/index.ts. Updated import paths in all 3 consuming pages: page.tsx, careers/page.tsx, school-plan/page.tsx. npx tsc --noEmit exits with code 0.
+<!-- SECTION:FINAL_SUMMARY:END -->
