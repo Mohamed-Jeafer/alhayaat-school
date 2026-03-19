@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { Container, GreenHero, Section } from '@/components/layout';
-import { ColoredBorderCard, FadeIn, SupportMissionSection } from '@/components/ui';
+import { ColoredBorderCard, FadeIn } from '@/components/ui';
+import { SupportMissionSection } from '@/components/sections';
 import { CTASection } from '@/components/sections';
 import { Button } from '@/components/ui/button';
 import content from '@/content/school-plan.json';

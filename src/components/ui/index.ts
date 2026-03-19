@@ -7,7 +7,6 @@
 export { HeroSection } from './HeroSection'
 export { FeatureCard } from './FeatureCard'
 export { WhyCard } from './WhyCard'
-export { SupportMissionSection } from './SupportMissionSection'
 export { EnrollNowButton } from './EnrollNowButton'
 export { Icon } from './Icon'
 export { ImageWrapper } from './ImageWrapper'

@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Container, Section } from '@/components/layout';
-import { FadeIn, AnimatedCounter, homeWhyIcons, subjectIconList, SupportMissionSection } from '@/components/ui';
+import { FadeIn, AnimatedCounter, homeWhyIcons, subjectIconList } from '@/components/ui';
+import { SupportMissionSection } from '@/components/sections';
 import { CTASection } from '@/components/sections';
 import { WhySection } from '@/components/sections';
 import type { WhySectionCard } from '@/components/sections';
