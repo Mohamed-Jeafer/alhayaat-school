@@ -3,10 +3,10 @@ id: TASK-120
 title: >-
   [P2] Build DonateInfoSection component to extract the Donate page info and
   form inline section
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-19 15:22'
-updated_date: '2026-03-19 20:27'
+updated_date: '2026-03-19 20:29'
 labels:
   - UI_COMPONENT
   - section-componentization
