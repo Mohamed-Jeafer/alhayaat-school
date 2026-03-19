@@ -3,9 +3,10 @@ id: TASK-126
 title: >-
   [P2] Update all page files to import from sections/ barrel so page files are
   thin orchestrators
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-19 15:24'
+updated_date: '2026-03-19 20:31'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -76,15 +77,19 @@ This is the integration story that closes the section componentization effort. O
 *Sizing rationale: Auditing 8 pages + final import cleanup + build verification across entire site.*
 
 ## Definition of Done
-- [ ] All 8 page files contain zero inline section JSX — only section component imports
-- [ ] All section imports resolve from `@/components/sections`
-- [ ] `next build` passes with zero TypeScript errors
-- [ ] All 8 pages render correctly at 375px, 768px, 1440px
-- [ ] No raw `<img>` tags in any page file
-- [ ] No inline styles in any page file
-- [ ] Lighthouse scores meet targets on all pages
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 All 8 page files contain zero inline section JSX — only section component imports
+- [ ] #2 All section imports resolve from `@/components/sections`
+- [ ] #3 `next build` passes with zero TypeScript errors
+- [ ] #4 All 8 pages render correctly at 375px, 768px, 1440px
+- [ ] #5 No raw `<img>` tags in any page file
+- [ ] #6 No inline styles in any page file
+- [ ] #7 Lighthouse scores meet targets on all pages
+- [ ] #8 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+<!-- DOD:END -->
+
+
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
