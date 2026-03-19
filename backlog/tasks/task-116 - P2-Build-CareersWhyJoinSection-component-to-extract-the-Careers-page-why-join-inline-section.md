@@ -3,10 +3,10 @@ id: TASK-116
 title: >-
   [P2] Build CareersWhyJoinSection component to extract the Careers page
   why-join inline section
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-19 15:20'
-updated_date: '2026-03-19 20:24'
+updated_date: '2026-03-19 20:27'
 labels:
   - UI_COMPONENT
   - section-componentization
