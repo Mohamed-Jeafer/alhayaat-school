@@ -3,9 +3,10 @@ id: TASK-108
 title: >-
   [P2] Build AboutTeamSection component to extract the About page team members
   inline section
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-19 15:17'
+updated_date: '2026-03-19 19:41'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -59,14 +60,18 @@ The team section is currently inline JSX in `src/app/about/page.tsx` with one ar
 *Sizing rationale: Member list + optional photo handling + board photo + content JSON extraction.*
 
 ## Definition of Done
-- [ ] `src/components/sections/AboutTeamSection.tsx` created with typed props
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] Inline team JSX removed from `src/app/about/page.tsx`
-- [ ] Team content sourced from `src/content/about.json`
-- [ ] All images use `next/image` with non-empty alt
-- [ ] No inline styles
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 `src/components/sections/AboutTeamSection.tsx` created with typed props
+- [ ] #2 Added to `src/components/sections/index.ts`
+- [ ] #3 Inline team JSX removed from `src/app/about/page.tsx`
+- [ ] #4 Team content sourced from `src/content/about.json`
+- [ ] #5 All images use `next/image` with non-empty alt
+- [ ] #6 No inline styles
+- [ ] #7 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+<!-- DOD:END -->
+
+
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
