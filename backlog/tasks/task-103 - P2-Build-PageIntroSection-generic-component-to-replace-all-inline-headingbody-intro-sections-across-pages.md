@@ -3,10 +3,10 @@ id: TASK-103
 title: >-
   [P2] Build PageIntroSection generic component to replace all inline
   heading+body intro sections across pages
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-19 15:15'
-updated_date: '2026-03-19 17:24'
+updated_date: '2026-03-19 17:37'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -82,9 +82,8 @@ About, Careers, Contact, School Plan, Curriculum, and Admissions pages all have 
 - [ ] #7 WCAG 2.1 AA checked — heading hierarchy valid
 - [ ] #8 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+
 <!-- DOD:END -->
-
-
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
@@ -94,3 +93,9 @@ About, Careers, Contact, School Plan, Curriculum, and Admissions pages all have 
 - [ ] #4 Given the user is on a 375px wide screen, When PageIntroSection renders on any page, Then text is legible (min 16px body), layout is single-column, and no horizontal scroll occurs
 - [ ] #5 Given a className override is passed, When PageIntroSection renders, Then the custom class is applied to the section wrapper without breaking default styles
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Created PageIntroSection component with typed props (headline, body: string | string[], id?, className?). Replaced inline intro JSX in about, contact, school-plan, and curriculum pages. Careers intro was skipped — it is embedded inside a shared section wrapper with why_join and openings, not a standalone section. Barrel updated. Zero TypeScript errors. All 4 updated pages are shorter.
+<!-- SECTION:FINAL_SUMMARY:END -->
