@@ -3,10 +3,10 @@ id: TASK-106
 title: >-
   [P2] Build AboutHeroCarouselSection component to extract the About page
   carousel inline section
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-19 15:16'
-updated_date: '2026-03-19 19:30'
+updated_date: '2026-03-19 19:31'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -72,9 +72,8 @@ The About page carousel is a raw `<section>` tag wrapping `<AutoScrollCarousel>`
 - [ ] #6 No inline styles
 - [ ] #7 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+
 <!-- DOD:END -->
-
-
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
@@ -83,3 +82,9 @@ The About page carousel is a raw `<section>` tag wrapping `<AutoScrollCarousel>`
 - [ ] #3 Given the images prop is an empty array, When AboutHeroCarouselSection renders, Then the section renders without errors and shows no broken image slots
 - [ ] #4 Given the user is on a 375px wide screen, When AboutHeroCarouselSection renders, Then the carousel is contained within the viewport with no horizontal scroll
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Extracted 9-line carousel section from about/page.tsx into AboutHeroCarouselSection. Props: id?, images (AutoScrollCarouselImage[]), className?. AutoScrollCarouselImage imported directly from the source file (not re-exported from ui barrel). Removed AutoScrollCarousel import from about/page.tsx. Barrel updated. Zero TS errors. Page is shorter.
+<!-- SECTION:FINAL_SUMMARY:END -->
