@@ -3,7 +3,7 @@ id: TASK-071
 title: >-
   [BUG] Home hero section background is black — should be white with colored
   sparkle image
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-17 22:22'
 labels: []

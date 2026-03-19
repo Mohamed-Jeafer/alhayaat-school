@@ -94,7 +94,7 @@ export function Footer() {
 
   return (
     <footer id="site-footer" className="bg-brand-off-white-background text-brand-black" aria-label="Site footer">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 pt-[6.6875rem] pb-[3.625rem] sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
 
           <div id="footer-brand" className="lg:col-span-1">

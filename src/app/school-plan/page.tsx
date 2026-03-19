@@ -31,15 +31,15 @@ export default function SchoolPlanPage() {
   return (
     <>
       {/* Section matches Webflow section_school-plans: bg #fffcf9 */}
-      <Section id="school-plans-cards-section" background="off-white-bg" padding="lg">
+      <Section id="school-plans-cards-section" background="off-white-bg" padding="none" className="pt-[3.9375rem] pb-[3.125rem]">
         <Container maxWidth="7xl">
           <FadeIn>
-            <div id="school-plans-header" className="mx-auto max-w-4xl text-center">
+            <div id="school-plans-header" className="mx-auto max-w-[46.75rem] text-center">
               <p className="text-lg leading-relaxed text-brand-black/75">{content.intro.body}</p>
             </div>
           </FadeIn>
 
-          <div id="school-plans-card-container" className="mt-12 grid gap-6 lg:grid-cols-2">
+          <div id="school-plans-card-container" className="mt-[5.1875rem] grid gap-[3.125rem] lg:grid-cols-2">
             <FadeIn>
               <ColoredBorderCard
                 accent="yellow"

@@ -3,7 +3,7 @@ id: TASK-075
 title: >-
   [BUG] Home Why and Support Mission sections have gray background but Webflow
   uses white
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-17 22:33'
 labels:

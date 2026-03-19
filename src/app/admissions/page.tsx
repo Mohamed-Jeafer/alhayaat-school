@@ -25,7 +25,7 @@ export default function AdmissionsPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Section background="gray" padding="md" className="overflow-hidden">
+      <Section id="admissions-hero-section" background="white" padding="none" className="overflow-hidden pt-[5rem] pb-[6rem] sm:pt-[7rem] sm:pb-[8rem] lg:pt-[9.125rem]">
         <Container>
           <PageHeader
             title={hero.headline}

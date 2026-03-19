@@ -14,7 +14,7 @@ export default function CurriculumPage() {
   return (
     <>
       {/* ── Hero section ───────────────────────────────────────────── */}
-      <section className="bg-white">
+      <section id="curriculum-hero-section" className="bg-white">
         <Container maxWidth="7xl" className="pt-[4.9375rem]">
           <FadeIn>
             {/* Centered H1 title */}
@@ -89,12 +89,13 @@ export default function CurriculumPage() {
       </section>
 
       {/* ── Academic growth / educators section ────────────────────── */}
+      {/* id="curriculum-growth-section" for Playwright targeting (TASK-089) */}
       {/*
         Webflow: <div class="section-academic-growth"> (no section tag, no background)
         Contains our-growth-wrapper (height 42.75rem desktop, auto tablet)
         with absolutely-positioned educator image on the right at desktop.
       */}
-      <div className="px-4 pb-[7.4375rem] pt-[3.3125rem] sm:px-6 lg:px-10">
+      <div id="curriculum-growth-section" className="px-4 pb-[7.4375rem] pt-[3.3125rem] sm:px-6 lg:px-10">
         <div className="mx-auto max-w-7xl">
           {/* our-growth-wrapper: relative container, fixed height on desktop */}
           <div className="relative lg:h-[42.75rem]">

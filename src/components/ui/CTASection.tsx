@@ -47,35 +47,37 @@ export function CTASection({
           priority={false}
         />
       )}
-      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-8 text-center">
-        <h2 className="font-display text-[clamp(2.5rem,5vw,5rem)] leading-[0.75] font-normal">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-10 px-6 text-center lg:flex-row lg:items-center lg:justify-between lg:text-left">
+        <h2 className="font-display text-[clamp(3rem,5vw,5rem)] font-normal leading-[0.85] lg:max-w-[25rem] lg:leading-[0.75]">
           {heading}
         </h2>
-        <p
-          className={cn(
-            'max-w-2xl text-base leading-relaxed',
-            isPrimary ? 'text-primary-foreground/80' : 'text-white/80',
-          )}
-        >
-          {body}
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button
-            size="lg"
-            variant={isPrimary ? 'secondary' : 'default'}
-            render={<Link href={primaryCta.href} />}
+        <div className="flex flex-col items-center gap-6 lg:max-w-[41.6875rem] lg:items-start">
+          <p
+            className={cn(
+              'text-[1.25rem] leading-[1.4] lg:text-[2rem] lg:leading-[1.3]',
+              isPrimary ? 'text-primary-foreground/80' : 'text-white/80',
+            )}
           >
-            {primaryCta.label}
-          </Button>
-          {secondaryCta && (
+            {body}
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
             <Button
               size="lg"
-              variant="outline"
-              render={<Link href={secondaryCta.href} />}
+              variant={isPrimary ? 'secondary' : 'default'}
+              render={<Link href={primaryCta.href} />}
             >
-              {secondaryCta.label}
+              {primaryCta.label}
             </Button>
-          )}
+            {secondaryCta && (
+              <Button
+                size="lg"
+                variant="outline"
+                render={<Link href={secondaryCta.href} />}
+              >
+                {secondaryCta.label}
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </section>

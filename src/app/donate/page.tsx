@@ -29,7 +29,7 @@ export default function DonatePage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Section background="white" padding="lg">
+      <Section id="donate-hero-section" background="white" padding="lg">
         <Container maxWidth="7xl">
           <FadeIn>
             <div className="mx-auto max-w-5xl text-center">
@@ -48,7 +48,7 @@ export default function DonatePage() {
         </Container>
       </Section>
 
-      <Section background="white" padding="lg">
+      <Section id="donate-info-section" background="white" padding="lg">
         <Container maxWidth="7xl">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
             <FadeIn>

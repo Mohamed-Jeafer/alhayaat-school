@@ -15,7 +15,7 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Section background="gray" padding="md">
+      <Section id="contact-hero-section" background="gray" padding="md">
         <Container>
           <PageHeader
             title={hero.heading}
@@ -25,7 +25,7 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section background="white" padding="lg">
+      <Section id="contact-info-section" background="white" padding="lg">
         <Container maxWidth="7xl">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
             <FadeIn>

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { HeartHandshake } from 'lucide-react';
 import { Container, Section } from '@/components/layout';
 import { CTASection, FadeIn, WhyCard, AnimatedCounter, homeWhyIcons, subjectIconList } from '@/components/ui';
 import { Button } from '@/components/ui/button';
@@ -60,11 +59,11 @@ export default function HomePage() {
             aria-hidden="true"
           />
         </div>
-        <div className="pointer-events-none absolute left-1/2 top-8 z-10 hidden -translate-x-[24rem] lg:block">
+        <div className="pointer-events-none absolute bottom-0 right-0 z-10 hidden lg:block">
           <Image src={hero.background.dots} alt="" width={253} height={130} className="opacity-30" aria-hidden="true" />
         </div>
 
-        <Container maxWidth="7xl" className="relative z-20 py-24 sm:py-28 lg:py-32">
+        <Container maxWidth="7xl" className="relative z-20 pt-[10rem] pb-[16rem]">
           <FadeIn>
             <div id="home-hero-content" className="mx-auto max-w-4xl text-center">
               <h1 className="text-brand-black">{hero.headline}</h1>
@@ -159,7 +158,10 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section id="home-curriculum-section" background="white" padding="lg">
+      <Section id="home-curriculum-section" background="white" padding="none" className="relative overflow-hidden py-20">
+        <div className="pointer-events-none absolute -bottom-[6.375rem] -right-[5.375rem]" aria-hidden="true">
+          <Image src="/images/dotted.png" alt="" width={270} height={254} />
+        </div>
         <Container maxWidth="7xl">
           <FadeIn>
             <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-20">
@@ -270,7 +272,14 @@ export default function HomePage() {
                   <ul className="mt-6 space-y-4">
                     {supportMission.points.map((point) => (
                       <li key={point} className="flex items-start gap-3 text-left text-white/80">
-                        <HeartHandshake className="mt-1 h-5 w-5 flex-shrink-0 text-white/70" />
+                        <Image
+                          src="/images/list-check.svg"
+                          alt=""
+                          width={20}
+                          height={20}
+                          className="mt-1 h-5 w-5 flex-shrink-0"
+                          aria-hidden="true"
+                        />
                         <span className="text-base leading-relaxed">{point}</span>
                       </li>
                     ))}

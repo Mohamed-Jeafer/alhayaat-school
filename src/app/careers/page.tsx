@@ -34,7 +34,7 @@ export default function CareersPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden bg-brand-green py-12 text-white">
+      <section id="careers-hero-section" className="relative overflow-hidden bg-brand-green py-12 text-white">
         <Image
           src="/images/cta-bg.webp"
           alt=""
@@ -67,7 +67,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <Section background="white" padding="lg">
+      <Section id="careers-intro-section" background="white" padding="lg">
         <Container maxWidth="xl">
           <FadeIn>
             <div className="mx-auto">
@@ -82,7 +82,7 @@ export default function CareersPage() {
         </Container>
       </Section>
 
-      <Section background="white" padding="lg">
+      <Section id="careers-why-join-section" background="white" padding="lg">
         <Container maxWidth="xl">
           <FadeIn>
             <div className="mb-8">
@@ -111,7 +111,7 @@ export default function CareersPage() {
         </Container>
       </Section>
 
-      <Section background="white" padding="lg">
+      <Section id="careers-openings-section" background="white" padding="lg">
         <Container maxWidth="xl">
           <FadeIn>
             <div className="mb-8">
@@ -170,7 +170,7 @@ export default function CareersPage() {
         </Container>
       </Section>
 
-      <Section background="primary" padding="lg">
+      <Section id="careers-cta-section" background="primary" padding="lg">
         <Container maxWidth="7xl">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:items-center">
             <FadeIn>
