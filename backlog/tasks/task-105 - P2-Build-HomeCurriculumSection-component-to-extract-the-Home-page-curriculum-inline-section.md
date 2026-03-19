@@ -3,10 +3,10 @@ id: TASK-105
 title: >-
   [P2] Build HomeCurriculumSection component to extract the Home page curriculum
   inline section
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-19 15:16'
-updated_date: '2026-03-19 19:22'
+updated_date: '2026-03-19 19:24'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -70,9 +70,8 @@ The curriculum section on the Home page is a two-column layout with a heading, i
 - [ ] #5 No inline styles, no raw `<img>` tags
 - [ ] #6 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+
 <!-- DOD:END -->
-
-
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
@@ -81,3 +80,9 @@ The curriculum section on the Home page is a two-column layout with a heading, i
 - [ ] #3 Given the subjects prop is an empty array, When HomeCurriculumSection renders, Then the section renders without errors and shows no broken icon slots
 - [ ] #4 Given the user is on a 375px wide screen, When HomeCurriculumSection renders, Then the two-column layout collapses to single-column and no horizontal scroll occurs
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Extracted home-curriculum-section (~22 lines) from page.tsx into HomeCurriculumSection. Props: id?, heading, intro, subjects (string[]), cta, className?. Uses subjectIconList internally indexed by position to match existing behaviour. Removed SUBJECT_ICONS constant and subjectIconList import from page.tsx. Barrel updated. Zero TS errors. page.tsx is shorter.
+<!-- SECTION:FINAL_SUMMARY:END -->
