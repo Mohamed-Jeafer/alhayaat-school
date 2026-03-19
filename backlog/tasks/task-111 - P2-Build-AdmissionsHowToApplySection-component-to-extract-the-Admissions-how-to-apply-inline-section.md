@@ -3,9 +3,10 @@ id: TASK-111
 title: >-
   [P2] Build AdmissionsHowToApplySection component to extract the Admissions
   how-to-apply inline section
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-19 15:18'
+updated_date: '2026-03-19 20:21'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -55,13 +56,17 @@ The How to Apply section is a two-column layout: intro text on the left, numbere
 *Sizing rationale: Two-column layout + numbered steps list + content JSON extraction.*
 
 ## Definition of Done
-- [ ] `src/components/sections/AdmissionsHowToApplySection.tsx` created
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] Inline section JSX removed from `src/app/admissions/page.tsx`
-- [ ] Steps content sourced from `src/content/admissions.json`
-- [ ] No inline styles
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 `src/components/sections/AdmissionsHowToApplySection.tsx` created
+- [ ] #2 Added to `src/components/sections/index.ts`
+- [ ] #3 Inline section JSX removed from `src/app/admissions/page.tsx`
+- [ ] #4 Steps content sourced from `src/content/admissions.json`
+- [ ] #5 No inline styles
+- [ ] #6 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+<!-- DOD:END -->
+
+
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
