@@ -1,9 +1,10 @@
 ---
 id: TASK-100
 title: '[P2] Migrate WhySection from ui/ to sections/ and update all page imports'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-19 15:14'
+updated_date: '2026-03-19 16:44'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -56,13 +57,16 @@ As a developer, I want `WhySection` to live in `src/components/sections/` with i
 *Sizing rationale: Pure file move and import update — no logic changes.*
 
 ## Definition of Done
-- [ ] File moved to `src/components/sections/WhySection.tsx`
-- [ ] Removed from `src/components/ui/index.ts`
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] All page imports updated — zero TypeScript errors
-- [ ] Home and About pages render identically post-move
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 File moved to `src/components/sections/WhySection.tsx`
+- [ ] #2 Removed from `src/components/ui/index.ts`
+- [ ] #3 Added to `src/components/sections/index.ts`
+- [ ] #4 All page imports updated — zero TypeScript errors
+- [ ] #5 Home and About pages render identically post-move
+- [ ] #6 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+
+<!-- DOD:END -->
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
@@ -71,3 +75,9 @@ As a developer, I want `WhySection` to live in `src/components/sections/` with i
 - [ ] #3 Given the developer imports from '@/components/sections', When they use WhySection, Then TypeScript compiles without errors
 - [ ] #4 Given the user is on a 375px wide screen, When WhySection renders on the Home page, Then the layout stacks correctly and all content is readable with no horizontal scroll
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Migrated WhySection from src/components/ui/ to src/components/sections/. Created src/components/sections/index.ts barrel with WhySection export. Removed WhySection and its type exports from src/components/ui/index.ts. Updated import paths in src/app/page.tsx and src/app/about/page.tsx to import from @/components/sections. Also fixed a pre-existing TS7053 error in curriculum/page.tsx by casting subject.id to SubjectId. npx tsc --noEmit exits with code 0.
+<!-- SECTION:FINAL_SUMMARY:END -->
