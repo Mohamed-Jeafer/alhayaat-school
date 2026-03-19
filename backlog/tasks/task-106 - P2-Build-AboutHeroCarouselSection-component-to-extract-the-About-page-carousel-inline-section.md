@@ -3,9 +3,10 @@ id: TASK-106
 title: >-
   [P2] Build AboutHeroCarouselSection component to extract the About page
   carousel inline section
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-19 15:16'
+updated_date: '2026-03-19 19:30'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -62,14 +63,18 @@ The About page carousel is a raw `<section>` tag wrapping `<AutoScrollCarousel>`
 *Sizing rationale: Wrapper component + content JSON image array extraction.*
 
 ## Definition of Done
-- [ ] `src/components/sections/AboutHeroCarouselSection.tsx` created
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] Inline carousel JSX removed from `src/app/about/page.tsx`
-- [ ] Image array sourced from `src/content/about.json`
-- [ ] All images use `next/image` with non-empty alt
-- [ ] No inline styles
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 `src/components/sections/AboutHeroCarouselSection.tsx` created
+- [ ] #2 Added to `src/components/sections/index.ts`
+- [ ] #3 Inline carousel JSX removed from `src/app/about/page.tsx`
+- [ ] #4 Image array sourced from `src/content/about.json`
+- [ ] #5 All images use `next/image` with non-empty alt
+- [ ] #6 No inline styles
+- [ ] #7 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+<!-- DOD:END -->
+
+
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
