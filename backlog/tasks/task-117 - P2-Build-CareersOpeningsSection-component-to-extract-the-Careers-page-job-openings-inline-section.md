@@ -3,9 +3,10 @@ id: TASK-117
 title: >-
   [P2] Build CareersOpeningsSection component to extract the Careers page job
   openings inline section
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-19 15:20'
+updated_date: '2026-03-19 20:27'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -55,14 +56,18 @@ The openings section renders job cards conditionally — only if open positions 
 *Sizing rationale: Conditional rendering + card layout + content JSON extraction.*
 
 ## Definition of Done
-- [ ] `src/components/sections/CareersOpeningsSection.tsx` created
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] Inline section JSX removed from `src/app/careers/page.tsx`
-- [ ] Positions sourced from `src/content/careers.json`
-- [ ] Section renders null when positions array is empty
-- [ ] No inline styles
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 `src/components/sections/CareersOpeningsSection.tsx` created
+- [ ] #2 Added to `src/components/sections/index.ts`
+- [ ] #3 Inline section JSX removed from `src/app/careers/page.tsx`
+- [ ] #4 Positions sourced from `src/content/careers.json`
+- [ ] #5 Section renders null when positions array is empty
+- [ ] #6 No inline styles
+- [ ] #7 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+<!-- DOD:END -->
+
+
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
