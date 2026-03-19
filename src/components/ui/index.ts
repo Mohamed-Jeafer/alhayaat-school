@@ -7,6 +7,8 @@
 export { HeroSection } from './HeroSection'
 export { FeatureCard } from './FeatureCard'
 export { WhyCard } from './WhyCard'
+export { WhySection } from './WhySection'
+export type { WhySectionCard, WhySectionProps } from './WhySection'
 export { CTASection } from './CTASection'
 export { SupportMissionSection } from './SupportMissionSection'
 export { EnrollNowButton } from './EnrollNowButton'

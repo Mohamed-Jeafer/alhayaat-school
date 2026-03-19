@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import { Container, GreenHero, Section } from '@/components/layout';
-import { AutoScrollCarousel, CTASection, FadeIn, TabsPanel, WhyCard, homeWhyIcons } from '@/components/ui';
+import { AutoScrollCarousel, CTASection, FadeIn, TabsPanel, WhySection, homeWhyIcons } from '@/components/ui';
+import type { WhySectionCard } from '@/components/ui';
 import aboutContent from '@/content/about.json';
-
-type WhyCardItem = { id: string; title: string; description: string };
 type MissionTab = { id: string; label: string; text: string };
 type TeamMember = {
   id: string;
@@ -124,27 +123,14 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section id="about-why-section" background="white" padding="none">
-        <Container maxWidth="7xl">
-          <FadeIn>
-            <div id="about-why-header" className="mx-auto mb-[5.5625rem] max-w-[44.5rem] pt-8 text-center">
-              <h2 className="text-brand-black">{why.heading}</h2>
-              <p className="mt-4 text-[1.2rem] font-medium leading-[1.3] text-brand-black/80">{why.intro}</p>
-            </div>
-          </FadeIn>
-          <div id="about-why-cards-container" className="mx-auto flex max-w-[67.375rem] flex-col gap-[2.375rem] pb-20">
-            {(why.cards as WhyCardItem[]).map((card, index) => (
-              <FadeIn key={card.id} delay={index * 100}>
-                <WhyCard
-                  icon={WHY_ICONS[index % WHY_ICONS.length]}
-                  title={card.title}
-                  description={card.description}
-                />
-              </FadeIn>
-            ))}
-          </div>
-        </Container>
-      </Section>
+      <WhySection
+        id="about-why-section"
+        heading={why.heading}
+        intro={why.intro}
+        cards={why.cards as WhySectionCard[]}
+        icons={WHY_ICONS}
+        cardsClassName="flex flex-col gap-[2.375rem] pb-20"
+      />
 
       <Section background="white" padding="lg" className="hidden">
         <Container maxWidth="7xl">

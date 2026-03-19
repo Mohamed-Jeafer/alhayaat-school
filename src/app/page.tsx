@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Container, Section } from '@/components/layout';
-import { CTASection, FadeIn, WhyCard, AnimatedCounter, homeWhyIcons, subjectIconList, SupportMissionSection } from '@/components/ui';
+import { CTASection, FadeIn, WhySection, AnimatedCounter, homeWhyIcons, subjectIconList, SupportMissionSection } from '@/components/ui';
+import type { WhySectionCard } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import homeContent from '@/content/home.json';
-
-type WhyCardItem = { id: string; title: string; description: string };
 type Stat = { value: number; suffix: string; label: string };
 type Collaborator = {
   id: string;
@@ -121,41 +120,36 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section id="home-why-section" background="white" padding="lg" className="relative overflow-hidden">
-        <div
-          className="pointer-events-none absolute -right-52 hidden xl:block"
-          style={{ top: '-16rem' }}
-          aria-hidden="true"
-        >
-          <Image src="/images/circle-light-green.webp" alt="" width={467} height={467} />
-        </div>
-        <div
-          className="pointer-events-none absolute -left-52 hidden xl:block"
-          style={{ bottom: '-7rem', zIndex: -1 }}
-          aria-hidden="true"
-        >
-          <Image src="/images/circle-light-orange.webp" alt="" width={467} height={467} />
-        </div>
-        <Container maxWidth="7xl">
-          <FadeIn>
-            <div id="home-why-header" className="mb-12 text-center">
-              <h2 className="text-brand-black">{why.heading}</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-lg text-brand-black/65">{why.intro}</p>
+      <WhySection
+        id="home-why-section"
+        heading={why.heading}
+        intro={why.intro}
+        cards={why.cards as WhySectionCard[]}
+        icons={WHY_ICONS}
+        sectionPadding="lg"
+        sectionClassName="relative overflow-hidden"
+        headingClassName="mb-6"
+        introClassName="mb-12 text-lg text-brand-black/65"
+        cardsClassName="flex flex-col gap-10"
+        decorations={
+          <>
+            <div
+              className="pointer-events-none absolute -right-52 hidden xl:block"
+              style={{ top: '-16rem' }}
+              aria-hidden="true"
+            >
+              <Image src="/images/circle-light-green.webp" alt="" width={467} height={467} />
             </div>
-          </FadeIn>
-          <div id="home-why-cards-container" className="mx-auto flex max-w-[67rem] flex-col gap-10">
-            {(why.cards as WhyCardItem[]).map((card, index) => (
-              <FadeIn key={card.id} delay={index * 100}>
-                <WhyCard
-                  icon={WHY_ICONS[index % WHY_ICONS.length]}
-                  title={card.title}
-                  description={card.description}
-                />
-              </FadeIn>
-            ))}
-          </div>
-        </Container>
-      </Section>
+            <div
+              className="pointer-events-none absolute -left-52 hidden xl:block"
+              style={{ bottom: '-7rem', zIndex: -1 }}
+              aria-hidden="true"
+            >
+              <Image src="/images/circle-light-orange.webp" alt="" width={467} height={467} />
+            </div>
+          </>
+        }
+      />
 
       <Section id="home-curriculum-section" background="white" padding="none" className="relative overflow-hidden py-20">
         <div className="pointer-events-none absolute -bottom-[6.375rem] -right-[5.375rem]" aria-hidden="true">
