@@ -1,9 +1,10 @@
 ---
 id: TASK-089
 title: '[BUG] Curriculum — hero section and content sections missing id attributes'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-19 02:56'
+updated_date: '2026-03-19 03:38'
 labels:
   - visual-qa
   - bug
