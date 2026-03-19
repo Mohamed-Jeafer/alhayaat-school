@@ -3,9 +3,10 @@ id: TASK-118
 title: >-
   [P2] Build ContactInfoSection component to extract the Contact page info and
   form inline section
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-19 15:21'
+updated_date: '2026-03-19 20:27'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -57,14 +58,18 @@ The contact info section is a two-column layout: 3 contact info cards (Email, Ph
 *Sizing rationale: Two-column layout + contact card mapping + shared content evaluation.*
 
 ## Definition of Done
-- [ ] `src/components/sections/ContactInfoSection.tsx` created
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] Inline section JSX removed from `src/app/contact/page.tsx`
-- [ ] Contact data sourced from `src/content/contact.json` or `_shared.json`
-- [ ] Shared contact info flagged for `_shared.json` if also used in footer
-- [ ] No inline styles
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 `src/components/sections/ContactInfoSection.tsx` created
+- [ ] #2 Added to `src/components/sections/index.ts`
+- [ ] #3 Inline section JSX removed from `src/app/contact/page.tsx`
+- [ ] #4 Contact data sourced from `src/content/contact.json` or `_shared.json`
+- [ ] #5 Shared contact info flagged for `_shared.json` if also used in footer
+- [ ] #6 No inline styles
+- [ ] #7 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+<!-- DOD:END -->
+
+
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
