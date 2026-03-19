@@ -7,6 +7,10 @@
     "headline": "Admission",
     "subtext": "A faith-based educational journey for your child."
   },
+  "banner": {
+    "src": "/images/banner.png",
+    "alt": "Pattern of colorful geometric shapes including green pinwheels, teal and black checkered squares, purple circles, and yellow and black diagonal stripes."
+  },
   "enrollment": {
     "heading": "Building a Bright Future – Enroll for 2025-2026!",
     "cards": [

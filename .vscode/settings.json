@@ -3,5 +3,6 @@
     "cSpell.words": [
         "Hayaat",
         "Webflow"
-    ]
+    ],
+    "typescript.autoClosingTags": false
 }

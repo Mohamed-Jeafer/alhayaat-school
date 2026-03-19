@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { BookOpen, CheckCircle2, GraduationCap, Heart } from 'lucide-react';
 import { Container, Grid, GreenHero, Section } from '@/components/layout';
 import { ColoredBorderCard, EnrollNowButton, FadeIn } from '@/components/ui';
-import { CTASection } from '@/components/sections';
+import { AdmissionsBannerSection, CTASection } from '@/components/sections';
 import { Badge } from '@/components/ui/badge';
 import admissionsContent from '@/content/admissions.json';
 
@@ -31,20 +31,7 @@ export default function AdmissionsPage() {
         title={hero.headline}
       />
 
-      <Section background="white" padding="none" className="pb-[3rem] pt-[2rem]">
-        <Container>
-          <div className="overflow-hidden rounded-[1.5rem] border border-black/10 bg-white">
-            <Image
-              src="/images/banner.png"
-              alt="Colorful admissions banner with abstract school-themed shapes."
-              width={1422}
-              height={210}
-              className="h-auto w-full object-cover"
-              priority
-            />
-          </div>
-        </Container>
-      </Section>
+      <AdmissionsBannerSection image={admissionsContent.banner} />
 
       <Section background="white" padding="lg">
         <Container>
