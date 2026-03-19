@@ -3,9 +3,10 @@ id: TASK-110
 title: >-
   [P2] Build AdmissionsEnrollmentCardsSection component to extract the
   Admissions enrollment periods inline section
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-19 15:18'
+updated_date: '2026-03-19 20:19'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -55,13 +56,17 @@ The enrollment periods section uses a 2-column `ColoredBorderCard` grid. Current
 *Sizing rationale: Grid layout + card prop mapping + content JSON extraction.*
 
 ## Definition of Done
-- [ ] `src/components/sections/AdmissionsEnrollmentCardsSection.tsx` created
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] Inline section JSX removed from `src/app/admissions/page.tsx`
-- [ ] Card content sourced from `src/content/admissions.json`
-- [ ] No inline styles
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 `src/components/sections/AdmissionsEnrollmentCardsSection.tsx` created
+- [ ] #2 Added to `src/components/sections/index.ts`
+- [ ] #3 Inline section JSX removed from `src/app/admissions/page.tsx`
+- [ ] #4 Card content sourced from `src/content/admissions.json`
+- [ ] #5 No inline styles
+- [ ] #6 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+<!-- DOD:END -->
+
+
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
