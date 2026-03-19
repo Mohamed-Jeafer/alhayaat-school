@@ -3,9 +3,10 @@ id: TASK-119
 title: >-
   [P2] Build DonateVerseSection component to extract the Donate page Quranic
   verse inline section
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-19 15:21'
+updated_date: '2026-03-19 20:27'
 labels:
   - UI_COMPONENT
   - section-componentization
@@ -55,14 +56,18 @@ The verse section is a centered block with Arabic text, English translation, and
 *Sizing rationale: RTL text handling + Arabic typography consideration + content JSON extraction.*
 
 ## Definition of Done
-- [ ] `src/components/sections/DonateVerseSection.tsx` created
-- [ ] Added to `src/components/sections/index.ts`
-- [ ] Inline verse JSX removed from `src/app/donate/page.tsx`
-- [ ] Verse content sourced from `src/content/donate.json`
-- [ ] Arabic text has `lang="ar"` attribute and `dir="rtl"` direction
-- [ ] No inline styles
-- [ ] Code reviewed and merged to `develop`
+<!-- DOD:BEGIN -->
+- [ ] #1 `src/components/sections/DonateVerseSection.tsx` created
+- [ ] #2 Added to `src/components/sections/index.ts`
+- [ ] #3 Inline verse JSX removed from `src/app/donate/page.tsx`
+- [ ] #4 Verse content sourced from `src/content/donate.json`
+- [ ] #5 Arabic text has `lang="ar"` attribute and `dir="rtl"` direction
+- [ ] #6 No inline styles
+- [ ] #7 Code reviewed and merged to `develop`
 <!-- SECTION:DESCRIPTION:END -->
+<!-- DOD:END -->
+
+
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
