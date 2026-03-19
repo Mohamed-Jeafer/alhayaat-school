@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { CheckCircle } from 'lucide-react';
 import { Container, Section, PageHeader } from '@/components/layout';
-import { CTASection, FadeIn } from '@/components/ui';
+import { FadeIn } from '@/components/ui';
+import { CTASection } from '@/components/sections';
 import careersContent from '@/content/careers.json';
 
 const position = careersContent.openings.positions[0];

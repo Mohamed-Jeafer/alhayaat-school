@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { Container, GreenHero, Section } from '@/components/layout';
-import { CTASection, ColoredBorderCard, FadeIn } from '@/components/ui';
+import { ColoredBorderCard, FadeIn } from '@/components/ui';
+import { CTASection } from '@/components/sections';
 import ContactForm from './ContactForm';
 import contactContent from '@/content/contact.json';
 

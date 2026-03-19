@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Container, GreenHero, Section } from '@/components/layout';
-import { AutoScrollCarousel, CTASection, FadeIn, TabsPanel, homeWhyIcons } from '@/components/ui';
+import { AutoScrollCarousel, FadeIn, TabsPanel, homeWhyIcons } from '@/components/ui';
+import { CTASection } from '@/components/sections';
 import { WhySection } from '@/components/sections';
 import type { WhySectionCard } from '@/components/sections';
 import aboutContent from '@/content/about.json';

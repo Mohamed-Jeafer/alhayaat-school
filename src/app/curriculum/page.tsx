@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { Container, GreenHero, Section } from '@/components/layout';
 import { AutoScrollCarousel } from '@/components/ui/AutoScrollCarousel';
-import { CTASection, FadeIn, subjectIcons } from '@/components/ui';
+import { FadeIn, subjectIcons } from '@/components/ui';
+import { CTASection } from '@/components/sections';
 import type { SubjectId } from '@/components/ui';
 import content from '@/content/curriculum.json';
 

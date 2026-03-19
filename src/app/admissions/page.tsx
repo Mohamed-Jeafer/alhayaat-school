@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { BookOpen, CheckCircle2, GraduationCap, Heart } from 'lucide-react';
 import { Container, Grid, GreenHero, Section } from '@/components/layout';
-import { CTASection, ColoredBorderCard, EnrollNowButton, FadeIn } from '@/components/ui';
+import { ColoredBorderCard, EnrollNowButton, FadeIn } from '@/components/ui';
+import { CTASection } from '@/components/sections';
 import { Badge } from '@/components/ui/badge';
 import admissionsContent from '@/content/admissions.json';
 
