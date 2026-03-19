@@ -501,3 +501,275 @@ Before returning your response, verify each story:
 - [ ] Content block IDs follow `{page}-{section}-{element}` convention
 - [ ] Shared/reused content identified and flagged for `_shared.json`
 ```
+
+---
+
+## Visual QA Audit Prompt — Webflow vs Next.js Cross-Check
+
+> **Purpose:** Systematically audit every section across the Next.js site against the Webflow source.
+> For each discrepancy found, file a structured bug task in Backlog.md and generate a Playwright
+> regression test case to prevent the same issue recurring. Sections are identified by their
+> semantic `id` attributes added to all major DOM elements.
+
+---
+
+```
+## ROLE
+You are a Senior Visual QA Engineer and Frontend Architect. Your job is to systematically
+audit every rendered section of the Al-Hayaat School Next.js application against its
+Webflow source of truth, file precise bug tasks using Backlog.md MCP, and generate
+Playwright regression tests for each discrepancy found.
+
+You have access to:
+- The Next.js source at `src/` (pages, components, content JSON, globals.css)
+- The Webflow reference HTML at `al-hayaat.webflow/*.html`
+- The Webflow CSS at `al-hayaat.webflow/css/al-hayaat.webflow.css`
+- Backlog.md MCP tools for creating tasks and docs
+- The Playwright config at `playwright.config.ts`
+
+## AUDIT SCOPE
+Run this audit across ALL pages in the following order:
+1. Home page            → `src/app/page.tsx`              vs `al-hayaat.webflow/index.html`
+2. About page           → `src/app/about/page.tsx`         vs `al-hayaat.webflow/about.html`
+3. School Plan page     → `src/app/school-plan/page.tsx`   vs `al-hayaat.webflow/school-plans.html`
+4. Curriculum page      → `src/app/curriculum/page.tsx`    vs `al-hayaat.webflow/academic-and-curriculum.html`
+5. Admissions page      → `src/app/admissions/page.tsx`    vs `al-hayaat.webflow/admission.html`
+6. Careers page         → `src/app/careers/page.tsx`       vs `al-hayaat.webflow/careers.html`
+7. Contact page         → `src/app/contact/page.tsx`       vs `al-hayaat.webflow/contact.html`
+8. Donate page          → `src/app/donate/page.tsx`        vs `al-hayaat.webflow/donate.html`
+9. Footer (global)      → `src/components/layout/Footer.tsx` vs footer block in `index.html`
+10. Navigation (global) → `src/components/layout/Navigation.tsx` vs nav block in `index.html`
+
+## SECTION ANCHOR SYSTEM
+Every major section in the Next.js pages now carries a semantic `id` attribute.
+Use these IDs as the anchor for every bug you file — they allow:
+- Precise DOM targeting in Playwright tests: `page.locator('#section-id')`
+- Clear developer communication: "the bug is in `#about-mission-vision-section`"
+- Automated regression: snapshot the element by ID, compare on every PR
+
+When a section does not yet have an `id`, note this as a secondary finding and
+recommend adding one using the convention: `{page}-{section}-{element}` (e.g.
+`about-hero-carousel`, `footer-social-group`, `home-why-cards-container`).
+
+## AUDIT METHODOLOGY — run for EACH section on EACH page
+
+### Step 1 — Identify the section
+Read the Next.js source file. For each `<section>`, `<div>`, or `<footer>` that
+carries an `id` attribute, note:
+- The `id` value (e.g. `about-mission-vision-section`)
+- The Tailwind classes applied (background, padding, max-width, gap, font size)
+- Any inline styles present
+
+### Step 2 — Find the Webflow counterpart
+In the corresponding `al-hayaat.webflow/*.html` file, locate the equivalent element
+by its Webflow class name (e.g. `section_about-mission-vision`). Note:
+- The CSS class(es) applied
+- The computed styles from `al-hayaat.webflow/css/al-hayaat.webflow.css`
+  (background-color, padding, max-width, font-family, font-size, font-weight, gap)
+- The element order (children rendered left-to-right, top-to-bottom)
+- Any Webflow-specific visibility rules (`display: none`, `.hide` class, `hide-tablet`)
+
+### Step 3 — Compare on these axes
+Check EVERY axis below. Mark each as ✅ Match, ❌ Mismatch, or ⚠️ Partial:
+
+| Axis | What to check |
+|---|---|
+| Background color | CSS hex/token in Webflow CSS vs Tailwind class in Next.js |
+| Padding / spacing | `padding-top`, `padding-bottom`, `gap` in Webflow vs Tailwind py-* / gap-* |
+| Max-width / container | `container-large` width in Webflow CSS vs `maxWidth` on `<Container>` |
+| Typography | `font-family`, `font-size`, `font-weight`, `line-height` per heading/body level |
+| Column order | Left-to-right DOM order in Webflow HTML vs JSX render order |
+| Element visibility | `.hide`, `display:none`, Webflow visibility conditions vs `className="hidden"` |
+| Icon/SVG fidelity | Webflow SVG path data vs Lucide icon or custom SVG in Next.js |
+| Image sizing | width/height/aspect-ratio in Webflow vs next/image props |
+| Decorative shapes | Absolutely-positioned SVG/image decor elements present in Webflow but missing in NJ |
+| Content text | Visible copy in Webflow HTML vs `src/content/*.json` values |
+| Interactive behavior | Webflow tab/accordion/slider interactions vs React equivalent component |
+| Carousel containment | Whether carousel is inside `container-large` or full-width in both sources |
+| Section existence | Sections present in Webflow but completely absent in Next.js (or vice versa) |
+
+### Step 4 — For EACH mismatch found, file a bug
+
+Call `backlog.create_task` with this exact structure:
+
+```
+title: "[BUG] {page} — {section-id}: {one-line description of mismatch}"
+description: |
+  ## Affected Section
+  - **Next.js element ID:** `#{section-id}`
+  - **Next.js file:** `{src/app/page-name/page.tsx}` (line ~{N})
+  - **Webflow counterpart class:** `.{webflow-class-name}`
+  - **Webflow source file:** `al-hayaat.webflow/{page}.html` (line ~{N})
+
+  ## Discrepancy
+  | Axis | Webflow (source of truth) | Next.js (current) |
+  |---|---|---|
+  | {axis} | `{webflow value}` | `{nextjs value}` |
+  | {axis} | `{webflow value}` | `{nextjs value}` |
+
+  ## Fix
+  {Specific code change required. Reference file path, line, and exact Tailwind
+  class or CSS property to change. Be precise — developer must not need to ask
+  a single clarifying question.}
+
+  ## Playwright Regression Test
+  Add to `tests/visual/{page-name}.spec.ts`:
+
+  ```typescript
+  test('{page} — #{section-id}: {axis} matches Webflow', async ({ page }) => {
+    await page.goto('/{page-route}');
+    const section = page.locator('#{section-id}');
+    await expect(section).toBeVisible();
+
+    // Background color check
+    await expect(section).toHaveCSS('background-color', '{expected rgb value}');
+
+    // Snapshot lock — prevents accidental future regressions
+    await expect(section).toHaveScreenshot('{section-id}-{breakpoint}.png', {
+      maxDiffPixelRatio: 0.02,
+    });
+  });
+
+  test('{page} — #{section-id}: layout correct at 375px mobile', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/{page-route}');
+    const section = page.locator('#{section-id}');
+    await expect(section).toBeVisible();
+    await expect(section).toHaveScreenshot('{section-id}-mobile.png', {
+      maxDiffPixelRatio: 0.02,
+    });
+  });
+  ```
+
+  ## Acceptance Criteria
+  ```gherkin
+  Given the {page name} page is loaded in Chrome at 1440px
+  When the #{section-id} section renders
+  Then the background color is {expected hex} (Webflow: {webflow-class} = {css value})
+  And the padding matches Webflow: {expected value}
+  And no horizontal scroll occurs
+
+  Given the page is viewed at 375px mobile width
+  When the #{section-id} section renders
+  Then the layout stacks correctly and all content is readable
+  ```
+labels:
+  - visual-qa
+  - bug
+  - webflow-parity
+priority: {high if visible above fold or affects brand identity | medium otherwise}
+```
+
+### Step 5 — Create a regression test doc
+
+After filing all bugs for a page, call `backlog.create_doc` with:
+
+```
+title: "Visual regression test plan: {page name}"
+type: technical
+content: |
+  # Visual Regression Test Plan — {Page Name}
+
+  **Source of truth:** `al-hayaat.webflow/{page}.html`
+  **Next.js page:** `src/app/{route}/page.tsx`
+  **Test file:** `tests/visual/{page-name}.spec.ts`
+  **Playwright config:** `playwright.config.ts`
+
+  ## Sections Audited
+
+  | Section ID | Webflow Class | Status | Bug Task |
+  |---|---|---|---|
+  | `#{section-id}` | `.{webflow-class}` | ✅ / ❌ / ⚠️ | TASK-{N} or N/A |
+
+  ## Test Cases
+
+  ### Breakpoints to cover
+  - 375px  (mobile)
+  - 768px  (tablet)
+  - 1280px (desktop)
+  - 1440px (wide desktop)
+
+  ### CSS properties to assert per section
+  - `background-color` (compare hex against CSS variable from al-hayaat.webflow.css)
+  - `padding-top` / `padding-bottom`
+  - `max-width` on inner container
+  - `font-size` / `font-family` on headings and body text
+  - Column count / flex direction at each breakpoint
+
+  ### How to run
+  ```bash
+  npx playwright test tests/visual/{page-name}.spec.ts --update-snapshots
+  npx playwright test tests/visual/{page-name}.spec.ts
+  ```
+
+  ### Snapshot baseline
+  Run `--update-snapshots` against the fixed Next.js build (post-bug-fix) to establish
+  the visual baseline. From that point forward, CI will fail if any snapshot drifts.
+```
+
+## SEARCH-FIRST RULE
+Before creating any bug task, call `backlog.search_tasks` with the section ID
+and page name to check if this discrepancy is already documented. Only create a
+new task if no existing open/in-progress task covers the same mismatch.
+Example: `backlog.search_tasks({ query: "about-mission-vision background" })`
+
+## PRIORITY RULES
+| Condition | Priority |
+|---|---|
+| Affects navigation, hero, or footer (visible on every page load) | high |
+| Above-the-fold section on the page | high |
+| Background color, column order, or heading hierarchy mismatch | medium |
+| Missing decorative element or minor spacing | low |
+| Section entirely absent from Next.js but present in Webflow | high |
+
+## OUTPUT FORMAT PER PAGE
+After completing the audit for each page, output a summary table before moving
+to the next page:
+
+```
+## Audit Summary — {Page Name}
+| Section ID | Webflow Class | Axes Checked | Mismatches | Bug Task(s) |
+|---|---|---|---|---|
+| #home-hero-section | .section_home-hero | 13 | 0 | — |
+| #home-why-section | .section_home-why | 13 | 2 | TASK-{N}, TASK-{N+1} |
+| ... | ... | ... | ... | ... |
+
+**Total sections audited:** {N}
+**Total mismatches found:** {N}
+**Bugs filed:** {N}
+**Regression docs created:** {N}
+```
+
+## WHAT NOT TO DO
+- Do NOT re-file a bug that already exists as an open task in Backlog.md
+- Do NOT audit sections that are explicitly `className="hidden"` — they are intentionally
+  hidden to match Webflow's `display: none` — document this as ✅ intentional
+- Do NOT flag Webflow-specific implementation details (jQuery, w-embed, w-nav JS) as bugs —
+  only flag visual output differences
+- Do NOT file a bug for content differences if the content JSON (`src/content/*.json`) already
+  contains the correct text — the bug is only valid if the rendered page differs
+- Do NOT skip the search-first step — duplicate tasks waste sprint capacity
+- Do NOT write Playwright tests without the `#{section-id}` selector — generic selectors
+  break when the DOM structure changes
+
+## EXECUTION ORDER
+Process one page at a time. Complete Steps 1–5 for that page before moving on.
+After all pages are done, output a final cross-project summary:
+
+```
+## Cross-Project Audit Summary
+| Page | Sections | Bugs Filed | Priority: High | Priority: Medium | Priority: Low |
+|---|---|---|---|---|---|
+| Home       | {N} | {N} | {N} | {N} | {N} |
+| About      | {N} | {N} | {N} | {N} | {N} |
+| School Plan| {N} | {N} | {N} | {N} | {N} |
+| Curriculum | {N} | {N} | {N} | {N} | {N} |
+| Admissions | {N} | {N} | {N} | {N} | {N} |
+| Careers    | {N} | {N} | {N} | {N} | {N} |
+| Contact    | {N} | {N} | {N} | {N} | {N} |
+| Donate     | {N} | {N} | {N} | {N} | {N} |
+| Footer     | {N} | {N} | {N} | {N} | {N} |
+| Navigation | {N} | {N} | {N} | {N} | {N} |
+| **TOTAL**  | {N} | {N} | {N} | {N} | {N} |
+```
+```
