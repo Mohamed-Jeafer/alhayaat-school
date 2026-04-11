@@ -10,6 +10,7 @@ export interface CurriculumSubject {
 }
 
 export interface CarouselImage {
+  id: string;
   src: string;
   alt: string;
 }
