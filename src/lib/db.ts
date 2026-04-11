@@ -11,7 +11,12 @@ export function getPool(): Pool {
       connectionString: process.env.DATABASE_URL,
       max: 10,
       idleTimeoutMillis: 30000,
-      connectionTimeoutMillis: 2000,
+      connectionTimeoutMillis: 10000,
+      // Azure Database for PostgreSQL requires SSL; rejectUnauthorized is
+      // handled by the sslmode=require parameter in the connection string.
+      ssl: process.env.DATABASE_URL.includes('sslmode=require')
+        ? { rejectUnauthorized: false }
+        : false,
     });
   }
   return pool;

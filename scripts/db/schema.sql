@@ -4,7 +4,9 @@
 -- Idempotent: safe to re-run locally; includes compatibility fixes
 -- =============================================================
 
-CREATE EXTENSION IF NOT EXISTS pgcrypto;
+-- gen_random_uuid() is built-in from PostgreSQL 13+; pgcrypto not needed.
+-- Azure Database for PostgreSQL does not allow pgcrypto for non-superusers.
+-- CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 -- Contact form submissions
 CREATE TABLE IF NOT EXISTS contact_submissions (
