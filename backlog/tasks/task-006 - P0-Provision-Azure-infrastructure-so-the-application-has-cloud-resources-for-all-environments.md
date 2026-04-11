@@ -3,10 +3,10 @@ id: TASK-006
 title: >-
   [P0] Provision Azure infrastructure so the application has cloud resources for
   all environments
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-03-15 10:51'
-updated_date: '2026-03-15 12:58'
+updated_date: '2026-04-11 12:33'
 labels:
   - phase-0
   - infrastructure
@@ -103,6 +103,12 @@ az deployment group create \
   --parameters infrastructure/parameters/dev.json
 ```
 <!-- SECTION:PLAN:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Azure infrastructure provisioned for production via deploy-infra-prod.yml GitHub Actions workflow using OIDC federated credentials. Resources created: rg-alhayaat-infra-prod (Managed Identity al-hayaat-prod-identity, PostgreSQL al-hayaat-prod-psql, Key Vault al-hayaat-prod-kv, Blob Storage) and rg-alhayaat-app-prod (App Service al-hayaat-prod on P1v2, App Insights). User Access Administrator role granted to App Registration on infra RG to allow Key Vault RBAC role assignments.
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
