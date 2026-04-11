@@ -1,20 +1,8 @@
-import { Resend } from 'resend';
 import { render } from '@react-email/render';
+import { sendMail } from './client';
 import { DonationThankYouEmail } from './templates/donation-thank-you';
 import type { Donation } from '@/lib/db/queries';
 import donateContent from '@/content/donate.json';
-
-let resendInstance: Resend | null = null;
-
-function getResend(): Resend {
-  if (!resendInstance) {
-    if (!process.env.RESEND_API_KEY) {
-      throw new Error('ERR_EMAIL_NOT_CONFIGURED: RESEND_API_KEY is not set');
-    }
-    resendInstance = new Resend(process.env.RESEND_API_KEY);
-  }
-  return resendInstance;
-}
 
 export interface ThankYouEmailInput {
   donation: Donation;
@@ -45,8 +33,7 @@ export async function sendThankYouEmail({ donation, receiptPdf }: ThankYouEmailI
     })
   );
 
-  await getResend().emails.send({
-    from: 'Al-Hayaat School <noreply@alhayaat.ca>',
+  await sendMail({
     to: donation.donorEmail,
     subject: `Thank you for your donation to Al-Hayaat School`,
     html,
@@ -54,6 +41,7 @@ export async function sendThankYouEmail({ donation, receiptPdf }: ThankYouEmailI
       {
         filename: `receipt-${donation.id.substring(0, 8)}.pdf`,
         content: receiptPdf,
+        contentType: 'application/pdf',
       },
     ],
   });

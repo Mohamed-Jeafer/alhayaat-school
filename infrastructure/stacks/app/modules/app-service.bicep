@@ -53,11 +53,11 @@ resource appService 'Microsoft.Web/sites@2023-01-01' = {
         // Required so Azure SDK picks up the user-assigned identity (not system-assigned)
         { name: 'AZURE_CLIENT_ID', value: identityClientId }
         // Key Vault references — resolved at runtime using the managed identity
+        { name: 'MAIL_SENDER_ADDRESS',                value: 'noreply@alhayaat.ca' }
         { name: 'STRIPE_SECRET_KEY',                  value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/STRIPE-SECRET-KEY/)' }
         { name: 'STRIPE_WEBHOOK_SECRET',              value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/STRIPE-WEBHOOK-SECRET/)' }
         { name: 'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY', value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/STRIPE-PUBLISHABLE-KEY/)' }
         { name: 'DATABASE_URL',                       value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/DATABASE-URL/)' }
-        { name: 'RESEND_API_KEY',                     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/RESEND-API-KEY/)' }
         { name: 'NEXTAUTH_SECRET',                    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/NEXTAUTH-SECRET/)' }
       ]
       alwaysOn: environment != 'dev'
