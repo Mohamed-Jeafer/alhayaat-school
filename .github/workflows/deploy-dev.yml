@@ -38,18 +38,25 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}-${{ hashFiles('**/*.ts', '**/*.tsx') }}
           restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}-
 
-      - name: Build
-        run: npm run build
-        env:
-          NEXT_TELEMETRY_DISABLED: 1
-          NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${{ vars.STRIPE_PK_TEST }}
-
       - name: Azure Login (OIDC)
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      # Same shape as app-service.bicep: az.environment().suffixes.storage (public vs Gov vs China).
+      - name: Set NEXT_PUBLIC_REGISTRATION_FORMS_BASE_URL from Azure cloud
+        run: |
+          set -euo pipefail
+          suffix=$(az cloud show --query suffixes.storage -o tsv)
+          echo "NEXT_PUBLIC_REGISTRATION_FORMS_BASE_URL=https://alhayaatassetsdev.blob.${suffix}/school-registration" >> "$GITHUB_ENV"
+
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${{ vars.STRIPE_PK_TEST }}
 
       - name: Deploy to Azure Web App (Dev)
         uses: azure/webapps-deploy@v3

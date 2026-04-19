@@ -12,7 +12,8 @@ alwaysApply: false
 
 1. **HTML structure**: `al-hayaat.webflow/about.html`, `index.html`, etc.
 2. **CSS**: `al-hayaat.webflow/css/al-hayaat.webflow.css` — classes, layout, spacing, max-widths
-3. **Live reference**: https://al-hayaat.webflow.io/ for visual confirmation
+3. **Live production (canonical public URL)**: https://www.alhayaat.ca/ — what users actually see in production
+4. **Webflow staging (if still published)**: https://al-hayaat.webflow.io/ — optional visual confirmation against the original Webflow build
 
 ## What to Verify
 

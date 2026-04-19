@@ -9,6 +9,8 @@
 
 Every `POST` request to `/api/contact`, `/api/application`, and `/api/jobs/apply` was returning `500 {"error":"Something went wrong. Please try again."}` on the production Azure App Service. No data was being saved. The site was effectively non-functional for all user-facing forms.
 
+**Host:** [https://www.alhayaat.ca/](https://www.alhayaat.ca/) (custom domain on `al-hayaat-prod` App Service).
+
 ---
 
 ## Timeline

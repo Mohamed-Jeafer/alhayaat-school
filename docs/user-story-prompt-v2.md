@@ -185,7 +185,7 @@ section** that specifies:
 Notice how tab content buried in `data-w-tab` divs becomes flat, searchable JSON.
 
 ## PROJECT CONTEXT
-Al-Hayaat School — migrating from Webflow (al-hayaat.webflow.io) to Next.js 15.
+Al-Hayaat School — migrated from Webflow to Next.js 15; production is **https://www.alhayaat.ca/** (Azure). The Webflow export in-repo and optional **https://al-hayaat.webflow.io/** remain useful for design parity.
 
 Tech stack:
 - Frontend: Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, shadcn/ui

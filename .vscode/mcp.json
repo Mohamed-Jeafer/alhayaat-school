@@ -1,15 +1,35 @@
 {
   "servers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_TOKEN}"
+      }
+    },
     "backlog": {
       "command": "backlog",
       "args": ["mcp", "start"],
       "env": {
-        "BACKLOG_CWD": "c:\\Users\\mohdr\\projects\\webflow"
-      }
+        "BACKLOG_CWD": "C:\\Users\\mohdr\\projects\\webflow\\"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "milestone_list",
+        "task_list",
+        "milestone_add",
+        "milestone_rename",
+        "task_edit",
+        "task_archive",
+        "task_create",
+        "task_view",
+        "get_workflow_overview",
+        "task_search"
+      ]
     },
-    "github": {
-      "type": "http",
-      "url": "https://api.githubcopilot.com/mcp/"
+    "webflow": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://mcp.webflow.com/sse"]
     },
     "Azure MCP Server": {
       "command": "dnx",
@@ -24,6 +44,10 @@
         "start"
       ],
       "type": "stdio"
+    },
+    "power-stripe-stripe": {
+      "url": "https://mcp.stripe.com",
+      "disabled": false
     }
   }
 }

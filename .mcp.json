@@ -26,7 +26,8 @@
         "task_archive",
         "task_create",
         "task_view",
-        "get_workflow_overview"
+        "get_workflow_overview",
+        "task_search"
       ]
     },
     "webflow": {
@@ -41,7 +42,7 @@
     "mcpServers": {
       "power-stripe-stripe": {
         "url": "https://mcp.stripe.com",
-        "disabled": true
+        "disabled": false
       }
     }
   }

@@ -2,9 +2,17 @@
 
 Al-Hayaat School is an school that empowers students with a holistic education rooted in the teachings of the Holy Quran and the principles of Ahlulbayt [A.S.]. The mission is to shape academically competent, spiritually grounded, and morally upright individuals ready to contribute to society with confidence and pride in their identity.
 
+## Production
+
+The public site runs on **Azure App Service** (Next.js 15):
+
+**[https://www.alhayaat.ca/](https://www.alhayaat.ca/)**
+
+DNS uses a **decoupled apex** (apex on stable cPanel IP, `www` CNAME to `al-hayaat-prod.azurewebsites.net`) with a **path-preserving 301** from the root domain to `https://www`. See **[docs/PRODUCTION-HOSTING.md](docs/PRODUCTION-HOSTING.md)** and **[cpanel_zone_editor.md](cpanel_zone_editor.md)** for the full picture.
+
 ## What This Project Is
 
-This is a full migration of the Al-Hayaat School website from Webflow to a modern Next.js 15 application. The original Webflow export lives in `al-hayaat.webflow/` and serves as the design reference. The new site is being built with a full backend — forms, donations, authentication, and an admin dashboard.
+This is a full migration of the Al-Hayaat School website from Webflow to a modern Next.js 15 application. The original Webflow export lives in `al-hayaat.webflow/` and serves as the **design and parity reference** for layout and styling. The deployed app includes a full backend — forms, donations, authentication, and an admin dashboard.
 
 ## Tech Stack
 
@@ -25,10 +33,18 @@ al-hayaat.webflow/   # Original Webflow export (design reference)
 diagrams/            # Architecture, DB schema, CI/CD, component hierarchy diagrams
 docs/                # Migration plan, component specs, validation reports
 .kiro/specs/         # Phase-by-phase implementation specs (phases 0–8)
-backlog/             # Task tracking via Backlog.md MCP
+backlog/             # Backlog.md tasks (MCP in Cursor, or Backlog.md CLI—CLI mirrors MCP guardrails for edits/create/close)
+.cursor/             # Cursor rules; project MCP for Cursor lives in .cursor/mcp.json (see below)
+.vscode/             # Editor shared settings; optional MCP for VS Code in .vscode/mcp.json (different shape than Cursor)
 ```
 
-The Next.js app itself hasn't been scaffolded yet — that happens in Phase 0.
+The Next.js application source lives under `src/` at the repo root.
+
+### MCP configuration (Cursor vs VS Code)
+
+This team uses **Cursor**. Cursor loads **project** MCP from **[`.cursor/mcp.json`](.cursor/mcp.json)** (`mcpServers`, optional nested **`powers.mcpServers`** for Stripe, and Cursor-specific fields such as **`autoApprove`** where supported). Cursor **also** merges in **your user-level MCP list** from the Cursor application settings—that is separate from anything in this repository.
+
+**VS Code** (without Cursor) may read **[`.vscode/mcp.json`](.vscode/mcp.json)** instead. That file uses a top-level **`servers`** object and may not support every Cursor-only knob. The two JSON files are **not** required to stay identical; when you change MCP for day-to-day work in Cursor, update **`.cursor/mcp.json`** first, then adjust **`.vscode/mcp.json`** only if you care about VS Code parity.
 
 ## Migration Phases
 
@@ -93,6 +109,7 @@ The Next.js app itself hasn't been scaffolded yet — that happens in Phase 0.
 
 ### Key Reference Docs
 
+- `docs/PRODUCTION-HOSTING.md` — Live URL, DNS, cPanel redirects, Azure TLS
 - `docs/plan.md` — Full migration plan with decisions and rationale
 - `docs/COMPONENT-LIBRARY-SPEC.md` — Detailed spec for all 45 components
 - `docs/REVISED-MIGRATION-PLAN.md` — Updated migration strategy

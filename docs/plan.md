@@ -4,6 +4,10 @@
 
 Migrate Al-Hayaat School website from Webflow to a modern React TypeScript application using Next.js 15+ App Router, Tailwind CSS, with comprehensive backend functionality (forms, donations, authentication). Content will remain hardcoded initially, with architecture ready for future CMS integration.
 
+### Production status (April 2026)
+
+The **public website** is live at **[https://www.alhayaat.ca/](https://www.alhayaat.ca/)** on **Azure App Service** (`al-hayaat-prod`). Hosting is no longer on Webflow; DNS uses a **decoupled apex** (cPanel A record + `www` CNAME to Azure) and a **path-preserving 301** from the apex to `https://www`. Authoritative write-up: **`docs/PRODUCTION-HOSTING.md`** and **`cpanel_zone_editor.md`**.
+
 **Timeline Estimate**: 6-8 weeks (balanced quality approach)  
 **Tech Stack**: Next.js 15, React 19, TypeScript, Tailwind CSS, shadcn/ui, Prisma + PostgreSQL, NextAuth.js, Stripe  
 **Deployment**: AWS/Azure/GCP with Docker containerization

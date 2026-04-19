@@ -365,3 +365,9 @@ After completing Phase 0, proceed to **Phase 1: Foundation & Design System** whi
 - Configure Tailwind with brand colors
 - Build base Button component
 - Set up database connection utilities
+
+---
+
+## Production custom domain (April 2026)
+
+The production app is served at **https://www.alhayaat.ca/** (Azure App Service `al-hayaat-prod`). DNS and redirects follow the **decoupled apex** pattern documented in **`docs/PRODUCTION-HOSTING.md`** and **`cpanel_zone_editor.md`** at the repository root (apex on cPanel, `www` CNAME to `al-hayaat-prod.azurewebsites.net`, path-preserving 301 from apex to `https://www`, Azure-managed TLS, HTTPS enforced).

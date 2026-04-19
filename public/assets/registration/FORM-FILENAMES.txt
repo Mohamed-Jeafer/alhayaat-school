@@ -8,8 +8,10 @@ Current files (spaces are OK — the app builds URLs with encodeURIComponent):
   Parental Agreement.pdf
   Liability Waiver.pdf
 
-Production: point NEXT_PUBLIC_REGISTRATION_FORMS_BASE_URL at the blob path prefix (no trailing slash), e.g.
+Production: App Service gets NEXT_PUBLIC_REGISTRATION_FORMS_BASE_URL from app-service.bicep (and CI sets the same value at build). Example (prod, no trailing slash):
 
-  NEXT_PUBLIC_REGISTRATION_FORMS_BASE_URL=https://alhayaatassetsprod.blob.core.windows.net/school-registration
+  https://alhayaatassetsprod.blob.core.windows.net/school-registration
+
+Local: set NEXT_PUBLIC_REGISTRATION_FORMS_BASE_URL in .env.local to the same pattern if you want blob links instead of /assets/registration/.
 
 When Azure CDN (or Front Door) is enabled, switch that value to the CDN endpoint + same path segment; filenames in admissions.json stay the same.

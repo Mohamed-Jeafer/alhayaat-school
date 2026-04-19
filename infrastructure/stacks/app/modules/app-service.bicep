@@ -13,6 +13,10 @@ param identityClientId string
 @description('Key Vault name in the infra stack (used to build Key Vault reference URIs)')
 param keyVaultName string
 
+// Keep in sync with infra `main.bicep` → `assetsStorageAccountName` (`alhayaatassets` + environment).
+var assetsStorageAccountName = 'alhayaatassets${environment}'
+var registrationFormsPublicBaseUrl = 'https://${assetsStorageAccountName}.blob.${az.environment().suffixes.storage}/school-registration'
+
 var skuMap = {
   dev:     { name: 'B1',   tier: 'Basic' }
   staging: { name: 'S1',   tier: 'Standard' }
@@ -43,6 +47,9 @@ resource appService 'Microsoft.Web/sites@2023-01-01' = {
     }
   }
   properties: {
+    // Key Vault @Microsoft.KeyVault(...) resolution uses this identity. Without it, the
+    // platform defaults to system-assigned MI (often off) → MSINotEnabled / red X in Portal.
+    keyVaultReferenceIdentity: identityResourceId
     serverFarmId: appServicePlan.id
     siteConfig: {
       linuxFxVersion: 'NODE|20-lts'
@@ -57,8 +64,12 @@ resource appService 'Microsoft.Web/sites@2023-01-01' = {
         { name: 'STRIPE_SECRET_KEY',                  value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/STRIPE-SECRET-KEY/)' }
         { name: 'STRIPE_WEBHOOK_SECRET',              value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/STRIPE-WEBHOOK-SECRET/)' }
         { name: 'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY', value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/STRIPE-PUBLISHABLE-KEY/)' }
+        // Admissions PDFs — server-rendered links (see registration-forms.ts). No Key Vault; not secret.
+        { name: 'NEXT_PUBLIC_REGISTRATION_FORMS_BASE_URL', value: registrationFormsPublicBaseUrl }
         { name: 'DATABASE_URL',                       value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/DATABASE-URL/)' }
         { name: 'NEXTAUTH_SECRET',                    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/NEXTAUTH-SECRET/)' }
+        // Careers resume upload (src/lib/services/job-application.service.ts)
+        { name: 'AZURE_STORAGE_CONNECTION_STRING',    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/AZURE-STORAGE-CONNECTION-STRING/)' }
       ]
       alwaysOn: environment != 'dev'
     }

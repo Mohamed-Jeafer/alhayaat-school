@@ -1,0 +1,172 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.42.1.51946",
+      "templateHash": "13447963965908945346"
+    }
+  },
+  "parameters": {
+    "appName": {
+      "type": "string",
+      "metadata": {
+        "description": "Application name"
+      }
+    },
+    "location": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "object"
+    },
+    "environment": {
+      "type": "string"
+    },
+    "identityResourceId": {
+      "type": "string",
+      "metadata": {
+        "description": "Resource ID of the user-assigned managed identity from the infra stack"
+      }
+    },
+    "identityClientId": {
+      "type": "string",
+      "metadata": {
+        "description": "Client ID of the user-assigned managed identity (set as AZURE_CLIENT_ID app setting)"
+      }
+    },
+    "keyVaultName": {
+      "type": "string",
+      "metadata": {
+        "description": "Key Vault name in the infra stack (used to build Key Vault reference URIs)"
+      }
+    }
+  },
+  "variables": {
+    "assetsStorageAccountName": "[format('alhayaatassets{0}', parameters('environment'))]",
+    "registrationFormsPublicBaseUrl": "[format('https://{0}.blob.{1}/school-registration', variables('assetsStorageAccountName'), environment().suffixes.storage)]",
+    "skuMap": {
+      "dev": {
+        "name": "B1",
+        "tier": "Basic"
+      },
+      "staging": {
+        "name": "S1",
+        "tier": "Standard"
+      },
+      "prod": {
+        "name": "P1v2",
+        "tier": "PremiumV2"
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/serverfarms",
+      "apiVersion": "2023-01-01",
+      "name": "[format('{0}-plan', parameters('appName'))]",
+      "location": "[parameters('location')]",
+      "tags": "[parameters('tags')]",
+      "sku": "[variables('skuMap')[parameters('environment')]]",
+      "kind": "linux",
+      "properties": {
+        "reserved": true
+      }
+    },
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2023-01-01",
+      "name": "[parameters('appName')]",
+      "location": "[parameters('location')]",
+      "tags": "[parameters('tags')]",
+      "identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+          "[format('{0}', parameters('identityResourceId'))]": {}
+        }
+      },
+      "properties": {
+        "keyVaultReferenceIdentity": "[parameters('identityResourceId')]",
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', format('{0}-plan', parameters('appName')))]",
+        "siteConfig": {
+          "linuxFxVersion": "NODE|20-lts",
+          "nodeVersion": "20-lts",
+          "appSettings": [
+            {
+              "name": "NODE_ENV",
+              "value": "production"
+            },
+            {
+              "name": "NEXTAUTH_URL",
+              "value": "[format('https://{0}.azurewebsites.net', parameters('appName'))]"
+            },
+            {
+              "name": "AZURE_CLIENT_ID",
+              "value": "[parameters('identityClientId')]"
+            },
+            {
+              "name": "MAIL_SENDER_ADDRESS",
+              "value": "noreply@alhayaat.ca"
+            },
+            {
+              "name": "STRIPE_SECRET_KEY",
+              "value": "[format('@Microsoft.KeyVault(SecretUri=https://{0}.vault.azure.net/secrets/STRIPE-SECRET-KEY/)', parameters('keyVaultName'))]"
+            },
+            {
+              "name": "STRIPE_WEBHOOK_SECRET",
+              "value": "[format('@Microsoft.KeyVault(SecretUri=https://{0}.vault.azure.net/secrets/STRIPE-WEBHOOK-SECRET/)', parameters('keyVaultName'))]"
+            },
+            {
+              "name": "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY",
+              "value": "[format('@Microsoft.KeyVault(SecretUri=https://{0}.vault.azure.net/secrets/STRIPE-PUBLISHABLE-KEY/)', parameters('keyVaultName'))]"
+            },
+            {
+              "name": "NEXT_PUBLIC_REGISTRATION_FORMS_BASE_URL",
+              "value": "[variables('registrationFormsPublicBaseUrl')]"
+            },
+            {
+              "name": "DATABASE_URL",
+              "value": "[format('@Microsoft.KeyVault(SecretUri=https://{0}.vault.azure.net/secrets/DATABASE-URL/)', parameters('keyVaultName'))]"
+            },
+            {
+              "name": "NEXTAUTH_SECRET",
+              "value": "[format('@Microsoft.KeyVault(SecretUri=https://{0}.vault.azure.net/secrets/NEXTAUTH-SECRET/)', parameters('keyVaultName'))]"
+            },
+            {
+              "name": "AZURE_STORAGE_CONNECTION_STRING",
+              "value": "[format('@Microsoft.KeyVault(SecretUri=https://{0}.vault.azure.net/secrets/AZURE-STORAGE-CONNECTION-STRING/)', parameters('keyVaultName'))]"
+            }
+          ],
+          "alwaysOn": "[not(equals(parameters('environment'), 'dev'))]"
+        },
+        "httpsOnly": true
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', format('{0}-plan', parameters('appName')))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Insights/components",
+      "apiVersion": "2020-02-02",
+      "name": "[format('{0}-insights', parameters('appName'))]",
+      "location": "[parameters('location')]",
+      "tags": "[parameters('tags')]",
+      "kind": "web",
+      "properties": {
+        "Application_Type": "web",
+        "RetentionInDays": 90
+      }
+    }
+  ],
+  "outputs": {
+    "defaultHostName": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Web/sites', parameters('appName')), '2023-01-01').defaultHostName]"
+    },
+    "appServiceName": {
+      "type": "string",
+      "value": "[parameters('appName')]"
+    }
+  }
+}
