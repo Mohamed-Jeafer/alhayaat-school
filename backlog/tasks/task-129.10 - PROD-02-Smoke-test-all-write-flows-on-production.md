@@ -4,6 +4,7 @@ title: 'PROD-02: Smoke test all write flows on production'
 status: To Do
 assignee: []
 created_date: '2026-04-11 13:24'
+updated_date: '2026-04-19 13:05'
 labels:
   - production
 dependencies:
@@ -35,3 +36,9 @@ After schema is applied to production, do a smoke test of all 5 write flows agai
 3. After each test, query production DB to verify row was created
 4. Check App Insights logs for any errors
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Production blockers tracked separately: TASK-131 (AZURE_STORAGE_CONNECTION_STRING for careers resume upload), TASK-132 (Key Vault reference errors on App Service). Close those before expecting PROD AC #3 and Stripe-related checks to pass.
+<!-- SECTION:NOTES:END -->
