@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Container } from '@/components/layout';
+import { cn } from '@/lib/utils';
 import { AutoScrollCarousel } from '@/components/ui/AutoScrollCarousel';
 import { CurriculumSubjectsGrid, FadeIn, type CurriculumSubjectItem } from '@/components/ui';
 
@@ -25,9 +26,9 @@ export function CurriculumContentSection({
   subjects,
   carousel,
   className,
-}: CurriculumContentSectionProps) {
+}: Readonly<CurriculumContentSectionProps>) {
   return (
-    <section id={id} className={`bg-white${className ? ` ${className}` : ''}`}>
+    <section id={id} className={cn('bg-white', className)}>
       <Container maxWidth="7xl" className="pt-[2rem]">
         <FadeIn>
           {/* Full-width hero image */}

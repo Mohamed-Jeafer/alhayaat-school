@@ -21,7 +21,7 @@ export function AdmissionsEnrollmentCardsSection({
   heading,
   cards,
   className,
-}: AdmissionsEnrollmentCardsSectionProps) {
+}: Readonly<AdmissionsEnrollmentCardsSectionProps>) {
   return (
     <Section id={id} background="white" padding="lg" className={className}>
       <Container>
